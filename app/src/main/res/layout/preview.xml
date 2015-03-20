@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layoutGeneral"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blanco" >
+ 
+    <RelativeLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@color/fondo_intro" >
+
+        <TextView
+            android:id="@+id/codigoTextura"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:padding="20dp"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <LinearLayout
+            android:id="@+id/linearColores"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/codigoTextura"
+            android:layout_margin="5dp"
+            android:orientation="horizontal" >
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/linearBotonSave"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/fondo_negro_mp"
+        android:clickable="true"
+        android:gravity="center_horizontal"
+        android:onClick="sacarFoto"
+        android:orientation="horizontal"
+        android:padding="20dp" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/save_preview"
+            android:textColor="@color/blanco" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/comentarioPreview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/linearBotonSave"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="40dp"
+        android:layout_marginTop="10dp"
+        android:textSize="@dimen/font_size_comentario_preview"
+        android:background="@color/fondo_intro"
+        android:padding="20dp" />
+
+    <LinearLayout
+        android:id="@+id/contPaletas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:orientation="vertical" >
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,17 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+<dimen name="margen_izq_menu_principal">90dp</dimen>
+<dimen name="margen_top_menu_principal">0dp</dimen>
+<dimen name="font_size_menu_principal">16sp</dimen>
+<dimen name="caja_colores">40dp</dimen>
+<dimen name="font_size_done">22sp</dimen>
+<dimen name="margen_top_entre_iconos">20dp</dimen>
+<dimen name="caja_colores2">40dp</dimen>
+<dimen name="margen_izq_mis_paletas">10dp</dimen>
+<dimen name="font_size_titulo">24sp</dimen>
+<dimen name="caja_coloresPreview">20dp</dimen>
+<dimen name="font_size_comentario_preview">14sp</dimen>
+</resources>

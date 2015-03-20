@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Espartano</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+	<string name="logo">Logo</string>
+	<string name="magna">Magna</string>
+	<string name="ic_classic">Icono Classic</string>
+	<string name="ic_contemporary">Icono Contemporary</string>
+	<string name="ic_ethnic">Icono Ethnic</string>
+	<string name="ic_organic">Icono Organic</string>
+	<string name="ic_small_patterns">Icono Small Patterns</string>
+	<string name="ic_collections">Icono Collections</string>
+	<string name="classic">CLASSIC</string>
+	<string name="contemporary">CONTEMPORARY</string>
+	<string name="ethnic">ETHNIC</string>
+	<string name="organic">ORGANIC</string>
+	<string name="small_patterns">SMALL PATTERNS</string>
+	<string name="collections">Collections</string>
+	<string name="item_lista_textura">Textura</string>
+	<string name="ic_favoritos">Favoritos</string>
+	<string name="done">DONE</string>
+	<string name="eliminar">Eliminar</string>
+	<string name="email">E-Mail</string>
+	<string name="mis_paletas">MY PALLETS</string>
+	<string name="flecha_atras">back</string>
+	<string name="color_fan">COLOR FAN</string>
+	<string name="my_selection">MY SELECTION</string>
+	<string name="delete">DELETE?</string>
+	<string name="yes">YES</string>
+	<string name="cancel">CANCEL</string>
+	<string name="emailit">E-MAIL IT</string>
+	<string name="name">NAME</string>
+	<string name="phone">PHONE</string>
+	<string name="link_pallete">LINK A PALLETE</string>
+	<string name="email2">EMAIL</string>
+	<string name="comment">COMMENT</string>
+	<string name="send">SEND</string>
+	<string name="attach_comment">ATTACH A COMMENT</string>
+	<string name="save">SAVE</string>
+	<string name="preview">PREVIEW</string>
+	<string name="contact">CONTACT</string>
+	<string name="mail_espartano">design@elespartano.com.ar</string>
+	<string name="tel_espartano">+54 11 4702&#8211;3030 </string>
+	<string name="web_espartano">www.elespartano.com.ar</string>
+	<string name="compatible">compatible</string>
+	<string name="save_preview">Save Preview</string>
+	
+</resources>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:baselineAligned="false"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:id="@+id/color1"
+        android:layout_width="@dimen/caja_colores"
+        android:layout_height="@dimen/caja_colores"
+        android:layout_margin="3dp"
+        android:background="@color/blanco"
+        android:orientation="horizontal" >
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/color2"
+        android:layout_width="@dimen/caja_colores"
+        android:layout_height="@dimen/caja_colores"
+        android:layout_margin="3dp"
+        android:background="@color/blanco"
+        android:orientation="horizontal" >
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/color3"
+        android:layout_width="@dimen/caja_colores"
+        android:layout_height="@dimen/caja_colores"
+        android:layout_margin="3dp"
+        android:background="@color/blanco"
+        android:orientation="horizontal" >
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/color4"
+        android:layout_width="@dimen/caja_colores"
+        android:layout_height="@dimen/caja_colores"
+        android:layout_margin="3dp"
+        android:background="@color/blanco"
+        android:orientation="horizontal" >
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/color5"
+        android:layout_width="@dimen/caja_colores"
+        android:layout_height="@dimen/caja_colores"
+        android:layout_margin="3dp"
+        android:background="@color/blanco"
+        android:orientation="horizontal" >
+    </LinearLayout>
+
+    <CheckBox
+        android:id="@+id/radioLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_margin="5dp"
+        android:layout_marginLeft="10dp" />
+
+</LinearLayout>

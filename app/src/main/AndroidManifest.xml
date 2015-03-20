@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.conquersoft.espartano"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="16"
+        android:targetSdkVersion="19" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:icon="@drawable/logoluncher"
+        android:theme="@style/AppTheme" >
+        
+        <activity
+            android:name="com.conquersoft.espartano.MainActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MenuPrincipal"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="Menu Principal"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".ColeccionClassic"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="Coleccion Classic"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".VerTextura"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="Ver Textura"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".ColorFan"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="Color Fan"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".MisPaletas"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="Mis Paletas"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".HorizontalListViewDemo"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="TESTRERERER"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".MisColecciones"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="Mis Colecciones"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".Compatibles"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="Compatible"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".Preview"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="Preview"
+            android:screenOrientation="portrait" >
+        </activity>
+    </application>
+
+</manifest>

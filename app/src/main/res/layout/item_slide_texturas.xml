@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layoutGeneral"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blanco"
+    >
+
+
+    <RelativeLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@color/fondo_intro" >
+
+        <TextView
+            android:id="@+id/codigoTextura"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <LinearLayout
+            android:id="@+id/linearColores"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/codigoTextura"
+            android:layout_margin="5dp"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:id="@+id/cajaColor1"
+                android:layout_width="@dimen/caja_colores"
+                android:layout_height="@dimen/caja_colores"
+                android:layout_margin="3dp"
+                android:background="@color/blanco"
+                android:orientation="horizontal" >
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cajaColor2"
+                android:layout_width="@dimen/caja_colores"
+                android:layout_height="@dimen/caja_colores"
+                android:layout_margin="3dp"
+                android:background="@color/blanco"
+                android:orientation="horizontal" >
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cajaColor3"
+                android:layout_width="@dimen/caja_colores"
+                android:layout_height="@dimen/caja_colores"
+                android:layout_margin="3dp"
+                android:background="@color/blanco"
+                android:orientation="horizontal" >
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cajaColor4"
+                android:layout_width="@dimen/caja_colores"
+                android:layout_height="@dimen/caja_colores"
+                android:layout_margin="3dp"
+                android:background="@color/blanco"
+                android:orientation="horizontal" >
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cajaColor5"
+                android:layout_width="@dimen/caja_colores"
+                android:layout_height="@dimen/caja_colores"
+                android:layout_margin="3dp"
+                android:background="@color/blanco"
+                android:orientation="horizontal" >
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/icono_favoritos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="@string/ic_favoritos"
+        android:src="@drawable/corazon" />
+
+</RelativeLayout>

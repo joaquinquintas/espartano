@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/gris_dialog"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/idDelete"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="50dp"
+        android:text="@string/contact"
+        android:textSize="24sp" />
+
+    <LinearLayout
+        android:id="@+id/linearCuerpo"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/lineargen"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:background="@color/blanco"
+            android:padding="15dp"
+            android:layout_margin="20dp" >
+
+            <TextView
+                android:id="@+id/mailContact"
+                android:drawableLeft="@drawable/contacticon"
+                android:drawablePadding="20dp"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/mail_espartano"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearPhoneContact"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:background="@color/blanco" 
+            android:padding="15dp"
+             android:layout_margin="20dp">
+
+            <TextView
+                android:id="@+id/phoneContact"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/phoneicon"
+                android:drawablePadding="20dp"
+                android:text="+54 11 4702-3030"
+                android:textSize="15sp" />
+        </LinearLayout>
+        
+        <LinearLayout
+            android:id="@+id/linearWeb"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:background="@color/blanco" 
+            android:padding="15dp"
+             android:layout_margin="20dp">
+
+            <TextView
+                android:id="@+id/webContact"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/web_espartano"
+                android:drawableLeft="@drawable/webicon"
+                android:drawablePadding="20dp"
+                android:textSize="15sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearCancelContact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="50dp"
+        android:background="@color/boton_gris"
+        android:clickable="true"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:padding="5dp" >
+
+        <TextView
+            android:id="@+id/send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/cancel"
+            android:textColor="@color/blanco"
+            android:textSize="24sp" />
+    </LinearLayout>
+
+</LinearLayout>

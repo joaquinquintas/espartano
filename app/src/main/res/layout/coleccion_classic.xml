@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo_negro_mp"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/contPaletas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/fondo_intro"
+        android:gravity="top"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/txtTitulo"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="22sp"
+            android:layout_margin="10dp" />
+    </LinearLayout>
+    
+    <ListView
+        android:id="@+id/list"
+        android:layout_below="@+id/contPaletas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/menuNavegacion" />
+
+    <LinearLayout
+        android:id="@+id/menuNavegacion"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="5dp"
+        android:background="@color/fondo_negro_mp"
+        android:gravity="bottom"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="irMenuPrincipal"
+            android:contentDescription="@string/ic_collections"
+            android:src="@drawable/collectionsclick" />
+
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:contentDescription="@string/ic_collections"
+            android:onClick="irColorFan"
+            android:src="@drawable/colorfan" />
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="irMisColecciones"
+            android:contentDescription="@string/ic_collections"
+            android:src="@drawable/myselection" />
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="mostrarContacto"
+            android:contentDescription="@string/ic_collections"
+            android:src="@drawable/contact" />
+    </LinearLayout>
+
+</RelativeLayout>

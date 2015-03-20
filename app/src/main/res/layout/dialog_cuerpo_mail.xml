@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/gris_dialog"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/linearcuerpo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/lineargen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <EditText
+                android:id="@+id/edtName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@color/blanco"
+                android:ems="14"
+                android:hint="@string/name"
+                android:inputType="textPersonName"
+                android:padding="10dp" >
+            </EditText>
+
+            <EditText
+                android:id="@+id/edtPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@color/blanco"
+                android:ems="14"
+                android:hint="@string/phone"
+                android:inputType="phone"
+                android:padding="10dp" >
+            </EditText>
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/edtMail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/blanco"
+            android:ems="14"
+            android:hint="@string/email2"
+            android:inputType="textEmailAddress"
+            android:padding="10dp" >
+        </EditText>
+
+        <EditText
+            android:id="@+id/edtcomment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/blanco"
+            android:ems="14"
+            android:gravity="top"
+            android:hint="@string/comment"
+            android:lines="6"
+            android:padding="10dp"
+            android:singleLine="false" >
+        </EditText>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearSendMail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="50dp"
+        android:background="@color/boton_verde"
+        android:clickable="true"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:padding="5dp" >
+
+        <TextView
+            android:id="@+id/send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/send"
+            android:textColor="@color/blanco"
+            android:textSize="24sp" />
+    </LinearLayout>
+
+</LinearLayout>

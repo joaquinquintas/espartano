@@ -1,0 +1,20 @@
+<resources>
+
+    <!--
+         Example customization of dimensions originally defined in res/values/dimens.xml
+         (such as screen margins) for screens with more than 820dp of available width. This
+         would include 7" and 10" devices in landscape (~960dp and ~1280dp respectively).
+    -->
+    <dimen name="activity_horizontal_margin">64dp</dimen>
+    <dimen name="margen_izq_menu_principal">260dp</dimen>
+<dimen name="margen_top_menu_principal">80dp</dimen>
+<dimen name="font_size_menu_principal">35sp</dimen>
+<dimen name="caja_colores">90dp</dimen>
+<dimen name="font_size_done">30sp</dimen>
+<dimen name="margen_top_entre_iconos">20dp</dimen>
+<dimen name="caja_colores2">120dp</dimen>
+<dimen name="margen_izq_mis_paletas">10dp</dimen>
+<dimen name="font_size_titulo">32sp</dimen>
+<dimen name="caja_coloresPreview">50dp</dimen>
+<dimen name="font_size_comentario_preview">20sp</dimen>
+</resources>

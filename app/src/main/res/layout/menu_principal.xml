@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/fondo_negro_mp"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/fondo_negro_mp"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/margen_top_menu_principal" >
+
+        <TextView
+            android:id="@+id/colClassic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margen_izq_menu_principal"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:drawableLeft="@drawable/icono_classic"
+            android:drawablePadding="10dp"
+            android:textSize="@dimen/font_size_menu_principal"
+            android:layout_marginTop="2dp"
+            android:gravity="center_vertical"
+            android:textColor="@color/fuente_menu_principal"
+            android:onClick="abrirColeccion"
+            android:text="@string/classic"
+             />
+
+        <TextView
+            android:id="@+id/colContemporary"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margen_izq_menu_principal"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:drawableLeft="@drawable/icono_contemporary"
+            android:drawablePadding="10dp"
+            android:textSize="@dimen/font_size_menu_principal"
+            android:gravity="center_vertical"
+            android:onClick="abrirColeccion"
+            android:text="@string/contemporary"
+            android:textColor="@color/fuente_menu_principal" />
+
+        <TextView
+            android:id="@+id/colEthnic"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margen_izq_menu_principal"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:drawableLeft="@drawable/icono_ethnic"
+            android:drawablePadding="10dp"
+            android:clickable="true"
+            android:gravity="center_vertical"
+            android:textSize="@dimen/font_size_menu_principal"
+            android:onClick="abrirColeccion"
+            android:text="@string/ethnic"
+            android:textColor="@color/fuente_menu_principal" />
+
+        <TextView
+            android:id="@+id/colOrganic"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margen_izq_menu_principal"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:textSize="@dimen/font_size_menu_principal"
+            android:clickable="true"
+            android:drawableLeft="@drawable/icono_organic"
+            android:drawablePadding="10dp"
+            android:gravity="center_vertical"
+            android:onClick="abrirColeccion"
+            android:text="@string/organic"
+            android:textColor="@color/fuente_menu_principal" />
+
+        <TextView
+            android:id="@+id/colSmall"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margen_izq_menu_principal"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:textSize="@dimen/font_size_menu_principal"
+            android:clickable="true"
+            android:drawableLeft="@drawable/icono_small_patterns"
+            android:drawablePadding="10dp"
+            android:gravity="center_vertical"
+            android:onClick="abrirColeccion"
+            android:text="@string/small_patterns"
+            android:textColor="@color/fuente_menu_principal" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:background="@color/fondo_negro_mp"
+        android:gravity="bottom"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:contentDescription="@string/ic_collections"
+            android:src="@drawable/collectionsclick" />
+
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:contentDescription="@string/ic_collections"
+            android:onClick="irColorFan"
+            android:src="@drawable/colorfan" />
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="irMisColecciones"
+            android:contentDescription="@string/ic_collections"
+            android:src="@drawable/myselection" />
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="mostrarContacto"
+            android:contentDescription="@string/ic_collections"
+            android:src="@drawable/contact" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_above="@+id/linearLayout1"
+        android:layout_alignParentLeft="true"
+        android:background="#4D4D4D" />
+
+</RelativeLayout>
