@@ -2,74 +2,156 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:baselineAligned="false"
-    android:orientation="horizontal" >
+    android:baselineAligned="false">
+
 
     <LinearLayout
-        android:id="@+id/listaColor1"
-        android:layout_width="@dimen/caja_colores2"
-        android:layout_height="@dimen/caja_colores2"
-        android:layout_margin="3dp"
-        android:background="@color/blanco"
-        android:orientation="horizontal" >
+        android:id="@+id/listaColorWrapper1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/listaColor1"
+            android:layout_width="@dimen/caja_colores2"
+            android:layout_height="@dimen/caja_colores2"
+            android:layout_margin="3dp"
+            android:background="@color/blanco"
+            android:orientation="horizontal" >
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/codigo1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="10dp"
+            android:layout_margin="3dp"/>
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/listaColor2"
-        android:layout_width="@dimen/caja_colores2"
-        android:layout_height="@dimen/caja_colores2"
-        android:layout_margin="3dp"
-        android:background="@color/blanco"
-        android:orientation="horizontal" >
+        android:id="@+id/listaColorWrapper2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/listaColor2"
+            android:layout_width="@dimen/caja_colores2"
+            android:layout_height="@dimen/caja_colores2"
+            android:layout_margin="3dp"
+            android:background="@color/blanco"
+            android:orientation="horizontal" >
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/codigo2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="10dp"
+            android:layout_margin="3dp"/>
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/listaColor3"
-        android:layout_width="@dimen/caja_colores2"
-        android:layout_height="@dimen/caja_colores2"
-        android:layout_margin="3dp"
-        android:background="@color/blanco"
-        android:orientation="horizontal" >
+        android:id="@+id/listaColorWrapper3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/listaColor3"
+            android:layout_width="@dimen/caja_colores2"
+            android:layout_height="@dimen/caja_colores2"
+            android:layout_margin="3dp"
+            android:background="@color/blanco"
+            android:orientation="horizontal" >
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/codigo3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="10dp"
+            android:layout_margin="3dp"/>
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/listaColor4"
-        android:layout_width="@dimen/caja_colores2"
-        android:layout_height="@dimen/caja_colores2"
-        android:layout_margin="3dp"
-        android:background="@color/blanco"
-        android:orientation="horizontal" >
+        android:id="@+id/listaColorWrapper4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/listaColor4"
+            android:layout_width="@dimen/caja_colores2"
+            android:layout_height="@dimen/caja_colores2"
+            android:layout_margin="3dp"
+            android:background="@color/blanco"
+            android:orientation="horizontal" >
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/codigo4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="10dp"
+            android:layout_margin="3dp" />
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/listaColor5"
-        android:layout_width="@dimen/caja_colores2"
-        android:layout_height="@dimen/caja_colores2"
-        android:layout_margin="3dp"
-        android:background="@color/blanco"
-        android:orientation="horizontal" >
+        android:id="@+id/listaColorWrapper5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/listaColor5"
+            android:layout_width="@dimen/caja_colores2"
+            android:layout_height="@dimen/caja_colores2"
+            android:layout_margin="3dp"
+            android:background="@color/blanco"
+            android:orientation="horizontal" >
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/codigo5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="10dp"
+            android:layout_margin="3dp" />
     </LinearLayout>
 
     <ImageView
         android:id="@+id/imgEliminar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="5dp"
+        android:layout_gravity="top"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="26dp"
         android:clickable="true"
         android:contentDescription="@string/eliminar"
         android:onClick="showDialogEliminar"
-        android:src="@drawable/cruzlarge" />
+        android:src="@drawable/cruz" />
 
     <ImageView
         android:id="@+id/imgEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="5dp"
+        android:layout_gravity="top"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="20dp"
         android:contentDescription="@string/email"
-        android:src="@drawable/mail_large" />
+        android:src="@drawable/mail" />
+
 
 </LinearLayout>
+

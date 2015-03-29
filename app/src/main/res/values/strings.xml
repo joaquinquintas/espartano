@@ -22,7 +22,7 @@
 	<string name="done">DONE</string>
 	<string name="eliminar">Eliminar</string>
 	<string name="email">E-Mail</string>
-	<string name="mis_paletas">MY PALLETS</string>
+	<string name="mis_paletas">MY PALETTES</string>
 	<string name="flecha_atras">back</string>
 	<string name="color_fan">COLOR FAN</string>
 	<string name="my_selection">MY SELECTION</string>
@@ -32,7 +32,7 @@
 	<string name="emailit">E-MAIL IT</string>
 	<string name="name">NAME</string>
 	<string name="phone">PHONE</string>
-	<string name="link_pallete">LINK A PALLETE</string>
+	<string name="link_pallete">LINK A PALETTE</string>
 	<string name="email2">EMAIL</string>
 	<string name="comment">COMMENT</string>
 	<string name="send">SEND</string>
@@ -43,7 +43,7 @@
 	<string name="mail_espartano">design@elespartano.com.ar</string>
 	<string name="tel_espartano">+54 11 4702&#8211;3030 </string>
 	<string name="web_espartano">www.elespartano.com.ar</string>
-	<string name="compatible">compatible</string>
-	<string name="save_preview">Save Preview</string>
+	<string name="compatible">COMPATIBLE</string>
+	<string name="save_preview">SAVE ON CAMERA ROLL</string>
 	
 </resources>

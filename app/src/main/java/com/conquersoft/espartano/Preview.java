@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.Random;
 
 import android.app.Activity;
 import android.content.Context;
@@ -29,6 +30,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.graphics.Typeface;
 
 public class Preview extends Activity{
 
@@ -44,7 +46,7 @@ public class Preview extends Activity{
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		
+
 		setContentView(R.layout.preview);
 		
 		getActionBar().hide();
@@ -97,7 +99,7 @@ public class Preview extends Activity{
 
         
         txtCodigoTextura = (TextView) findViewById(R.id.codigoTextura);
-        txtCodigoTextura.setText(codigoTextura);
+        txtCodigoTextura.setText(codigoTextura.toUpperCase());
         txtComentario = (TextView) findViewById(R.id.comentarioPreview);
         if (comentario != null && !comentario.equals("")){
         	txtComentario.setText(comentario);
@@ -118,7 +120,7 @@ public class Preview extends Activity{
         layoutGeneral.setBackground(new BitmapDrawable(getResources(), bm ));
 
 		layoutGeneral.setLayoutParams(new FrameLayout.LayoutParams(width,LayoutParams.MATCH_PARENT));
-		
+
 	}
 	
 	public static int calculateInSampleSize(
@@ -159,7 +161,20 @@ public class Preview extends Activity{
 	    options.inJustDecodeBounds = false;
 	    return BitmapFactory.decodeResource(res, resId, options);
 	}
-	
+
+    public static int randInt(int min, int max) {
+
+        // NOTE: Usually this should be a field rather than a method
+        // variable so that it is not re-seeded every call.
+        Random rand = new Random();
+
+        // nextInt is normally exclusive of the top value,
+        // so add 1 to make it inclusive
+        int randomNum = rand.nextInt((max - min) + 1) + min;
+
+        return randomNum;
+    }
+
 	public void sacarFoto(View v){
 		// image naming and path  to include sd card  appending name you choose for file
 		
@@ -174,14 +189,15 @@ public class Preview extends Activity{
 		v1.setDrawingCacheEnabled(true);
 		bitmap = Bitmap.createBitmap(v1.getDrawingCache());
 		v1.setDrawingCacheEnabled(false);
-
+        int rn = randInt(1,100);
+        String imageName = "espartano_"+rn+".jpg";
 		String filePath = Environment.getExternalStorageDirectory()
 				 + File.separator + "Espartano/Media/Espartano Images/";
 				 File imagePath = new File(filePath);
 				 if (!imagePath.isDirectory()) {
 					 imagePath.mkdirs();
 				 }
-				 File file = new File(imagePath, "screenshot.jpg");
+				 File file = new File(imagePath, imageName);
 				 FileOutputStream fos;
 				 try {
 				 fos = new FileOutputStream(file);

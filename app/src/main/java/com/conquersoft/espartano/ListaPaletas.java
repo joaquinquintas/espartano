@@ -6,6 +6,7 @@ import java.util.List;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.net.Uri;
@@ -204,21 +205,82 @@ public class ListaPaletas extends ArrayAdapter<String> {
 
 	private void pintarLayouts(View rowView, String[] colores) {
 		LinearLayout cajaColor;
+        TextView cajaCodigo;
+        BaseDeDatos adminBD=new BaseDeDatos(this.context, "BaseEspartano.db", null, ConstantesDeNegocio.versionBd); //Recordar cambiar el nro de version en cada run
+        SQLiteDatabase bd=adminBD.getReadableDatabase();
+
+
+        final String hexColor = new String( String.format("%06X", (0xFFFFFF & (Integer.valueOf(colores[0]))))).toLowerCase();
+        Cursor fila = bd.query("Colores", new String[] {"id"}, "color=?", new String[]{String.valueOf(hexColor)}, null, null, "id DESC", "1");
+        fila.moveToFirst();
+
 		cajaColor = (LinearLayout) rowView.findViewById(R.id.listaColor1);
 		cajaColor.setBackgroundColor(Integer.valueOf((colores[0])));
 
-		cajaColor = (LinearLayout) rowView.findViewById(R.id.listaColor2);
+        cajaCodigo = (TextView) rowView.findViewById(R.id.codigo1);
+        try {
+            cajaCodigo.setText(fila.getString(0));
+        } catch (Exception e) {
+            e.printStackTrace();
+            cajaCodigo.setText("");
+        }
+
+        cajaColor = (LinearLayout) rowView.findViewById(R.id.listaColor2);
 		cajaColor.setBackgroundColor(Integer.valueOf((colores[1])));
+
+        final String hexColor1 = new String( String.format("%06X", (0xFFFFFF & (Integer.valueOf(colores[1]))))).toLowerCase();
+        fila = bd.query("Colores", new String[] {"id"}, "color=?", new String[]{String.valueOf(hexColor1)}, null, null, "id DESC", "1");
+        fila.moveToFirst();
+        cajaCodigo = (TextView) rowView.findViewById(R.id.codigo2);
+        try {
+            cajaCodigo.setText(fila.getString(0));
+        } catch (Exception e) {
+            e.printStackTrace();
+            cajaCodigo.setText("");
+        }
 
 		cajaColor = (LinearLayout) rowView.findViewById(R.id.listaColor3);
 		cajaColor.setBackgroundColor(Integer.valueOf((colores[2])));
 
+        final String hexColor3 = new String( String.format("%06X", (0xFFFFFF & (Integer.valueOf(colores[2]))))).toLowerCase();
+        fila = bd.query("Colores", new String[] {"id"}, "color=?", new String[]{String.valueOf(hexColor3)}, null, null, "id DESC", "1");
+        fila.moveToFirst();
+        cajaCodigo = (TextView) rowView.findViewById(R.id.codigo3);
+        try {
+            cajaCodigo.setText(fila.getString(0));
+        } catch (Exception e) {
+            e.printStackTrace();
+            cajaCodigo.setText("");
+        }
+
 		cajaColor = (LinearLayout) rowView.findViewById(R.id.listaColor4);
 		cajaColor.setBackgroundColor(Integer.valueOf((colores[3])));
+
+        final String hexColor4 = new String( String.format("%06X", (0xFFFFFF & (Integer.valueOf(colores[3]))))).toLowerCase();
+        fila = bd.query("Colores", new String[] {"id"}, "color=?", new String[]{String.valueOf(hexColor4)}, null, null, "id DESC", "1");
+        fila.moveToFirst();
+        cajaCodigo = (TextView) rowView.findViewById(R.id.codigo4);
+        try {
+            cajaCodigo.setText(fila.getString(0));
+        } catch (Exception e) {
+            e.printStackTrace();
+            cajaCodigo.setText("");
+        }
 
 		cajaColor = (LinearLayout) rowView.findViewById(R.id.listaColor5);
 		cajaColor.setBackgroundColor(Integer.valueOf((colores[4])));
 
+        final String hexColor5 = new String( String.format("%06X", (0xFFFFFF & (Integer.valueOf(colores[4]))))).toLowerCase();
+        fila = bd.query("Colores", new String[] {"id"}, "color=?", new String[]{String.valueOf(hexColor5)}, null, null, "id DESC", "1");
+        fila.moveToFirst();
+        cajaCodigo = (TextView) rowView.findViewById(R.id.codigo5);
+        try {
+            cajaCodigo.setText(fila.getString(0));
+        } catch (Exception e) {
+            e.printStackTrace();
+            cajaCodigo.setText("");
+        }
+        bd.close();
 	}
 
 	public void removerItem(int position) {

@@ -54,7 +54,7 @@ public class MisPaletas extends Activity{
     			fila.moveToNext();
     		}
         } else
-            Toast.makeText(this, "There are no saved pallets",
+            Toast.makeText(this, "There are no saved palettes",
                     Toast.LENGTH_SHORT).show();
         bd.close();
     

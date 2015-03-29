@@ -41,7 +41,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_marginTop="5dp"
         android:background="@color/fondo_negro_mp"
         android:gravity="bottom"
         android:orientation="horizontal" >
@@ -51,6 +50,8 @@
             android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
             android:onClick="irMenuPrincipal"
             android:contentDescription="@string/ic_collections"
             android:src="@drawable/collectionslarge" />
@@ -60,6 +61,8 @@
             android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
             android:onClick="irColorFan"
             android:contentDescription="@string/ic_collections"
             android:src="@drawable/colorfanlarge" />
@@ -69,6 +72,8 @@
             android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
             android:contentDescription="@string/ic_collections"
             android:src="@drawable/myselectionclick_large" />
 
@@ -77,11 +82,18 @@
             android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
             android:onClick="mostrarContacto"
             android:contentDescription="@string/ic_collections"
             android:src="@drawable/contactlarge" />
     </LinearLayout>
 
-
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_above="@+id/linearLayout1"
+        android:layout_alignParentLeft="true"
+        android:background="#4D4D4D" />
 
 </RelativeLayout>

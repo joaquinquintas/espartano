@@ -21,7 +21,8 @@
             android:layout_weight="1"
             android:clickable="true"
             android:drawableLeft="@drawable/icono_classic_large"
-            android:drawablePadding="10dp"
+            android:drawableStart="@drawable/icono_classic_large"
+            android:drawablePadding="25dp"
             android:textSize="@dimen/font_size_menu_principal"
             android:layout_marginTop="2dp"
             android:gravity="center_vertical"
@@ -39,7 +40,8 @@
             android:layout_weight="1"
             android:clickable="true"
             android:drawableLeft="@drawable/icono_contemporary_large"
-            android:drawablePadding="10dp"
+            android:drawableStart="@drawable/icono_contemporary_large"
+            android:drawablePadding="25dp"
             android:textSize="@dimen/font_size_menu_principal"
             android:gravity="center_vertical"
             android:onClick="abrirColeccion"
@@ -54,7 +56,8 @@
             android:layout_marginTop="20dp"
             android:layout_weight="1"
             android:drawableLeft="@drawable/icono_ethnic_large"
-            android:drawablePadding="10dp"
+            android:drawableStart="@drawable/icono_ethnic_large"
+            android:drawablePadding="25dp"
             android:clickable="true"
             android:gravity="center_vertical"
             android:textSize="@dimen/font_size_menu_principal"
@@ -72,7 +75,8 @@
             android:textSize="@dimen/font_size_menu_principal"
             android:clickable="true"
             android:drawableLeft="@drawable/icono_organic_large"
-            android:drawablePadding="10dp"
+            android:drawableStart="@drawable/icono_organic_large"
+            android:drawablePadding="25dp"
             android:gravity="center_vertical"
             android:onClick="abrirColeccion"
             android:text="@string/organic"
@@ -88,7 +92,8 @@
             android:textSize="@dimen/font_size_menu_principal"
             android:clickable="true"
             android:drawableLeft="@drawable/icono_small_patterns_large"
-            android:drawablePadding="10dp"
+            android:drawableStart="@drawable/icono_small_patterns_large"
+            android:drawablePadding="25dp"
             android:gravity="center_vertical"
             android:onClick="abrirColeccion"
             android:text="@string/small_patterns"
@@ -99,18 +104,20 @@
         android:id="@+id/linearLayout1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
         android:background="@color/fondo_negro_mp"
         android:gravity="bottom"
-        android:layout_marginTop="5dp"
-        android:orientation="horizontal" >
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
         <ImageView
             android:id="@+id/imageView6"
             android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
             android:contentDescription="@string/ic_collections"
             android:src="@drawable/collectionsclicklarge" />
 
@@ -121,6 +128,8 @@
             android:layout_weight="1"
             android:contentDescription="@string/ic_collections"
             android:onClick="irColorFan"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
             android:src="@drawable/colorfanlarge" />
 
         <ImageView
@@ -129,6 +138,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="irMisColecciones"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
             android:contentDescription="@string/ic_collections"
             android:src="@drawable/myselection_large" />
 
@@ -137,6 +148,8 @@
             android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
             android:onClick="mostrarContacto"
             android:contentDescription="@string/ic_collections"
             android:src="@drawable/contactlarge" />

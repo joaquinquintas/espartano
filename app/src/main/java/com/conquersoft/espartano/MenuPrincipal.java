@@ -59,7 +59,7 @@ public class MenuPrincipal extends ActionBarActivity implements MenuNavegacion{
 		Drawable img;
 		DisplayMetrics metrics = getResources().getDisplayMetrics();
 		int height = metrics.heightPixels;
-        
+
 		switch (v.getId()) {
 		case (R.id.colClassic):
 			if (height>1100){
@@ -118,7 +118,7 @@ public class MenuPrincipal extends ActionBarActivity implements MenuNavegacion{
 			startActivity(i);
 		}
 
-		i.putExtra("coleccion", coleccion);
+		i.putExtra("coleccion", coleccion.toUpperCase());
 		startActivity(i);
 	}
 	

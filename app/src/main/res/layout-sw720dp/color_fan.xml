@@ -127,7 +127,7 @@
         android:id="@+id/grillaColores"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/menuNavegacion"
+        android:layout_above="@+id/linearLayout1"
         android:layout_below="@+id/linearDone"
         android:numColumns="7"
         android:layout_marginLeft="2dp"
@@ -135,22 +135,24 @@
     </GridView>
 
     <LinearLayout
-        android:id="@+id/menuNavegacion"
+        android:id="@+id/linearLayout1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginTop="5dp"
         android:background="@color/fondo_negro_mp"
         android:gravity="bottom"
-        android:orientation="horizontal" >
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
         <ImageView
             android:id="@+id/imageView6"
             android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:layout_marginBottom="10dp"
             android:onClick="irMenuPrincipal"
+            android:layout_marginTop="10dp"
             android:contentDescription="@string/ic_collections"
             android:src="@drawable/collectionslarge" />
 
@@ -160,6 +162,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:contentDescription="@string/ic_collections"
+            android:onClick="irColorFan"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
             android:src="@drawable/colorfanclicklarge" />
 
         <ImageView
@@ -168,6 +173,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="irMisColecciones"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
             android:contentDescription="@string/ic_collections"
             android:src="@drawable/myselection_large" />
 
@@ -176,9 +183,18 @@
             android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
             android:onClick="mostrarContacto"
             android:contentDescription="@string/ic_collections"
             android:src="@drawable/contactlarge" />
     </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_above="@+id/linearLayout1"
+        android:layout_alignParentLeft="true"
+        android:background="#4D4D4D" />
 
 </RelativeLayout>

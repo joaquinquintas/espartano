@@ -47,11 +47,11 @@ public class ColeccionClassic extends Activity implements MenuNavegacion{
 		
 		context = this;
 		
-		mapa.put("classic", 1);
-		mapa.put("contemporary", 2);
-		mapa.put("ethnic", 3);
-		mapa.put("organic", 4);
-		mapa.put("small patterns", 5);
+		mapa.put("classic".toUpperCase(), 1);
+		mapa.put("contemporary".toUpperCase(), 2);
+		mapa.put("ethnic".toUpperCase(), 3);
+		mapa.put("organic".toUpperCase(), 4);
+		mapa.put("small patterns".toUpperCase(), 5);
 
 		
         Bundle bundle = getIntent().getExtras();
@@ -64,7 +64,7 @@ public class ColeccionClassic extends Activity implements MenuNavegacion{
         BaseDeDatos adminBD=new BaseDeDatos(this, "BaseEspartano.db", null, ConstantesDeNegocio.versionBd); //Recordar cambiar el nro de version en cada run
         SQLiteDatabase bd=adminBD.getReadableDatabase();
         
-        Cursor fila=bd.rawQuery("select codigo, colores, id from Texturas where id_coleccion=" + mapa.get(nombreColeccion),null);
+        Cursor fila=bd.rawQuery("select codigo, colores, id, imagen from Texturas where id_coleccion=" + mapa.get(nombreColeccion),null);
 
         
         if (fila.moveToFirst()) {
@@ -72,7 +72,7 @@ public class ColeccionClassic extends Activity implements MenuNavegacion{
         	arrColores = new String[fila.getCount()];
             
             for (int i=0; i<fila.getCount(); i++) {
-    			arrImagenes[i] = getResources().getIdentifier(fila.getString(0), "drawable", getPackageName());
+    			arrImagenes[i] = getResources().getIdentifier(fila.getString(3), "drawable", getPackageName());
     			arrColores[i] = fila.getString(1);
     			
     			queryCodigos = queryCodigos + fila.getString(0) + ";";

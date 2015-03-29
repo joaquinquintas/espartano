@@ -4,14 +4,17 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.Point;
 import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -117,16 +120,54 @@ public class HorizontalListViewDemo extends ActionBarActivity {
 					i++;
 				}
 				
-				ImageView imagenFavoritos = (ImageView) convertView.findViewById(R.id.icono_favoritos);
+				final ImageView imagenFavoritos = (ImageView) convertView.findViewById(R.id.icono_favoritos);
 				
 				imagenFavoritos.setTag(queryCodigos[position]+";"+queryIds[position]);
+                if (isFavorite(queryCodigos[position],queryIds[position])){
+                    Drawable img;
+                    DisplayMetrics metrics = getResources().getDisplayMetrics();
+                    int height_ = metrics.heightPixels;
+                    if (height_>1100){
+                        img = context.getResources().getDrawable(R.drawable.corazonlarge_on);
+                    }
+                    else {
+                        img = context.getResources().getDrawable(R.drawable.corazon_on);
+                    }
+                    imagenFavoritos.setImageDrawable(img);
+                }
 				imagenFavoritos.setOnClickListener(new OnClickListener() {
 	
 		        	@Override
 		            public void onClick(View view) {
+
 		        		String[] codYId = view.getTag().toString().split(";");
 		        		view.startAnimation(AnimationUtils.loadAnimation(context, R.animator.click_boton_1));
-		            	agregarFavoritos(codYId[0],codYId[1]);
+                        if (isFavorite(codYId[0],codYId[1])){
+                            desAgregarFavoritos(codYId[0], codYId[1]);
+                            Drawable img;
+                            DisplayMetrics metrics = getResources().getDisplayMetrics();
+                            int height = metrics.heightPixels;
+                            if (height>1100){
+                                img = context.getResources().getDrawable(R.drawable.corazonlarge);
+                            }
+                            else {
+                                img = context.getResources().getDrawable(R.drawable.corazon);
+                            }
+                            imagenFavoritos.setImageDrawable(img);
+                        }else{
+                            agregarFavoritos(codYId[0],codYId[1]);
+                            Drawable img;
+                            DisplayMetrics metrics = getResources().getDisplayMetrics();
+                            int height = metrics.heightPixels;
+                            if (height>1100){
+                                img = context.getResources().getDrawable(R.drawable.corazonlarge_on);
+                            }
+                            else {
+                                img = context.getResources().getDrawable(R.drawable.corazon_on);
+                            }
+                            imagenFavoritos.setImageDrawable(img);
+                        }
+
 		            }
 		        });
 				
@@ -134,6 +175,17 @@ public class HorizontalListViewDemo extends ActionBarActivity {
 		}
 		
 	};
+
+    private Boolean isFavorite(String codigo, String idTextura){
+        BaseDeDatos adminBD = new BaseDeDatos(this, "BaseEspartano.db", null, ConstantesDeNegocio.versionBd);
+        SQLiteDatabase bd = adminBD.getWritableDatabase();
+
+        Cursor fila=bd.rawQuery("select id from Favoritos where codigo_textura ='"+codigo+"'  and id_textura='"+idTextura+"'" ,null);
+        Boolean isFav = fila.getCount()>0;
+        bd.close();
+        return isFav;
+
+    }
 
 	private void obtenerCajas(View v, String[] coloresTextura) {
 		cajasColores = new LinearLayout[coloresTextura.length];
@@ -176,11 +228,20 @@ public class HorizontalListViewDemo extends ActionBarActivity {
 		i.putExtra("nombreColeccion", nombreColeccion);
 		startActivity(i);
 	}
-	
-	
-	
+
+
+    public void desAgregarFavoritos(String codigo, String idTextura) {
+        //String resultado = "";
+        BaseDeDatos adminBD = new BaseDeDatos(this, "BaseEspartano.db",
+                null, ConstantesDeNegocio.versionBd);
+        SQLiteDatabase bd = adminBD.getWritableDatabase();
+        bd.delete("Favoritos", "codigo_textura =? and id_textura=?",  new String[] { codigo, idTextura });
+
+        bd.close();
+    }
+
 	public void agregarFavoritos(String codigo, String idTextura) {
-		String resultado = "";
+		//String resultado = "";
 		BaseDeDatos adminBD = new BaseDeDatos(this, "BaseEspartano.db",
 				null, ConstantesDeNegocio.versionBd);
 		SQLiteDatabase bd = adminBD.getWritableDatabase();
@@ -190,13 +251,13 @@ public class HorizontalListViewDemo extends ActionBarActivity {
 			values.put("codigo_textura", codigo);
 			values.put("id_textura", idTextura);
 			bd.insert("Favoritos", null, values);
-			resultado = "SAVED";
+		//	resultado = "SAVED";
 		} catch (Exception e) {
-			resultado = "There was an error: " + e.getMessage();
+		//	resultado = "There was an error: " + e.getMessage();
 		}
 
-		Toast.makeText(getApplicationContext(), resultado, Toast.LENGTH_LONG)
-				.show();
+		//Toast.makeText(getApplicationContext(), resultado, Toast.LENGTH_LONG)
+		//		.show();
 		bd.close();
 	}
 	

@@ -19,7 +19,7 @@
             android:id="@+id/txtTitulo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_margin="20dp"
             android:gravity="center"
             android:text="@string/color_fan"
             android:textSize="22sp" />
@@ -32,8 +32,8 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:background="@color/fondo_intro"
-        android:layout_marginTop="7dp"
-        android:layout_marginRight="5dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
         android:orientation="horizontal">
     
         <ImageView
@@ -54,7 +54,6 @@
         android:layout_alignRight="@+id/contPaletas"
         android:layout_below="@+id/contPaletas"
         android:layout_marginBottom="10dp"
-        android:layout_marginRight="5dp"
         android:layout_marginTop="10dp"
         android:baselineAligned="false"
         android:gravity="center_horizontal"
@@ -64,7 +63,7 @@
             android:id="@+id/color1"
             android:layout_width="@dimen/caja_colores"
             android:layout_height="@dimen/caja_colores"
-            android:layout_margin="3dp"
+            android:layout_marginLeft="10dp"
             android:background="#FFFFFF"
             android:clickable="true"
             android:onClick="setCajaColor"
@@ -75,7 +74,7 @@
             android:id="@+id/color2"
             android:layout_width="@dimen/caja_colores"
             android:layout_height="@dimen/caja_colores"
-            android:layout_margin="3dp"
+            android:layout_marginLeft="10dp"
             android:background="#FFFFFF"
             android:clickable="true"
             android:onClick="setCajaColor"
@@ -86,7 +85,7 @@
             android:id="@+id/color3"
             android:layout_width="@dimen/caja_colores"
             android:layout_height="@dimen/caja_colores"
-            android:layout_margin="3dp"
+            android:layout_marginLeft="10dp"
             android:background="#FFFFFF"
             android:clickable="true"
             android:onClick="setCajaColor"
@@ -97,7 +96,7 @@
             android:id="@+id/color4"
             android:layout_width="@dimen/caja_colores"
             android:layout_height="@dimen/caja_colores"
-            android:layout_margin="3dp"
+            android:layout_marginLeft="10dp"
             android:background="#FFFFFF"
             android:clickable="true"
             android:onClick="setCajaColor"
@@ -108,7 +107,8 @@
             android:id="@+id/color5"
             android:layout_width="@dimen/caja_colores"
             android:layout_height="@dimen/caja_colores"
-            android:layout_margin="3dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:background="#FFFFFF"
             android:clickable="true"
             android:onClick="setCajaColor"
@@ -132,20 +132,19 @@
         android:id="@+id/grillaColores"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/menuNavegacion"
         android:layout_below="@+id/linearDone"
         android:layout_marginLeft="2dp"
         android:numColumns="5"
-        android:verticalSpacing="10dp" >
+        android:verticalSpacing="10dp"
+        android:layout_above="@+id/linearLayout1">
     </GridView>
 
     <LinearLayout
-        android:id="@+id/menuNavegacion"
+        android:id="@+id/linearLayout1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_marginTop="5dp"
         android:background="@color/fondo_negro_mp"
         android:gravity="bottom"
         android:orientation="horizontal" >
@@ -155,6 +154,8 @@
             android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
             android:onClick="irMenuPrincipal"
             android:contentDescription="@string/ic_collections"
             android:src="@drawable/collections" />
@@ -164,7 +165,10 @@
             android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
             android:contentDescription="@string/ic_collections"
+            android:onClick="irColorFan"
             android:src="@drawable/colorfanclick" />
 
         <ImageView
@@ -172,6 +176,8 @@
             android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
             android:onClick="irMisColecciones"
             android:contentDescription="@string/ic_collections"
             android:src="@drawable/myselection" />
@@ -181,9 +187,17 @@
             android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
             android:onClick="mostrarContacto"
             android:contentDescription="@string/ic_collections"
             android:src="@drawable/contact" />
     </LinearLayout>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_above="@+id/linearLayout1"
+        android:layout_alignParentLeft="true"
+        android:background="#4D4D4D" />
 </RelativeLayout>

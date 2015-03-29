@@ -20,10 +20,10 @@
     <color name="abc_search_url_text_selected">@android:color/black</color>
     <color name="abc_search_url_text_pressed">@android:color/black</color>
     <color name="fondo_intro">#E5EAEB</color>
-    <color name="fondo_negro_mp">#30302F</color>
+    <color name="fondo_negro_mp">#ff1b1b1a</color>
     <color name="blanco">#FEFEFE</color>
     <color name="blanco2">#FFFFFA</color>
-    <color name="fuente_menu_principal">#B3B3B3</color>
+    <color name="fuente_menu_principal">#ff979d9e</color>
     <color name="boton_verde">#70998A</color>
     <color name="boton_gris">#696868</color>
     <color name="gris_dialog">#DDDDDC</color>
@@ -33,5 +33,6 @@
     <color name="ethnic_click">#F9AF4E</color>
     <color name="organic_click">#E38BA1</color>
     <color name="small_click">#B196A7</color>
+    <color name="fondo_save_preview">#72998B</color>
 
 </resources>

@@ -1,6 +1,8 @@
 package com.conquersoft.espartano;
 
 import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.util.DisplayMetrics;
 import android.view.View;
@@ -8,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.LinearLayout;
+import java.util.ArrayList;
 
 public class SpecialAdapter extends BaseAdapter {
 
@@ -29,7 +32,13 @@ public class SpecialAdapter extends BaseAdapter {
 	}
 
 	public int getCount() {
-		return colores.length;
+        BaseDeDatos adminBD = new BaseDeDatos(this.mContext, "BaseEspartano.db", null, ConstantesDeNegocio.versionBd);
+        SQLiteDatabase bd = adminBD.getWritableDatabase();
+
+        Cursor fila=bd.rawQuery("select id from Colores" ,null);
+        int count =   fila.getCount();
+        bd.close();
+		return count;
 	}
 
 	public Object getItem(int position) {
@@ -55,7 +64,21 @@ public class SpecialAdapter extends BaseAdapter {
 		} else {
 			linear = (LinearLayout) convertView;
 		}
-		linear.setBackgroundColor(Color.parseColor("#" + colores[position]));
+
+        BaseDeDatos adminBD = new BaseDeDatos(this.mContext, "BaseEspartano.db", null, ConstantesDeNegocio.versionBd);
+        SQLiteDatabase bd = adminBD.getWritableDatabase();
+
+        Cursor cursor=bd.rawQuery("select color from Colores order by pos asc" ,null);
+        cursor.moveToFirst();
+        ArrayList<String> colores_ = new ArrayList<String>();
+        while(!cursor.isAfterLast()) {
+            colores_.add(cursor.getString(cursor.getColumnIndex("color")));
+            cursor.moveToNext();
+        }
+        cursor.close();
+
+
+		linear.setBackgroundColor(Color.parseColor("#" + colores_.toArray()[position]));
 		return linear;
 	}
 
