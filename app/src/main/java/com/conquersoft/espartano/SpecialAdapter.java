@@ -68,7 +68,7 @@ public class SpecialAdapter extends BaseAdapter {
         BaseDeDatos adminBD = new BaseDeDatos(this.mContext, "BaseEspartano.db", null, ConstantesDeNegocio.versionBd);
         SQLiteDatabase bd = adminBD.getWritableDatabase();
 
-        Cursor cursor=bd.rawQuery("select color from Colores order by pos asc" ,null);
+        Cursor cursor=bd.rawQuery("select color from Colores order by grupo asc, pos asc" ,null);
         cursor.moveToFirst();
         ArrayList<String> colores_ = new ArrayList<String>();
         while(!cursor.isAfterLast()) {

@@ -133,9 +133,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/linearDone"
+        android:numColumns="7"
         android:layout_marginLeft="2dp"
-        android:numColumns="5"
-        android:verticalSpacing="10dp"
+        android:verticalSpacing="5dp"
         android:layout_above="@+id/linearLayout1">
     </GridView>
 

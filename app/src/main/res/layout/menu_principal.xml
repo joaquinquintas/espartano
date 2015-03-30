@@ -28,6 +28,7 @@
             android:textColor="@color/fuente_menu_principal"
             android:onClick="abrirColeccion"
             android:text="@string/classic"
+            fontPath="fonts/Whitney_HTF_light.ttf"/>
              />
 
         <TextView
