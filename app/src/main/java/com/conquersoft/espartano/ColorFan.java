@@ -22,6 +22,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
+
 public class ColorFan extends Activity implements MenuNavegacion{
 
 	GridView gridView;
@@ -35,7 +38,11 @@ public class ColorFan extends Activity implements MenuNavegacion{
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-
+        CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
+                        .setDefaultFontPath("fonts/Whitney_HTF_Light.ttf")
+                        .setFontAttrId(R.attr.fontPath)
+                        .build()
+        );
 		setContentView(R.layout.color_fan);
 		context = this;
 		getActionBar().hide();
@@ -104,7 +111,11 @@ public class ColorFan extends Activity implements MenuNavegacion{
 		});
 	}
 
-	
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
+    }
+
 	private void pintarLayout(int color){
 		LinearLayout cajaColor;
 		switch (posicionALlenar) {

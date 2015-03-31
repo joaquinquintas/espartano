@@ -19,6 +19,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 
 public class MenuPrincipal extends ActionBarActivity implements MenuNavegacion{
@@ -37,6 +38,12 @@ public class MenuPrincipal extends ActionBarActivity implements MenuNavegacion{
 		getSupportActionBar().hide();
 		context = this;
 	}
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
+    }
+
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 

@@ -32,6 +32,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.graphics.Typeface;
 
+import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
+
 public class Preview extends Activity{
 
 	String idFavorito;
@@ -46,6 +49,12 @@ public class Preview extends Activity{
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
+
+        CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
+                        .setDefaultFontPath("fonts/Whitney_HTF_Light.ttf")
+                        .setFontAttrId(R.attr.fontPath)
+                        .build()
+        );
 
 		setContentView(R.layout.preview);
 		
@@ -122,8 +131,14 @@ public class Preview extends Activity{
 		layoutGeneral.setLayoutParams(new FrameLayout.LayoutParams(width,LayoutParams.MATCH_PARENT));
 
 	}
-	
-	public static int calculateInSampleSize(
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
+    }
+
+
+    public static int calculateInSampleSize(
             BitmapFactory.Options options, int reqWidth, int reqHeight) {
     // Raw height and width of image
     final int height = options.outHeight;

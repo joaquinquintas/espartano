@@ -20,6 +20,9 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
+
 public class MisPaletas extends Activity{
 
 	ListView listaPaletas;
@@ -32,7 +35,13 @@ public class MisPaletas extends Activity{
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		
+
+        CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
+                        .setDefaultFontPath("fonts/Whitney_HTF_Light.ttf")
+                        .setFontAttrId(R.attr.fontPath)
+                        .build()
+        );
+
 		setContentView(R.layout.mis_paletas);
 		
 		getActionBar().hide();
@@ -77,7 +86,11 @@ public class MisPaletas extends Activity{
         });
 
 	}
-	
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
+    }
 
 	public void irColorFan(View v){
 		v.startAnimation(AnimationUtils.loadAnimation(this, R.animator.click_boton_1));
