@@ -76,7 +76,7 @@ public class MenuPrincipal extends ActionBarActivity implements MenuNavegacion{
 		switch (v.getId()) {
 		case (R.id.colClassic):
 			if (height>1100){
-				img = context.getResources().getDrawable(R.drawable.icono_classic_click_large);
+				img = context.getResources().getDrawable(R.drawable.icono_classic_click);
 			}
 			else {
 				img = context.getResources().getDrawable(R.drawable.icono_classic_click);
