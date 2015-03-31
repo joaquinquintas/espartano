@@ -103,6 +103,7 @@ public class ListaLinkPaletas extends ArrayAdapter<String> {
 		if (fila.moveToFirst()) {
 			check.setChecked(true);
 		}
+        bd.close();
 	}
 	
 }

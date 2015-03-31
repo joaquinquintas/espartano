@@ -389,7 +389,7 @@ public class ListaMySelection extends ArrayAdapter<String> {
 		SQLiteDatabase bd = adminBD.getReadableDatabase();
 		Cursor fila = bd.rawQuery("select id from texturas_x_paletas where id_favorito='"+idFavorito+"'", null);
 		boolean existenPaletas = fila.moveToFirst();
-		
+        bd.close();
 		return existenPaletas;
 	}
 	private void linkearPaletasConTextura(Set<String> checksSeleccionados, String idFavorito){
@@ -445,6 +445,7 @@ public class ListaMySelection extends ArrayAdapter<String> {
 				comentario = fila.getString(0);
 			}
 		}
+        bd.close();
 		return comentario;
 	}
 
@@ -476,7 +477,7 @@ public class ListaMySelection extends ArrayAdapter<String> {
 		if (fila.moveToFirst()) {
 			contenido = "Codigo de Textura: "+fila.getString(1) +"\n \nComentario: "+ fila.getString(0); 
 		}
-		
+        bd.close();
 		enviarMail(contenido);
 		
 	}

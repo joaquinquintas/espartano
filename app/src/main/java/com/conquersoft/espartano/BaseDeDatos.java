@@ -261,6 +261,7 @@ public class BaseDeDatos extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS Colores");
         db.execSQL("DROP TABLE IF EXISTS texturas_x_paletas");
         onCreate(db);
+        db.close();
     }
 
 }

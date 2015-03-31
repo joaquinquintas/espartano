@@ -18,6 +18,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
+
 
 public class MenuPrincipal extends ActionBarActivity implements MenuNavegacion{
 
@@ -26,7 +28,11 @@ public class MenuPrincipal extends ActionBarActivity implements MenuNavegacion{
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		
+        CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
+                        .setDefaultFontPath("fonts/Whitney_HTF_Light.ttf")
+                        .setFontAttrId(R.attr.fontPath)
+                        .build()
+        );
 		setContentView(R.layout.menu_principal);
 		getSupportActionBar().hide();
 		context = this;
