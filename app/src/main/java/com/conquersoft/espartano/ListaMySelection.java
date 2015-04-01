@@ -11,7 +11,10 @@ import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
@@ -50,7 +53,22 @@ public class ListaMySelection extends ArrayAdapter<String> {
 
 		RelativeLayout relativeGeneral = (RelativeLayout) view.findViewById(R.id.relativeGeneral);
 
-		relativeGeneral.setBackground(context.getResources().getDrawable(imagenIds.get(posicion)[1]));
+        Bitmap yourBitmap =  BitmapFactory.decodeResource(this.context.getResources(), imagenIds.get(posicion)[1]);
+
+
+        DisplayMetrics metrics = this.context.getResources().getDisplayMetrics();
+        int height = metrics.heightPixels;
+
+        Bitmap bm;
+        if (height>1000){
+            bm = Bitmap.createBitmap(yourBitmap, 0, 0, yourBitmap.getWidth(), (int)(yourBitmap.getHeight()*0.3));
+        }else{
+            bm = Bitmap.createBitmap(yourBitmap, 0, 0, yourBitmap.getWidth(), (int)(yourBitmap.getHeight()*0.2));
+        }
+
+
+
+		relativeGeneral.setBackground(new BitmapDrawable(context.getResources(), bm));
 
 		String tag = posicion + "," + imagenIds.get(posicion)[0]+","+imagenIds.get(posicion)[2];
 		//ImagenIds: 0-IdFavorito, 1-codigo Textura, 2-idTextura

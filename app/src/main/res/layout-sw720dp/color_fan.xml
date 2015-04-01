@@ -49,7 +49,7 @@
         android:layout_alignRight="@+id/contPaletas"
         android:layout_below="@+id/contPaletas"
         android:layout_marginBottom="10dp"
-        android:layout_marginRight="5dp"
+        android:paddingRight="5dp"
         android:layout_marginTop="10dp"
         android:baselineAligned="false"
         android:gravity="center_horizontal"
@@ -62,6 +62,7 @@
             android:layout_margin="3dp"
             android:background="#FFFFFF"
             android:clickable="true"
+            android:paddingRight="6dp"
             android:onClick="setCajaColor"
             android:orientation="horizontal" >
         </LinearLayout>
@@ -73,6 +74,7 @@
             android:layout_margin="3dp"
             android:background="#FFFFFF"
             android:clickable="true"
+            android:paddingRight="6dp"
             android:onClick="setCajaColor"
             android:orientation="horizontal" >
         </LinearLayout>
@@ -84,6 +86,7 @@
             android:layout_margin="3dp"
             android:background="#FFFFFF"
             android:clickable="true"
+            android:paddingRight="6dp"
             android:onClick="setCajaColor"
             android:orientation="horizontal" >
         </LinearLayout>
@@ -93,6 +96,7 @@
             android:layout_width="@dimen/caja_colores"
             android:layout_height="@dimen/caja_colores"
             android:layout_margin="3dp"
+            android:paddingRight="6dp"
             android:background="#FFFFFF"
             android:clickable="true"
             android:onClick="setCajaColor"
@@ -104,6 +108,7 @@
             android:layout_width="@dimen/caja_colores"
             android:layout_height="@dimen/caja_colores"
             android:layout_margin="3dp"
+            android:layout_marginRight="6dp"
             android:background="#FFFFFF"
             android:clickable="true"
             android:onClick="setCajaColor"
