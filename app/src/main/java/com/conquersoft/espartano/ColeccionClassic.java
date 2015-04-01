@@ -22,6 +22,9 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
+
 public class ColeccionClassic extends Activity implements MenuNavegacion{
 
 	private String nombreColeccion;
@@ -30,6 +33,7 @@ public class ColeccionClassic extends Activity implements MenuNavegacion{
 	Integer[] arrImagenes = null;
 	String[] arrColores = null;
 	TextView titulo;
+    String queryImagenes = "";
 	String queryCodigos = "";		//Todos los codigos disponibles, se usan para mandarselos a la vista de texturas
 	String queryColores = "";		//Todos los colores disponibles, se usan para mandarselos a la vista de texturas
 	String queryIds = "";			//Todos los ids de las texturas disponibles, se usan para mandarselos a la vista de textura
@@ -40,7 +44,11 @@ public class ColeccionClassic extends Activity implements MenuNavegacion{
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		
+        CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
+                        .setDefaultFontPath("fonts/Whitney_HTF_Light.ttf")
+                        .setFontAttrId(R.attr.fontPath)
+                        .build()
+        );
 		setContentView(R.layout.coleccion_classic);
 		
 		getActionBar().hide();
@@ -78,6 +86,7 @@ public class ColeccionClassic extends Activity implements MenuNavegacion{
     			queryCodigos = queryCodigos + fila.getString(0) + ";";
     			queryColores = queryColores + fila.getString(1) + ";";
     			queryIds = queryIds + fila.getString(2) + ";";
+                queryImagenes = queryImagenes + fila.getString(3) + ";";
     			
     			fila.moveToNext();
     		}
@@ -108,6 +117,7 @@ public class ColeccionClassic extends Activity implements MenuNavegacion{
 					i.putExtra("nombreColeccion", nombreColeccion);
 					i.putExtra("queryCodigos", queryCodigos);
 					i.putExtra("queryColores", queryColores);
+                    i.putExtra("queryImagenes", queryImagenes);
 					i.putExtra("queryIds", queryIds);
 					i.putExtra("posicion", Integer.valueOf(position).toString());
 					startActivity(i);
@@ -125,6 +135,11 @@ public class ColeccionClassic extends Activity implements MenuNavegacion{
 		Intent i = new Intent(getApplicationContext(), MenuPrincipal.class);
 	    startActivity(i);
 	}
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
+    }
 
 	public void irMisColecciones(View v) {
 		v.startAnimation(AnimationUtils.loadAnimation(this, R.animator.click_boton_1));

@@ -28,16 +28,15 @@ public class BaseDeDatos extends SQLiteOpenHelper {
          ***/
 
 
-        db.execSQL("insert into Texturas (codigo, id_coleccion, colores, imagen, posicion, compatibles) VALUES ('1A',1,'B7807B,584F4C,C7C3B3,989F8E','classic_1a',1,'classic_5c_,classic_2b')");
-        db.execSQL("insert into Texturas (codigo, id_coleccion, colores, imagen, posicion, compatibles) VALUES ('2A',1,'B7807B,584F4C,C7C3B3,989F8E','classic_2a',2,'classic_2c,classic_5c_')");
+        db.execSQL("insert into Texturas (codigo, id_coleccion, colores, imagen, posicion, compatibles) VALUES ('1A',1,'B7807B,584F4C,C7C3B3,989F8E','classic_1a',1,'classic_3a_,classic_2b')");
+        db.execSQL("insert into Texturas (codigo, id_coleccion, colores, imagen, posicion, compatibles) VALUES ('2A',1,'B7807B,584F4C,C7C3B3,989F8E','classic_2a',2,'classic_2c,classic_3a_')");
         db.execSQL("insert into Texturas (codigo, id_coleccion, colores, imagen, posicion, compatibles) VALUES ('2B_',1,'B7807B,584F4C,C7C3B3,989F8E','classic_2b_',3,'classic_2c,classic_4a_')");
         db.execSQL("insert into Texturas (codigo, id_coleccion, colores, imagen, posicion, compatibles) VALUES ('2C',1,'B7807B,584F4C,C7C3B3,989F8E','classic_2c',4,'classic_3b_,classic_4a_')");
-        db.execSQL("insert into Texturas (codigo, id_coleccion, colores, imagen, posicion, compatibles) VALUES ('3A_',1,'B7807B,584F4C,C7C3B3,989F8E','classic_3a_',5,'classic_5c_,classic_3b_')");
+        db.execSQL("insert into Texturas (codigo, id_coleccion, colores, imagen, posicion, compatibles) VALUES ('3A_',1,'B7807B,584F4C,C7C3B3,989F8E','classic_3a_',5,'classic_4a_,classic_3b_')");
         db.execSQL("insert into Texturas (codigo, id_coleccion, colores, imagen, posicion, compatibles) VALUES ('3B_',1,'B7807B,584F4C,C7C3B3,989F8E','classic_3b_',6,'classic_3a_,classic_5b_')");
-        db.execSQL("insert into Texturas (codigo, id_coleccion, colores, imagen, posicion, compatibles) VALUES ('4A_',1,'B7807B,584F4C,C7C3B3,989F8E','classic_4a_',7,'classic_3a_,classic_5c_')");
+        db.execSQL("insert into Texturas (codigo, id_coleccion, colores, imagen, posicion, compatibles) VALUES ('4A_',1,'B7807B,584F4C,C7C3B3,989F8E','classic_4a_',7,'classic_3a_,classic_5b_')");
         db.execSQL("insert into Texturas (codigo, id_coleccion, colores, imagen, posicion, compatibles) VALUES ('5A_',1,'B7807B,584F4C,C7C3B3,989F8E','classic_5a_',8,'classic_3a_,classic_4a_')");
-        db.execSQL("insert into Texturas (codigo, id_coleccion, colores, imagen, posicion, compatibles) VALUES ('5B_',1,'B7807B,584F4C,C7C3B3,989F8E','classic_5b_',9,'classic_5c_,classic_3b_')");
-        db.execSQL("insert into Texturas (codigo, id_coleccion, colores, imagen, posicion, compatibles) VALUES ('5C_',1,'B7807B,584F4C,C7C3B3,989F8E','classic_5c_',10,'classic_5b_,classic_3b_')");
+        db.execSQL("insert into Texturas (codigo, id_coleccion, colores, imagen, posicion, compatibles) VALUES ('5B_',1,'B7807B,584F4C,C7C3B3,989F8E','classic_5b_',9,'classic_5a_,classic_3b_')");
 
 
         db.execSQL("create table Colores (id text primary key, color text, pos integer, grupo integer)");

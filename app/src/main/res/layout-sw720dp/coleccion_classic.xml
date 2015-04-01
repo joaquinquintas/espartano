@@ -8,7 +8,7 @@
     <LinearLayout
         android:id="@+id/contPaletas"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:background="@color/fondo_intro"
@@ -33,21 +33,23 @@
         android:dividerHeight="10sp" />
 
     <LinearLayout
-        android:id="@+id/menuNavegacion"
+        android:id="@+id/linearLayout1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginTop="5dp"
         android:background="@color/fondo_negro_mp"
         android:gravity="bottom"
-        android:orientation="horizontal" >
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
         <ImageView
             android:id="@+id/imageView6"
             android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
             android:onClick="irMenuPrincipal"
             android:contentDescription="@string/ic_collections"
             android:src="@drawable/collectionsclicklarge" />
@@ -59,6 +61,8 @@
             android:layout_weight="1"
             android:contentDescription="@string/ic_collections"
             android:onClick="irColorFan"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
             android:src="@drawable/colorfanlarge" />
 
         <ImageView
@@ -67,6 +71,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="irMisColecciones"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
             android:contentDescription="@string/ic_collections"
             android:src="@drawable/myselection_large" />
 
@@ -75,9 +81,18 @@
             android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
             android:onClick="mostrarContacto"
             android:contentDescription="@string/ic_collections"
             android:src="@drawable/contactlarge" />
     </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_above="@+id/linearLayout1"
+        android:layout_alignParentLeft="true"
+        android:background="#4D4D4D" />
 
 </RelativeLayout>

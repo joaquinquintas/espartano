@@ -3,6 +3,7 @@ package com.conquersoft.espartano;
 import java.util.ArrayList;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -14,6 +15,9 @@ import android.view.animation.AnimationUtils;
 import android.widget.GridView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class Compatibles extends Activity {
 
@@ -28,7 +32,14 @@ public class Compatibles extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		
+
+
+        CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
+                        .setDefaultFontPath("fonts/Whitney_HTF_Light.ttf")
+                        .setFontAttrId(R.attr.fontPath)
+                        .build()
+        );
+
 		setContentView(R.layout.compatibles);
 		
 		getActionBar().hide();
@@ -89,8 +100,15 @@ public class Compatibles extends Activity {
 
     return inSampleSize;
 }
-	
-	public static Bitmap decodeSampledBitmapFromResource(Resources res, int resId,
+
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
+    }
+
+
+    public static Bitmap decodeSampledBitmapFromResource(Resources res, int resId,
 	        int reqWidth, int reqHeight) {
 
 	    // First decode with inJustDecodeBounds=true to check dimensions

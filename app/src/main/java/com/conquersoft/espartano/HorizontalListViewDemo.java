@@ -32,6 +32,9 @@ import android.widget.Toast;
 
 import com.conquersoft.ui.HorizontialListView;
 
+import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
+
 public class HorizontalListViewDemo extends ActionBarActivity {
 
 	String nombreTextura;
@@ -43,6 +46,7 @@ public class HorizontalListViewDemo extends ActionBarActivity {
 	String[] queryCodigos;		//Todos los codigos disponibles, se usan para mandarselos a la vista de texturas
 	String[] queryColores;		//Todos los colores disponibles, se usan para mandarselos a la vista de texturas
 	String[] queryIds;			//Todos los ids de las texturas disponibles, se usan para mandarselos a la vista de textura
+    String[] queryImagenes;
 
 	String codigoTexturaDelMomento = "";
 	Context context;
@@ -50,7 +54,13 @@ public class HorizontalListViewDemo extends ActionBarActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
+
+        CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
+                        .setDefaultFontPath("fonts/Whitney_HTF_Light.ttf")
+                        .setFontAttrId(R.attr.fontPath)
+                        .build()
+        );
+
 		setContentView(R.layout.sliding_texturas);
 		getSupportActionBar().hide();
 		context = getApplicationContext();
@@ -61,6 +71,7 @@ public class HorizontalListViewDemo extends ActionBarActivity {
     	queryCodigos = bundle.getString("queryCodigos").split(";");
     	queryColores = bundle.getString("queryColores").split(";");
     	queryIds = bundle.getString("queryIds").split(";");
+        queryImagenes = bundle.getString("queryImagenes").split(";");
     	String posicion= bundle.getString("posicion");
     	
     	
@@ -72,6 +83,10 @@ public class HorizontalListViewDemo extends ActionBarActivity {
 		listview.setSelection(Integer.valueOf(posicion));
 	}
 
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
+    }
 
 	private BaseAdapter mAdapter = new BaseAdapter() {
 
@@ -103,7 +118,7 @@ public class HorizontalListViewDemo extends ActionBarActivity {
 		        codigoTexturaDelMomento = queryCodigos[position];
 		        
 		        layoutGeneral = (RelativeLayout) convertView.findViewById(R.id.layoutGeneral);
-		        bm = decodeSampledBitmapFromResource(getResources(), getResources().getIdentifier(queryCodigos[position]+"grande","drawable",getPackageName()), width, height);
+		        bm = decodeSampledBitmapFromResource(getResources(), getResources().getIdentifier(queryImagenes[position],"drawable",getPackageName()), width, height);
 		        layoutGeneral.setBackground(new BitmapDrawable(getResources(), bm ));
 	
 				layoutGeneral.setLayoutParams(new FrameLayout.LayoutParams(width,LayoutParams.MATCH_PARENT));
