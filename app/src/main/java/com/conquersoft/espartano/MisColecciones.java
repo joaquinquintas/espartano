@@ -53,9 +53,16 @@ public class MisColecciones extends Activity implements MenuNavegacion{
         if (fila.moveToFirst()) {
 
             for (int i=0; i<fila.getCount(); i++) {
-            	Integer[] arrIdCodigo = new Integer[3];
-            	arrIdCodigo[0] =  Integer.valueOf(fila.getString(0));
-            	arrIdCodigo[1] =  getResources().getIdentifier(fila.getString(1), "drawable", getPackageName());
+                Integer[] arrIdCodigo = new Integer[3];
+                arrIdCodigo[0] =  Integer.valueOf(fila.getString(0));
+
+                Cursor img=bd.rawQuery("select imagen from Textura where id="+fila.getString(1),null);
+                if (img.moveToFirst()){
+                    arrIdCodigo[1] =  getResources().getIdentifier(img.getString(0), "drawable", getPackageName());
+
+                }
+
+
             	arrIdCodigo[2] = Integer.valueOf(fila.getString(2));
             	imagenIds.add(arrIdCodigo);
     			fila.moveToNext();
