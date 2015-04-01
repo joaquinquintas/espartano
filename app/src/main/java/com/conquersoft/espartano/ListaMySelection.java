@@ -11,7 +11,10 @@ import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
@@ -45,12 +48,20 @@ public class ListaMySelection extends ArrayAdapter<String> {
 
 	@Override
 	public View getView(int posicion, View view, ViewGroup parent) {
+        System.out.print(this.imagenIds);
 		LayoutInflater inflater = context.getLayoutInflater();
 		view = inflater.inflate(R.layout.item_lista_selections, null, true);
 
 		RelativeLayout relativeGeneral = (RelativeLayout) view.findViewById(R.id.relativeGeneral);
 
-		relativeGeneral.setBackground(context.getResources().getDrawable(imagenIds.get(posicion)[1]));
+        Bitmap yourBitmap =  BitmapFactory.decodeResource(this.context.getResources(), imagenIds.get(posicion)[1]);
+
+
+        // Bitmap resized = Bitmap.createScaledBitmap(yourBitmap, yourBitmap.getWidth(), (int)(yourBitmap.getHeight()*0.3), true);
+        Bitmap bm = Bitmap.createBitmap(yourBitmap, 0, 0, yourBitmap.getWidth(), (int)(yourBitmap.getHeight()*0.2));
+        //Drawable d = new BitmapDrawable(resized);
+
+		relativeGeneral.setBackground(new BitmapDrawable(context.getResources(), bm));
 
 		String tag = posicion + "," + imagenIds.get(posicion)[0]+","+imagenIds.get(posicion)[2];
 		//ImagenIds: 0-IdFavorito, 1-codigo Textura, 2-idTextura

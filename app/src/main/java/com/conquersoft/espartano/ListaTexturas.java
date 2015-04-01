@@ -34,7 +34,7 @@ public class ListaTexturas extends ArrayAdapter<String> {
 
 
        // Bitmap resized = Bitmap.createScaledBitmap(yourBitmap, yourBitmap.getWidth(), (int)(yourBitmap.getHeight()*0.3), true);
-        Bitmap bm = Bitmap.createBitmap(yourBitmap, 0, 0, yourBitmap.getWidth(), (int)(yourBitmap.getHeight()*0.3));
+        Bitmap bm = Bitmap.createBitmap(yourBitmap, 0, 0, yourBitmap.getWidth(), (int)(yourBitmap.getHeight()*0.2));
         //Drawable d = new BitmapDrawable(resized);
 		imageView.setImageBitmap(bm);
 		return view;

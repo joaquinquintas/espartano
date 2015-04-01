@@ -56,7 +56,7 @@ public class MisColecciones extends Activity implements MenuNavegacion{
                 Integer[] arrIdCodigo = new Integer[3];
                 arrIdCodigo[0] =  Integer.valueOf(fila.getString(0));
 
-                Cursor img=bd.rawQuery("select imagen from Textura where id="+fila.getString(1),null);
+                Cursor img=bd.rawQuery("select imagen from Texturas where codigo='"+fila.getString(1)+"'",null);
                 if (img.moveToFirst()){
                     arrIdCodigo[1] =  getResources().getIdentifier(img.getString(0), "drawable", getPackageName());
 
