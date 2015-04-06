@@ -33,15 +33,14 @@
         android:layout_below="@+id/contPaletas"
         android:layout_above="@+id/menuNavegacion">
     </ListView>
- 
+
 
     <LinearLayout
-        android:id="@+id/menuNavegacion"
+        android:id="@+id/linearLayout1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_marginTop="5dp"
         android:background="@color/fondo_negro_mp"
         android:gravity="bottom"
         android:orientation="horizontal" >
@@ -51,6 +50,8 @@
             android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
             android:onClick="irMenuPrincipal"
             android:contentDescription="@string/ic_collections"
             android:src="@drawable/collections" />
@@ -60,8 +61,10 @@
             android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="irColorFan"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
             android:contentDescription="@string/ic_collections"
+            android:onClick="irColorFan"
             android:src="@drawable/colorfan" />
 
         <ImageView
@@ -69,6 +72,9 @@
             android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:onClick="irMisColecciones"
             android:contentDescription="@string/ic_collections"
             android:src="@drawable/myselectionclick" />
 
@@ -77,6 +83,8 @@
             android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
             android:onClick="mostrarContacto"
             android:contentDescription="@string/ic_collections"
             android:src="@drawable/contact" />

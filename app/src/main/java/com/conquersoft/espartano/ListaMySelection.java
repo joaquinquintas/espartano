@@ -59,7 +59,18 @@ public class ListaMySelection extends ArrayAdapter<String> {
 
         // Bitmap resized = Bitmap.createScaledBitmap(yourBitmap, yourBitmap.getWidth(), (int)(yourBitmap.getHeight()*0.3), true);
         Bitmap bm = Bitmap.createBitmap(yourBitmap, 0, 0, yourBitmap.getWidth(), (int)(yourBitmap.getHeight()*0.2));
-        //Drawable d = new BitmapDrawable(resized);
+
+        DisplayMetrics metrics = this.context.getResources().getDisplayMetrics();
+        int height = metrics.heightPixels;
+
+        Bitmap bm;
+        if (height>1000){
+            bm = Bitmap.createBitmap(yourBitmap, 0, 0, yourBitmap.getWidth(), (int)(yourBitmap.getHeight()*0.3));
+        }else{
+            bm = Bitmap.createBitmap(yourBitmap, 0, 0, yourBitmap.getWidth(), (int)(yourBitmap.getHeight()*0.2));
+        }
+
+
 
 		relativeGeneral.setBackground(new BitmapDrawable(context.getResources(), bm));
 

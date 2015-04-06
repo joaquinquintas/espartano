@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,10 +32,18 @@ public class ListaTexturas extends ArrayAdapter<String> {
 		ImageView imageView = (ImageView) view.findViewById(R.id.img);
 
         Bitmap yourBitmap =  BitmapFactory.decodeResource(this.context.getResources(), imagenId[posicion]);
-
+        DisplayMetrics metrics = this.context.getResources().getDisplayMetrics();
+        int height = metrics.heightPixels;
+        Bitmap bm;
+        if (height>1000){
+            bm = Bitmap.createBitmap(yourBitmap, 0, 0, yourBitmap.getWidth(), (int)(yourBitmap.getHeight()*0.3));
+        }else{
+            bm = Bitmap.createBitmap(yourBitmap, 0, 0, yourBitmap.getWidth(), (int)(yourBitmap.getHeight()*0.2));
+        }
 
        // Bitmap resized = Bitmap.createScaledBitmap(yourBitmap, yourBitmap.getWidth(), (int)(yourBitmap.getHeight()*0.3), true);
         Bitmap bm = Bitmap.createBitmap(yourBitmap, 0, 0, yourBitmap.getWidth(), (int)(yourBitmap.getHeight()*0.2));
+
         //Drawable d = new BitmapDrawable(resized);
 		imageView.setImageBitmap(bm);
 		return view;
