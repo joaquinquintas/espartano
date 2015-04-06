@@ -30,7 +30,8 @@ public class ColeccionClassic extends Activity implements MenuNavegacion{
 	private String nombreColeccion;
 	Context context;
 	ListView lista;
-	Integer[] arrImagenes = null;
+	Integer[] arrImagenesCrop = null;
+    String[] arrImagenes = null;
 	String[] arrColores = null;
 	TextView titulo;
     String queryImagenes = "";
@@ -72,21 +73,23 @@ public class ColeccionClassic extends Activity implements MenuNavegacion{
         BaseDeDatos adminBD=new BaseDeDatos(this, "BaseEspartano.db", null, ConstantesDeNegocio.versionBd); //Recordar cambiar el nro de version en cada run
         SQLiteDatabase bd=adminBD.getReadableDatabase();
         
-        Cursor fila=bd.rawQuery("select codigo, colores, id, imagen from Texturas where id_coleccion=" + mapa.get(nombreColeccion),null);
+        Cursor fila=bd.rawQuery("select codigo, colores, id, imagen_crop, imagen from Texturas where id_coleccion=" + mapa.get(nombreColeccion),null);
 
         
         if (fila.moveToFirst()) {
-        	arrImagenes = new Integer[fila.getCount()];
+        	arrImagenes = new String[fila.getCount()];
+            arrImagenesCrop = new Integer[fila.getCount()];
         	arrColores = new String[fila.getCount()];
             
             for (int i=0; i<fila.getCount(); i++) {
-    			arrImagenes[i] = getResources().getIdentifier(fila.getString(3), "drawable", getPackageName());
+                arrImagenesCrop[i] = getResources().getIdentifier(fila.getString(3), "drawable", getPackageName());
+                arrImagenes[i] = fila.getString(4);
     			arrColores[i] = fila.getString(1);
     			
     			queryCodigos = queryCodigos + fila.getString(0) + ";";
     			queryColores = queryColores + fila.getString(1) + ";";
     			queryIds = queryIds + fila.getString(2) + ";";
-                queryImagenes = queryImagenes + fila.getString(3) + ";";
+                queryImagenes = queryImagenes + fila.getString(4) + ";";
     			
     			fila.moveToNext();
     		}
@@ -98,9 +101,9 @@ public class ColeccionClassic extends Activity implements MenuNavegacion{
                     Toast.LENGTH_SHORT).show();
         bd.close();
 
-		if (arrImagenes != null) {
+		if (arrImagenesCrop != null) {
 			ListaTexturas adapter = new ListaTexturas(ColeccionClassic.this,
-					arrImagenes);
+                    arrImagenesCrop);
 			lista = (ListView) findViewById(R.id.list);
 			lista.setAdapter(adapter);
 			lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -108,7 +111,7 @@ public class ColeccionClassic extends Activity implements MenuNavegacion{
 				public void onItemClick(AdapterView<?> parent, View view,
 						int position, long id) {
 
-					String nombreImgTextura = getResources().getResourceName(arrImagenes[position]);
+					String nombreImgTextura = arrImagenes[position];
 					nombreImgTextura = nombreImgTextura.substring(nombreImgTextura.indexOf('/')+1);
 
 					Intent i = new Intent(getApplicationContext(), HorizontalListViewDemo.class);

@@ -13,7 +13,7 @@ public class BaseDeDatos extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table Texturas(id integer primary key autoincrement, codigo text , id_coleccion integer, colores text, imagen text, posicion integer, compatibles text)");
+        db.execSQL("create table Texturas(id integer primary key autoincrement, codigo text , id_coleccion integer, colores text, imagen text, imagen_crop text,  posicion integer, compatibles text)");
 
         /***
         db.execSQL("insert into Texturas (codigo, id_coleccion, colores, imagen, posicion, compatibles) VALUES ('mcl01a',1,'B7807B,584F4C,C7C3B3,989F8E','mcl01a',1,'mcl04b,mcl05a')");
@@ -28,15 +28,15 @@ public class BaseDeDatos extends SQLiteOpenHelper {
          ***/
 
 
-        db.execSQL("insert into Texturas (codigo, id_coleccion, colores, imagen, posicion, compatibles) VALUES ('1A',1,'B7807B,584F4C,C7C3B3,989F8E','classic_1a',1,'classic_3a_,classic_2b')");
-        db.execSQL("insert into Texturas (codigo, id_coleccion, colores, imagen, posicion, compatibles) VALUES ('2A',1,'B7807B,584F4C,C7C3B3,989F8E','classic_2a',2,'classic_2c,classic_3a_')");
-        db.execSQL("insert into Texturas (codigo, id_coleccion, colores, imagen, posicion, compatibles) VALUES ('2B_',1,'B7807B,584F4C,C7C3B3,989F8E','classic_2b_',3,'classic_2c,classic_4a_')");
-        db.execSQL("insert into Texturas (codigo, id_coleccion, colores, imagen, posicion, compatibles) VALUES ('2C',1,'B7807B,584F4C,C7C3B3,989F8E','classic_2c',4,'classic_3b_,classic_4a_')");
-        db.execSQL("insert into Texturas (codigo, id_coleccion, colores, imagen, posicion, compatibles) VALUES ('3A_',1,'B7807B,584F4C,C7C3B3,989F8E','classic_3a_',5,'classic_4a_,classic_3b_')");
-        db.execSQL("insert into Texturas (codigo, id_coleccion, colores, imagen, posicion, compatibles) VALUES ('3B_',1,'B7807B,584F4C,C7C3B3,989F8E','classic_3b_',6,'classic_3a_,classic_5b_')");
-        db.execSQL("insert into Texturas (codigo, id_coleccion, colores, imagen, posicion, compatibles) VALUES ('4A_',1,'B7807B,584F4C,C7C3B3,989F8E','classic_4a_',7,'classic_3a_,classic_5b_')");
-        db.execSQL("insert into Texturas (codigo, id_coleccion, colores, imagen, posicion, compatibles) VALUES ('5A_',1,'B7807B,584F4C,C7C3B3,989F8E','classic_5a_',8,'classic_3a_,classic_4a_')");
-        db.execSQL("insert into Texturas (codigo, id_coleccion, colores, imagen, posicion, compatibles) VALUES ('5B_',1,'B7807B,584F4C,C7C3B3,989F8E','classic_5b_',9,'classic_5a_,classic_3b_')");
+        db.execSQL("insert into Texturas (codigo, id_coleccion, colores, imagen, imagen_crop, posicion, compatibles) VALUES ('1A',1,'B7807B,584F4C,C7C3B3,989F8E','classic_1a', '_1a_crop' ,1,'classic_3a_,classic_2b')");
+        db.execSQL("insert into Texturas (codigo, id_coleccion, colores, imagen, imagen_crop, posicion, compatibles) VALUES ('2A',1,'B7807B,584F4C,C7C3B3,989F8E','classic_2a', '_2a_crop', 2,'classic_2c,classic_3a_')");
+        db.execSQL("insert into Texturas (codigo, id_coleccion, colores, imagen, imagen_crop, posicion, compatibles) VALUES ('2B_',1,'B7807B,584F4C,C7C3B3,989F8E','classic_2b_', '_2b__crop', 3,'classic_2c,classic_4a_')");
+        db.execSQL("insert into Texturas (codigo, id_coleccion, colores, imagen, imagen_crop, posicion, compatibles) VALUES ('2C',1,'B7807B,584F4C,C7C3B3,989F8E','classic_2c','_2c_crop',4,'classic_3b_,classic_4a_')");
+        db.execSQL("insert into Texturas (codigo, id_coleccion, colores, imagen, imagen_crop, posicion, compatibles) VALUES ('3A_',1,'B7807B,584F4C,C7C3B3,989F8E','classic_3a_','_3a__crop',5,'classic_4a_,classic_3b_')");
+        db.execSQL("insert into Texturas (codigo, id_coleccion, colores, imagen, imagen_crop, posicion, compatibles) VALUES ('3B_',1,'B7807B,584F4C,C7C3B3,989F8E','classic_3b_','_3b__crop',6,'classic_3a_,classic_5b_')");
+        db.execSQL("insert into Texturas (codigo, id_coleccion, colores, imagen, imagen_crop, posicion, compatibles) VALUES ('4A_',1,'B7807B,584F4C,C7C3B3,989F8E','classic_4a_','_4a__crop',7,'classic_3a_,classic_5b_')");
+        db.execSQL("insert into Texturas (codigo, id_coleccion, colores, imagen, imagen_crop, posicion, compatibles) VALUES ('5A_',1,'B7807B,584F4C,C7C3B3,989F8E','classic_5a_','_5a__crop',8,'classic_3a_,classic_4a_')");
+        db.execSQL("insert into Texturas (codigo, id_coleccion, colores, imagen, imagen_crop, posicion, compatibles) VALUES ('5B_',1,'B7807B,584F4C,C7C3B3,989F8E','classic_5b_','_5b__crop',9,'classic_5a_,classic_3b_')");
 
 
         db.execSQL("create table Colores (id text primary key, color text, pos integer, grupo integer)");

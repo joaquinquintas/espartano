@@ -54,6 +54,7 @@ public class ListaMySelection extends ArrayAdapter<String> {
 
 		RelativeLayout relativeGeneral = (RelativeLayout) view.findViewById(R.id.relativeGeneral);
 
+        /***
         Bitmap yourBitmap =  BitmapFactory.decodeResource(this.context.getResources(), imagenIds.get(posicion)[1]);
 
 
@@ -73,6 +74,8 @@ public class ListaMySelection extends ArrayAdapter<String> {
 
 
 		relativeGeneral.setBackground(new BitmapDrawable(context.getResources(), bm));
+        ***/
+        relativeGeneral.setBackground(context.getResources().getDrawable(imagenIds.get(posicion)[1]));
 
 		String tag = posicion + "," + imagenIds.get(posicion)[0]+","+imagenIds.get(posicion)[2];
 		//ImagenIds: 0-IdFavorito, 1-codigo Textura, 2-idTextura
