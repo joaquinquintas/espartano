@@ -112,8 +112,8 @@ public class BaseDeDatos extends SQLiteOpenHelper {
         db.execSQL("insert into Colores (id, color, pos, grupo) VALUES ('242020','5e4146',19, 2 )");
         db.execSQL("insert into Colores (id, color, pos, grupo) VALUES ('288070','a8381a',20, 2 )");
         db.execSQL("insert into Colores (id, color, pos, grupo) VALUES ('289050','e44f4f',21, 2 )");
-        db.execSQL("insert into Colores (id, color, pos, grupo) VALUES ('927949','9fa045',22, 2 )");
-        db.execSQL("insert into Colores (id, color, pos, grupo) VALUES ('905010','6a6c6d',23, 2 )");
+        db.execSQL("insert into Colores (id, color, pos, grupo) VALUES ('927040','9fa045',22, 2 )");
+        db.execSQL("insert into Colores (id, color, pos, grupo) VALUES ('925010','6a6c6d',23, 2 )");
         db.execSQL("insert into Colores (id, color, pos, grupo) VALUES ('724040','3e534d',24, 2 )");
         db.execSQL("insert into Colores (id, color, pos, grupo) VALUES ('846030','808c78',25, 2 )");
         db.execSQL("insert into Colores (id, color, pos, grupo) VALUES ('365040','724f62',26, 2 )");
@@ -139,7 +139,7 @@ public class BaseDeDatos extends SQLiteOpenHelper {
         db.execSQL("insert into Colores (id, color, pos, grupo) VALUES ('842020','404e3e',46, 2 )");
         db.execSQL("insert into Colores (id, color, pos, grupo) VALUES ('809090','497840',47, 2 )");
         db.execSQL("insert into Colores (id, color, pos, grupo) VALUES ('809070','6f9b56',48, 2 )");
-        db.execSQL("insert into Colores (id, color, pos, grupo) VALUES ('087060','8cac4e',49, 2 )");
+        db.execSQL("insert into Colores (id, color, pos, grupo) VALUES ('87060','8cac4e',49, 2 )");
 
         db.execSQL("insert into Colores (id, color, pos, grupo) VALUES ('129020','f5ecb1',1, 3 )");
         db.execSQL("insert into Colores (id, color, pos, grupo) VALUES ('128040','c2b98b',2, 3 )");
