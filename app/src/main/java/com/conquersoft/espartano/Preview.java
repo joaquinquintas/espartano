@@ -247,32 +247,34 @@ public class Preview extends Activity{
 		bitmap = Bitmap.createBitmap(v1.getDrawingCache());
 		v1.setDrawingCacheEnabled(false);
         int rn = randInt(1,10000);
+
         String imageName = "espartano_"+String.valueOf(rn)+".jpg";
-		String filePath = Environment.getExternalStorageDirectory()
-				 + File.separator + "Espartano/Media/Espartano Images/";
-				 File imagePath = new File(filePath);
-				 if (!imagePath.isDirectory()) {
-					 imagePath.mkdirs();
-				 }
-				 File file = new File(imagePath, imageName);
-				 FileOutputStream fos;
-				 try {
-				 fos = new FileOutputStream(file);
-				 bitmap.compress(CompressFormat.PNG, 100, fos);
-				 fos.flush();
-				 fos.close();
-				 } catch (FileNotFoundException e) {
-				 Log.e("GREC", e.getMessage(), e);
-				 } catch (IOException e) {
-				 Log.e("GREC", e.getMessage(), e);
-				 }
-				 Toast.makeText(
-							context,
-							"The preview image was saved",
-							Toast.LENGTH_SHORT).show();	
-				 
-				 Intent i = new Intent(getApplicationContext(), MisColecciones.class);
-				    startActivity(i);
+		String filePath = Environment.getExternalStorageDirectory() + File.separator + "Espartano/Media/Espartano Images/";
+
+        boolean exists = (new File(filePath)).exists();
+
+         if (!exists) {
+             new File(filePath).mkdirs();
+         }
+         //File file = new File(new File(filePath), imageName);
+         FileOutputStream fos;
+         try {
+             fos = new FileOutputStream(filePath+imageName, true);
+             bitmap.compress(CompressFormat.PNG, 100, fos);
+             fos.flush();
+             fos.close();
+         } catch (FileNotFoundException e) {
+            Log.e("GREC", e.getMessage(), e);
+         } catch (IOException e) {
+            Log.e("GREC", e.getMessage(), e);
+         }
+         Toast.makeText(
+                    context,
+                    "THE PREVIEW IMAGE WAS SAVED",
+                    Toast.LENGTH_SHORT).show();
+
+         Intent i = new Intent(getApplicationContext(), MisColecciones.class);
+            startActivity(i);
 	}
 
 	private void pintarLayouts(View rowView, String[] colores) {

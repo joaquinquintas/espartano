@@ -143,7 +143,7 @@ public class HorizontalListViewDemo extends ActionBarActivity {
                     DisplayMetrics metrics = getResources().getDisplayMetrics();
                     int height_ = metrics.heightPixels;
                     if (height_>1100){
-                        img = context.getResources().getDrawable(R.drawable.corazonlarge_on);
+                        img = context.getResources().getDrawable(R.drawable.corazon_on);
                     }
                     else {
                         img = context.getResources().getDrawable(R.drawable.corazon_on);
@@ -163,7 +163,7 @@ public class HorizontalListViewDemo extends ActionBarActivity {
                             DisplayMetrics metrics = getResources().getDisplayMetrics();
                             int height = metrics.heightPixels;
                             if (height>1100){
-                                img = context.getResources().getDrawable(R.drawable.corazonlarge);
+                                img = context.getResources().getDrawable(R.drawable.corazon);
                             }
                             else {
                                 img = context.getResources().getDrawable(R.drawable.corazon);
@@ -175,7 +175,7 @@ public class HorizontalListViewDemo extends ActionBarActivity {
                             DisplayMetrics metrics = getResources().getDisplayMetrics();
                             int height = metrics.heightPixels;
                             if (height>1100){
-                                img = context.getResources().getDrawable(R.drawable.corazonlarge_on);
+                                img = context.getResources().getDrawable(R.drawable.corazon_on);
                             }
                             else {
                                 img = context.getResources().getDrawable(R.drawable.corazon_on);
