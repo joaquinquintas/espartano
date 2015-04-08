@@ -89,5 +89,12 @@
         android:layout_centerHorizontal="true"
         android:contentDescription="@string/ic_favoritos"
         android:src="@drawable/corazon" />
-
+    <ImageView
+        android:id="@+id/icono_watermark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="@string/ic_favoritos"
+        android:src="@drawable/watermark" />
 </RelativeLayout>

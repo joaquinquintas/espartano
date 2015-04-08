@@ -242,7 +242,7 @@ public class BaseDeDatos extends SQLiteOpenHelper {
         db.execSQL("insert into Colores (id, color, pos, grupo) VALUES ('165030A','aa9569',49, 4)"); //165030
 
 
-        db.execSQL("create table Favoritos(id integer primary key, codigo_textura text, id_textura integer, id_paleta integer, comment text)");
+        db.execSQL("create table Favoritos(id integer primary key, codigo_textura text, id_textura integer, id_imagen text, id_paleta integer, comment text)");
 
         db.execSQL("create table Paletas (id integer primary key autoincrement, colores text)");
 

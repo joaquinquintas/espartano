@@ -12,6 +12,7 @@
 <dimen name="caja_colores2">40dp</dimen>
 <dimen name="margen_izq_mis_paletas">10dp</dimen>
 <dimen name="font_size_titulo">24sp</dimen>
-<dimen name="caja_coloresPreview">20dp</dimen>
+<dimen name="caja_coloresPreview">40dp</dimen>
+<dimen name="caja_coloresPreviewMargin">5dp</dimen>
 <dimen name="font_size_comentario_preview">14sp</dimen>
 </resources>

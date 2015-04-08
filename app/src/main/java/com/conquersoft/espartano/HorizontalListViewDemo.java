@@ -137,13 +137,13 @@ public class HorizontalListViewDemo extends ActionBarActivity {
 				
 				final ImageView imagenFavoritos = (ImageView) convertView.findViewById(R.id.icono_favoritos);
 				
-				imagenFavoritos.setTag(queryCodigos[position]+";"+queryIds[position]);
+				imagenFavoritos.setTag(queryCodigos[position]+";"+queryIds[position]+";"+queryImagenes[position]);
                 if (isFavorite(queryCodigos[position],queryIds[position])){
                     Drawable img;
                     DisplayMetrics metrics = getResources().getDisplayMetrics();
                     int height_ = metrics.heightPixels;
                     if (height_>1100){
-                        img = context.getResources().getDrawable(R.drawable.corazon_on);
+                        img = context.getResources().getDrawable(R.drawable.corazonlarge_on);
                     }
                     else {
                         img = context.getResources().getDrawable(R.drawable.corazon_on);
@@ -170,12 +170,12 @@ public class HorizontalListViewDemo extends ActionBarActivity {
                             }
                             imagenFavoritos.setImageDrawable(img);
                         }else{
-                            agregarFavoritos(codYId[0],codYId[1]);
+                            agregarFavoritos(codYId[0],codYId[1], codYId[2]);
                             Drawable img;
                             DisplayMetrics metrics = getResources().getDisplayMetrics();
                             int height = metrics.heightPixels;
                             if (height>1100){
-                                img = context.getResources().getDrawable(R.drawable.corazon_on);
+                                img = context.getResources().getDrawable(R.drawable.corazonlarge_on);
                             }
                             else {
                                 img = context.getResources().getDrawable(R.drawable.corazon_on);
@@ -255,7 +255,7 @@ public class HorizontalListViewDemo extends ActionBarActivity {
         bd.close();
     }
 
-	public void agregarFavoritos(String codigo, String idTextura) {
+	public void agregarFavoritos(String codigo, String idTextura, String idImage) {
 		//String resultado = "";
 		BaseDeDatos adminBD = new BaseDeDatos(this, "BaseEspartano.db",
 				null, ConstantesDeNegocio.versionBd);
@@ -265,6 +265,7 @@ public class HorizontalListViewDemo extends ActionBarActivity {
 			ContentValues values = new ContentValues();
 			values.put("codigo_textura", codigo);
 			values.put("id_textura", idTextura);
+            values.put("id_imagen", idImage);
 			bd.insert("Favoritos", null, values);
 		//	resultado = "SAVED";
 		} catch (Exception e) {

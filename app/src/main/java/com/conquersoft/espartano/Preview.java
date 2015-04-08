@@ -40,6 +40,7 @@ public class Preview extends Activity{
 	String idFavorito;
 	String codigoTextura;
 	String comentario;
+    String imagen;
 	String idPaleta;
 	TextView txtCodigoTextura;
 	TextView txtComentario;
@@ -69,12 +70,13 @@ public class Preview extends Activity{
         BaseDeDatos adminBD=new BaseDeDatos(this, "BaseEspartano.db", null, ConstantesDeNegocio.versionBd); 
         SQLiteDatabase bd=adminBD.getReadableDatabase();
         
-        Cursor fila=bd.rawQuery("select codigo_textura, comment from Favoritos where id=" + idFavorito,null);
+        Cursor fila=bd.rawQuery("select codigo_textura, comment, id_imagen from Favoritos where id=" + idFavorito,null);
 
         
         if (fila.moveToFirst()) {
         	codigoTextura =  fila.getString(0);
             comentario =  fila.getString(1);
+            imagen =  fila.getString(2);
     		fila.moveToNext();
         } 
         
@@ -111,7 +113,7 @@ public class Preview extends Activity{
         txtCodigoTextura.setText(codigoTextura.toUpperCase());
         txtComentario = (TextView) findViewById(R.id.comentarioPreview);
         if (comentario != null && !comentario.equals("")){
-        	txtComentario.setText(comentario);
+        	txtComentario.setText(comentario.toUpperCase());
         }
         else {
         	txtComentario.setBackgroundColor(Color.TRANSPARENT);
@@ -125,7 +127,7 @@ public class Preview extends Activity{
         int height = size.y;
         
         
-    	Bitmap bm = decodeSampledBitmapFromResource(getResources(), getResources().getIdentifier(codigoTextura+"grande","drawable",getPackageName()), width, height);
+    	Bitmap bm = decodeSampledBitmapFromResource(getResources(), getResources().getIdentifier(imagen,"drawable",getPackageName()), width, height);
         layoutGeneral.setBackground(new BitmapDrawable(getResources(), bm ));
 
 		layoutGeneral.setLayoutParams(new FrameLayout.LayoutParams(width,LayoutParams.MATCH_PARENT));
@@ -190,6 +192,46 @@ public class Preview extends Activity{
         return randomNum;
     }
 
+    /*
+    public void sacarFoto(View view){
+        // image naming and path  to include sd card  appending name you choose for file
+        view.setDrawingCacheEnabled(true);
+        view.buildDrawingCache();
+        Bitmap bm = view.getDrawingCache();
+
+        String root = Environment.getExternalStorageDirectory()
+                .toString();
+        File myDir = new File(root + "/_images");
+        myDir.mkdirs();
+        Random generator = new Random();
+        int n = 10000;
+        n = generator.nextInt(n);
+        String fname = "Image-" + n + ".jpg";
+        File file = new File(myDir, fname);
+
+        if (file.exists())
+            file.delete();
+        try {
+            FileOutputStream out = new FileOutputStream(file);
+            bm.compress(Bitmap.CompressFormat.JPEG, 90, out);
+            out.flush();
+            out.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        Toast.makeText(
+                context,
+                "The preview image was saved",
+                Toast.LENGTH_SHORT).show();
+
+        Intent i = new Intent(getApplicationContext(), MisColecciones.class);
+        startActivity(i);
+    }
+
+    */
+
 	public void sacarFoto(View v){
 		// image naming and path  to include sd card  appending name you choose for file
 		
@@ -204,8 +246,8 @@ public class Preview extends Activity{
 		v1.setDrawingCacheEnabled(true);
 		bitmap = Bitmap.createBitmap(v1.getDrawingCache());
 		v1.setDrawingCacheEnabled(false);
-        int rn = randInt(1,100);
-        String imageName = "espartano_"+rn+".jpg";
+        int rn = randInt(1,10000);
+        String imageName = "espartano_"+String.valueOf(rn)+".jpg";
 		String filePath = Environment.getExternalStorageDirectory()
 				 + File.separator + "Espartano/Media/Espartano Images/";
 				 File imagePath = new File(filePath);
@@ -232,7 +274,7 @@ public class Preview extends Activity{
 				 Intent i = new Intent(getApplicationContext(), MisColecciones.class);
 				    startActivity(i);
 	}
-	
+
 	private void pintarLayouts(View rowView, String[] colores) {
 		LinearLayout cajaColor;
 		cajaColor = (LinearLayout) rowView.findViewById(R.id.listaColor1);
