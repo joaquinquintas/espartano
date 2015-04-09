@@ -1,5 +1,6 @@
 package com.conquersoft.espartano;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -241,34 +242,34 @@ public class Preview extends Activity{
 		RelativeLayout layoutGeneral = (RelativeLayout) findViewById(R.id.layoutGeneral);
 		layoutGeneral.removeView(lin);
 
-		// create bitmap screen capture
-		Bitmap bitmap;
-		View v1 = getWindow().getDecorView().getRootView();
-		v1.setDrawingCacheEnabled(true);
-		bitmap = Bitmap.createBitmap(v1.getDrawingCache());
-		v1.setDrawingCacheEnabled(false);
+
+        View screen = getWindow().getDecorView().getRootView();
+        screen.setDrawingCacheEnabled(true);
+        Bitmap bitmap = screen.getDrawingCache();
         int rn = randInt(1,10000);
 
         String imageName = "espartano_"+String.valueOf(rn)+".jpg";
-		String filePath = Environment.getExternalStorageDirectory() + File.separator + "Espartano/Media/Espartano Images/";
+        String filePath = Environment.getExternalStorageDirectory().getPath()
+                + File.separator + imageName;
 
-        boolean exists = (new File(filePath)).exists();
+        File imageFile = new File(filePath);
+        try {
+            ByteArrayOutputStream bos = new ByteArrayOutputStream();
+            bitmap.compress(Bitmap.CompressFormat.PNG, 100, bos);
+            byte[] bitmapData = bos.toByteArray();
 
-         if (!exists) {
-             new File(filePath).mkdirs();
-         }
-         //File file = new File(new File(filePath), imageName);
-         FileOutputStream fos;
-         try {
-             fos = new FileOutputStream(filePath+imageName, true);
-             bitmap.compress(CompressFormat.PNG, 100, fos);
-             fos.flush();
-             fos.close();
-         } catch (FileNotFoundException e) {
+            FileOutputStream fos = new FileOutputStream(imageFile);
+            fos.write(bitmapData);
+            fos.flush();
+            fos.close();
+        } catch (FileNotFoundException e) {
             Log.e("GREC", e.getMessage(), e);
-         } catch (IOException e) {
+        } catch (IOException e) {
             Log.e("GREC", e.getMessage(), e);
-         }
+        }
+
+
+        
          Toast toast =Toast.makeText(
                     context,
                     "THE PREVIEW IMAGE WAS SAVED",
