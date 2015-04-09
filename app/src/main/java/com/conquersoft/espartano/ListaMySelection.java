@@ -17,6 +17,7 @@ import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.util.DisplayMetrics;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -366,10 +367,12 @@ public class ListaMySelection extends ArrayAdapter<String> {
 			db.delete("Favoritos", "id" + "=?", new String[] { idFav });
 			db.delete("texturas_x_paletas", "id_favorito" + "=?", new String[] { idFav });
 		} catch (Exception e) {
-			Toast.makeText(
+			Toast toast = Toast.makeText(
 					context,
-					"There was a problem deleting de Selection: " + e.getMessage(),
-					Toast.LENGTH_SHORT).show();
+					"THERE WAS AN ERROR DELETING THE SELECTION: " + e.getMessage(),
+					Toast.LENGTH_SHORT);
+            toast.setGravity(Gravity.CENTER, 0, 0);
+            toast.show();
 		}
 
 		db.close();
@@ -392,9 +395,12 @@ public class ListaMySelection extends ArrayAdapter<String> {
 				paletas.add(idYColor);
 				fila.moveToNext();
 			}
-		} else
-			Toast.makeText(context, "There are no saved pallets",
-					Toast.LENGTH_SHORT).show();
+		} else{
+			Toast toast = Toast.makeText(context, "THERE ARE NOT SAVED PALETTES",
+					Toast.LENGTH_SHORT);
+            toast.setGravity(Gravity.CENTER, 0, 0);
+            toast.show();
+        }
 		bd.close();
 
 		ListaLinkPaletas adapter = new ListaLinkPaletas(context, paletas);
@@ -431,8 +437,9 @@ public class ListaMySelection extends ArrayAdapter<String> {
 				bd.insert("texturas_x_paletas", null, values);
 				
 			} catch (Exception e) {
-				Toast.makeText(context.getApplicationContext(), "There was a problem linking the pallet/s: "+ e.getMessage() , Toast.LENGTH_LONG)
-						.show();
+				Toast toast = Toast.makeText(context.getApplicationContext(), "THERE WAS AN ERROR LINKING THE PALETTE: "+ e.getMessage() , Toast.LENGTH_LONG);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                toast.show();
 			}
 
 		}
@@ -451,7 +458,9 @@ public class ListaMySelection extends ArrayAdapter<String> {
 			try {
 				bd.delete("texturas_x_paletas", "id_favorito = ? and id_paleta = ?", new String[] { idFavorito, idPaleta });
 			} catch (Exception e) {
-				Toast.makeText(context, "There was a problem deleting the pallet: "+e.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast toast = Toast.makeText(context, "THERE WAS AN ERROR DELETING THIS PALETTE: "+e.getMessage(), Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                toast.show();
 			}
 		}
 		checksEliminados.clear();
@@ -527,8 +536,11 @@ public class ListaMySelection extends ArrayAdapter<String> {
 	      try {
 	    	  context.startActivity(Intent.createChooser(emailIntent, "Send mail..."));
 	      } catch (android.content.ActivityNotFoundException ex) {
-	         Toast.makeText(context, 
-	         "There is no email client installed.", Toast.LENGTH_SHORT).show();
+	         Toast toast = Toast.makeText(context,
+	         "THERE IS NO EMAIL CLIENT INSTALLED", Toast.LENGTH_SHORT);
+             toast.setGravity(Gravity.CENTER, 0, 0);
+             toast.show();
+
 	      }
 	   }
 }

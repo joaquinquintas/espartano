@@ -22,6 +22,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
 import android.view.Display;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
@@ -268,31 +269,103 @@ public class Preview extends Activity{
          } catch (IOException e) {
             Log.e("GREC", e.getMessage(), e);
          }
-         Toast.makeText(
+         Toast toast =Toast.makeText(
                     context,
                     "THE PREVIEW IMAGE WAS SAVED",
-                    Toast.LENGTH_SHORT).show();
+                    Toast.LENGTH_SHORT);
+        toast.setGravity(Gravity.CENTER, 0, 0);
+        toast.show();
 
          Intent i = new Intent(getApplicationContext(), MisColecciones.class);
             startActivity(i);
 	}
 
 	private void pintarLayouts(View rowView, String[] colores) {
-		LinearLayout cajaColor;
-		cajaColor = (LinearLayout) rowView.findViewById(R.id.listaColor1);
-		cajaColor.setBackgroundColor(Integer.valueOf((colores[0])));
+        BaseDeDatos adminBD=new BaseDeDatos(this.context, "BaseEspartano.db", null, ConstantesDeNegocio.versionBd); //Recordar cambiar el nro de version en cada run
+        SQLiteDatabase bd=adminBD.getReadableDatabase();
+        TextView cajaCodigo;
 
-		cajaColor = (LinearLayout) rowView.findViewById(R.id.listaColor2);
-		cajaColor.setBackgroundColor(Integer.valueOf((colores[1])));
+        LinearLayout cajaColor;
+        cajaColor = (LinearLayout) rowView.findViewById(R.id.listaColor1);
+        cajaColor.setBackgroundColor(Integer.valueOf((colores[0])));
+
+        final String hexColor = new String( String.format("%06X", (0xFFFFFF & (Integer.valueOf(colores[0]))))).toLowerCase();
+        Cursor fila = bd.query("Colores", new String[] {"id"}, "color=?", new String[]{String.valueOf(hexColor)}, null, null, "id DESC", "1");
+        fila.moveToFirst();
+
+        cajaCodigo = (TextView) rowView.findViewById(R.id.codigo1);
+        try {
+            cajaCodigo.setText(fila.getString(0));
+        } catch (Exception e) {
+            e.printStackTrace();
+            cajaCodigo.setText("");
+        }
+
+
+        cajaColor = (LinearLayout) rowView.findViewById(R.id.listaColor2);
+        cajaColor.setBackgroundColor(Integer.valueOf((colores[1])));
+
+        final String hexColor2 = new String( String.format("%06X", (0xFFFFFF & (Integer.valueOf(colores[1]))))).toLowerCase();
+        fila = bd.query("Colores", new String[] {"id"}, "color=?", new String[]{String.valueOf(hexColor2)}, null, null, "id DESC", "1");
+        fila.moveToFirst();
+
+        cajaCodigo = (TextView) rowView.findViewById(R.id.codigo2);
+        try {
+            cajaCodigo.setText(fila.getString(0));
+        } catch (Exception e) {
+            e.printStackTrace();
+            cajaCodigo.setText("");
+        }
+
 
 		cajaColor = (LinearLayout) rowView.findViewById(R.id.listaColor3);
 		cajaColor.setBackgroundColor(Integer.valueOf((colores[2])));
 
-		cajaColor = (LinearLayout) rowView.findViewById(R.id.listaColor4);
+        final String hexColor3 = new String( String.format("%06X", (0xFFFFFF & (Integer.valueOf(colores[2]))))).toLowerCase();
+        fila = bd.query("Colores", new String[] {"id"}, "color=?", new String[]{String.valueOf(hexColor3)}, null, null, "id DESC", "1");
+        fila.moveToFirst();
+
+        cajaCodigo = (TextView) rowView.findViewById(R.id.codigo3);
+        try {
+            cajaCodigo.setText(fila.getString(0));
+        } catch (Exception e) {
+            e.printStackTrace();
+            cajaCodigo.setText("");
+        }
+
+
+        cajaColor = (LinearLayout) rowView.findViewById(R.id.listaColor4);
 		cajaColor.setBackgroundColor(Integer.valueOf((colores[3])));
 
-		cajaColor = (LinearLayout) rowView.findViewById(R.id.listaColor5);
+        final String hexColor4 = new String( String.format("%06X", (0xFFFFFF & (Integer.valueOf(colores[3]))))).toLowerCase();
+        fila = bd.query("Colores", new String[] {"id"}, "color=?", new String[]{String.valueOf(hexColor4)}, null, null, "id DESC", "1");
+        fila.moveToFirst();
+
+        cajaCodigo = (TextView) rowView.findViewById(R.id.codigo4);
+        try {
+            cajaCodigo.setText(fila.getString(0));
+        } catch (Exception e) {
+            e.printStackTrace();
+            cajaCodigo.setText("");
+        }
+
+
+        cajaColor = (LinearLayout) rowView.findViewById(R.id.listaColor5);
 		cajaColor.setBackgroundColor(Integer.valueOf((colores[4])));
 
+        final String hexColor5 = new String( String.format("%06X", (0xFFFFFF & (Integer.valueOf(colores[4]))))).toLowerCase();
+        fila = bd.query("Colores", new String[] {"id"}, "color=?", new String[]{String.valueOf(hexColor5)}, null, null, "id DESC", "1");
+        fila.moveToFirst();
+
+        cajaCodigo = (TextView) rowView.findViewById(R.id.codigo5);
+        try {
+            cajaCodigo.setText(fila.getString(0));
+        } catch (Exception e) {
+            e.printStackTrace();
+            cajaCodigo.setText("");
+        }
+
+
+        bd.close();
 	}
 }

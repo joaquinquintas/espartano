@@ -5,25 +5,64 @@
     android:baselineAligned="false"
     android:orientation="horizontal" >
 
+
+
     <LinearLayout
-        android:id="@+id/listaColor1"
-        android:layout_width="@dimen/caja_coloresPreview"
-        android:layout_height="@dimen/caja_coloresPreview"
-        android:layout_margin="@dimen/caja_coloresPreviewMargin"
-        android:background="@color/blanco"
-        android:orientation="horizontal" >
+        android:id="@+id/listaColorWrapper1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/listaColor1"
+            android:layout_width="@dimen/caja_coloresPreview"
+            android:layout_height="@dimen/caja_coloresPreview"
+            android:layout_margin="@dimen/caja_coloresPreviewMargin"
+            android:background="@color/blanco"
+            android:orientation="horizontal" >
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/codigo1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="20dp"
+            android:layout_margin="3dp"/>
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/listaColor2"
-        android:layout_width="@dimen/caja_coloresPreview"
-        android:layout_height="@dimen/caja_coloresPreview"
-        android:layout_marginTop="@dimen/caja_coloresPreviewMargin"
-        android:layout_marginBottom="@dimen/caja_coloresPreviewMargin"
-        android:layout_marginRight="@dimen/caja_coloresPreviewMargin"
-        android:background="@color/blanco"
-        android:orientation="horizontal" >
+        android:id="@+id/listaColorWrapper2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/listaColor2"
+            android:layout_width="@dimen/caja_coloresPreview"
+            android:layout_height="@dimen/caja_coloresPreview"
+            android:layout_marginTop="@dimen/caja_coloresPreviewMargin"
+            android:layout_marginBottom="@dimen/caja_coloresPreviewMargin"
+            android:layout_marginRight="@dimen/caja_coloresPreviewMargin"
+            android:background="@color/blanco"
+            android:orientation="horizontal" >
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/codigo2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="20dp"
+            android:layout_margin="3dp"/>
     </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/listaColorWrapper3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
 
     <LinearLayout
         android:id="@+id/listaColor3"
@@ -36,6 +75,21 @@
         android:orientation="horizontal" >
     </LinearLayout>
 
+        <TextView
+            android:id="@+id/codigo3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="20dp"
+            android:layout_margin="3dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/listaColorWrapper4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
     <LinearLayout
         android:id="@+id/listaColor4"
         android:layout_width="@dimen/caja_coloresPreview"
@@ -46,6 +100,21 @@
         android:background="@color/blanco"
         android:orientation="horizontal" >
     </LinearLayout>
+
+        <TextView
+            android:id="@+id/codigo4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="20dp"
+            android:layout_margin="3dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/listaColorWrapper5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
 
     <LinearLayout
         android:id="@+id/listaColor5"
@@ -58,6 +127,15 @@
         android:orientation="horizontal" >
     </LinearLayout>
 
+
+    <TextView
+            android:id="@+id/codigo5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="20dp"
+            android:layout_margin="3dp" />
+    </LinearLayout>
 
 
 </LinearLayout>

@@ -11,6 +11,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
 import android.view.Window;
@@ -96,9 +97,11 @@ public class ColeccionClassic extends Activity implements MenuNavegacion{
 
           //  GridView gridView = (GridView) findViewById(R.id.grid_view);
            // gridView.setAdapter(new ImageAdapter(this,arrImagenes));
-        } else
-            Toast.makeText(this, "No existen texturas para esta coleccion",
-                    Toast.LENGTH_SHORT).show();
+        } else{
+            Toast toast = Toast.makeText(this, "NO DESIGNS FOR THIS COLLECTION",Toast.LENGTH_SHORT);
+            toast.setGravity(Gravity.CENTER, 0, 0);
+            toast.show();
+        }
         bd.close();
 
 		if (arrImagenesCrop != null) {

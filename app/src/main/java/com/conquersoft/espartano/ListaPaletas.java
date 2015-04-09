@@ -11,6 +11,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.net.Uri;
 import android.util.DisplayMetrics;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -293,7 +294,9 @@ public class ListaPaletas extends ArrayAdapter<String> {
 		try {
 			db.delete("Paletas", "id" + "=?", new String[] { idPaleta });
 		} catch (Exception e) {
-			Toast.makeText(context, "There was a problem deleting de pallet: "+e.getMessage(), Toast.LENGTH_SHORT).show();
+            Toast toast = Toast.makeText(context, "THERE WAS AN ERROR DELETING THE PALETTE : "+e.getMessage(), Toast.LENGTH_SHORT);
+            toast.setGravity(Gravity.CENTER, 0, 0);
+            toast.show();
 		}
 		
 		db.close();
@@ -321,8 +324,10 @@ public class ListaPaletas extends ArrayAdapter<String> {
 	      try {
 	    	  context.startActivity(Intent.createChooser(emailIntent, "Send mail..."));
 	      } catch (android.content.ActivityNotFoundException ex) {
-	         Toast.makeText(context, 
-	         "There is no email client installed.", Toast.LENGTH_SHORT).show();
+	         Toast toast =Toast.makeText(context,
+	         "THERE IS NO EMAIL CLIENT INSTALLED.", Toast.LENGTH_SHORT);
+             toast.setGravity(Gravity.CENTER, 0, 0);
+             toast.show();
 	      }
 	   }
 

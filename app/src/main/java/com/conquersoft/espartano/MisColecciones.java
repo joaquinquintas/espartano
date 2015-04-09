@@ -11,6 +11,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
 import android.view.Window;
@@ -68,9 +69,12 @@ public class MisColecciones extends Activity implements MenuNavegacion{
     			fila.moveToNext();
     		}
 
-        } else
-            Toast.makeText(this, "THERE ARE NO SELECTIONS AVAILABLE",
-                    Toast.LENGTH_SHORT).show();
+        } else{
+            Toast toast = Toast.makeText(this, "THERE ARE NO SELECTIONS AVAILABLE",
+                    Toast.LENGTH_SHORT);
+            toast.setGravity(Gravity.CENTER, 0, 0);
+            toast.show();
+        }
         bd.close();
 
         

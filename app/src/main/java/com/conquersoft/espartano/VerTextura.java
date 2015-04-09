@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -69,13 +70,15 @@ public class VerTextura extends ActionBarActivity {
 			ContentValues values = new ContentValues();
 			values.put("codigo_textura", nombreTextura);
 			bd.insert("Favoritos", null, values);
-			resultado = "La textura se ha agregado a Favoritos";
+			resultado = "THE DESIGN WAS ADDED TO YOUR SELECTIONS";
 		} catch (Exception e) {
-			resultado = "Hubo un error al insertar en Favoritos: " + e.getMessage();
+			resultado = "THERE WAS AN ERROR: " + e.getMessage();
 		}
 
-		Toast.makeText(getApplicationContext(), resultado, Toast.LENGTH_LONG)
-				.show();
+		Toast toast = Toast.makeText(getApplicationContext(), resultado, Toast.LENGTH_LONG);
+        toast.setGravity(Gravity.CENTER, 0, 0);
+        toast.show();
+
 		bd.close();
 	}
 

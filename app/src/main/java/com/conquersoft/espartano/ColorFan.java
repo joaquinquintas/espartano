@@ -11,6 +11,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
 import android.view.ViewGroup.LayoutParams;
@@ -197,9 +198,10 @@ public class ColorFan extends Activity implements MenuNavegacion{
 				values.put("colores", crearStringColores());
 				bd.insert("Paletas", null, values);
 			} catch (Exception e) {
-				resultado = "Hubo un error al crear la Paleta: " + e.getMessage();
-				Toast.makeText(getApplicationContext(), resultado, Toast.LENGTH_LONG)
-				.show();
+				resultado = "THERE WAS AN ERROR CREATING THE PALETTE: " + e.getMessage();
+				Toast toast =Toast.makeText(getApplicationContext(), resultado, Toast.LENGTH_LONG);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                toast.show();
 			}
 		}
 		else {

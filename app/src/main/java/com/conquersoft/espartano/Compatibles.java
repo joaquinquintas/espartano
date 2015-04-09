@@ -10,6 +10,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.widget.GridView;
@@ -68,9 +69,12 @@ public class Compatibles extends Activity {
             	Bitmap textura = BitmapFactory.decodeResource(this.getResources(),  getResources().getIdentifier(arrCompatibles[i], "drawable", getPackageName()));
             	gridArray.add(new Item(textura,arrCompatibles[i]));
     		}
-        } else
-            Toast.makeText(this, "No existen texturas compatibles para esta textura",
-                    Toast.LENGTH_SHORT).show();
+        } else{
+            Toast toast = Toast.makeText(this, "NO COMPATIBLES FOR THIS DESIGN",
+                    Toast.LENGTH_SHORT);
+            toast.setGravity(Gravity.CENTER, 0, 0);
+            toast.show();
+        }
         bd.close();
         
         grillaCompatibles = (GridView) findViewById(R.id.gridCompatibles); 

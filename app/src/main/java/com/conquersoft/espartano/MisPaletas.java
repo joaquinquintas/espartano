@@ -12,6 +12,7 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
@@ -62,9 +63,12 @@ public class MisPaletas extends Activity{
             	paletas.add(idYColor);
     			fila.moveToNext();
     		}
-        } else
-            Toast.makeText(this, "There are no saved palettes",
-                    Toast.LENGTH_SHORT).show();
+        } else{
+            Toast toast = Toast.makeText(this, "THERE ARE NO SAVED PALETTES",
+                    Toast.LENGTH_SHORT);
+            toast.setGravity(Gravity.CENTER, 0, 0);
+            toast.show();
+        }
         bd.close();
     
         adapter = new ListaPaletas(MisPaletas.this, paletas);
