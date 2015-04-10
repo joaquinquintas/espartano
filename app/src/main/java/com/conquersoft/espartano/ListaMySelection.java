@@ -24,6 +24,7 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
 import android.view.Window;
+import android.view.WindowManager;
 import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -305,30 +306,32 @@ public class ListaMySelection extends ArrayAdapter<String> {
 				final Dialog d = new Dialog(context);
 				d.requestWindowFeature(Window.FEATURE_NO_TITLE);
 				d.setContentView(R.layout.dialog_delete);
-				DisplayMetrics metrics = context.getResources().getDisplayMetrics();
-				int width = metrics.widthPixels;
-				
-				d.getWindow().setLayout((6 * width)/7, LayoutParams.WRAP_CONTENT);
-				d.show();
-					//Boton delete dialogo
-					LinearLayout delBtn = (LinearLayout) d.findViewById(R.id.linearDel);
-					delBtn.setTag(view.getTag().toString());
-					
-					delBtn.setOnClickListener(new View.OnClickListener() 
-					{
-	
-						@Override
-						public void onClick(View v) {
-							v.startAnimation(AnimationUtils.loadAnimation(context, R.animator.click_boton_1));
 
-							String[] posYId = v.getTag().toString().split(",");
-							eliminarFavorito(posYId[1]);
-							Intent i = new Intent(context, MisColecciones.class);
-							context.startActivity(i);
-						}
-						
-					});
-					//Fin Boton delete dialogo
+                WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
+                lp.copyFrom(d.getWindow().getAttributes());
+                lp.width = WindowManager.LayoutParams.FILL_PARENT;
+                lp.height = WindowManager.LayoutParams.MATCH_PARENT;
+                d.getWindow().setAttributes(lp);
+				d.show();
+                //Boton delete dialogo
+                LinearLayout delBtn = (LinearLayout) d.findViewById(R.id.linearDel);
+                delBtn.setTag(view.getTag().toString());
+
+                delBtn.setOnClickListener(new View.OnClickListener()
+                {
+
+                    @Override
+                    public void onClick(View v) {
+                        v.startAnimation(AnimationUtils.loadAnimation(context, R.animator.click_boton_1));
+
+                        String[] posYId = v.getTag().toString().split(",");
+                        eliminarFavorito(posYId[1]);
+                        Intent i = new Intent(context, MisColecciones.class);
+                        context.startActivity(i);
+                    }
+
+                });
+                //Fin Boton delete dialogo
 					
 					//Boton cancel dialogo
 					LinearLayout cancelBtn = (LinearLayout) d.findViewById(R.id.linearCancel);

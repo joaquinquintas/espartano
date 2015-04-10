@@ -18,7 +18,7 @@
             android:id="@+id/txtTitulo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_margin="20dp"
             android:gravity="center"
             android:text="@string/my_selection"
             android:textSize="@dimen/font_size_titulo" />

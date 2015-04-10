@@ -11,17 +11,16 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginBottom="15dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
         android:gravity="top"
         android:text="@string/link_pallete"
-        android:textSize="20sp" />
+        android:textSize="24sp" />
 
     <ListView
         android:id="@+id/listLinkPallete"
         android:layout_width="match_parent"
-        android:layout_marginLeft="15dp"
         android:layout_height="wrap_content"
         android:layout_above="@+id/linearBotonera"
         android:layout_below="@+id/textViewLink" >

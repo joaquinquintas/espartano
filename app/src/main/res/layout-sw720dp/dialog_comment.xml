@@ -6,37 +6,43 @@
     android:gravity="bottom" >
 
     <TextView
-        android:id="@+id/textViewLink"
+        android:id="@+id/textViewAttach"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginBottom="15dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
         android:gravity="top"
-        android:text="@string/link_pallete"
-        android:textSize="20sp" />
+        android:text="@string/attach_comment"
+        android:textSize="24sp" />
 
-    <ListView
-        android:id="@+id/listLinkPallete"
+    <EditText
+        android:id="@+id/edtcomment"
+        android:layout_below="@+id/textViewAttach"
         android:layout_width="match_parent"
-        android:layout_marginLeft="15dp"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/linearBotonera"
-        android:layout_below="@+id/textViewLink" >
-    </ListView>
+        android:layout_margin="5dp"
+        android:background="@color/blanco"
+        android:ems="14"
+        android:gravity="top"
+        android:inputType="textMultiLine"
+        android:lines="10"
+        android:padding="10dp"
+        android:singleLine="false" >
+    </EditText>
 
     <LinearLayout
         android:id="@+id/linearBotonera"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:orientation="vertical"
-        android:layout_marginTop="20dp" >
+        android:layout_below="@+id/edtcomment"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical" >
 
         <LinearLayout
-            android:id="@+id/linearDoneLink"
+            android:id="@+id/linearSaveComment"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
@@ -54,13 +60,13 @@
                 android:id="@+id/yes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/done"
+                android:text="@string/save"
                 android:textColor="@color/blanco"
                 android:textSize="24sp" />
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/linearCancelPallete"
+            android:id="@+id/linearCancelComment"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"

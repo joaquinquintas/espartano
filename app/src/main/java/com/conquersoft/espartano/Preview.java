@@ -269,7 +269,7 @@ public class Preview extends Activity{
         }
 
 
-        
+
          Toast toast =Toast.makeText(
                     context,
                     "THE PREVIEW IMAGE WAS SAVED",

@@ -7,8 +7,8 @@
 
     <LinearLayout
         android:id="@+id/color1"
-        android:layout_width="@dimen/caja_colores"
-        android:layout_height="@dimen/caja_colores"
+        android:layout_width="@dimen/caja_link_colores"
+        android:layout_height="@dimen/caja_link_colores"
         android:layout_margin="3dp"
         android:background="@color/blanco"
         android:orientation="horizontal" >
@@ -16,8 +16,8 @@
 
     <LinearLayout
         android:id="@+id/color2"
-        android:layout_width="@dimen/caja_colores"
-        android:layout_height="@dimen/caja_colores"
+        android:layout_width="@dimen/caja_link_colores"
+        android:layout_height="@dimen/caja_link_colores"
         android:layout_margin="3dp"
         android:background="@color/blanco"
         android:orientation="horizontal" >
@@ -25,8 +25,8 @@
 
     <LinearLayout
         android:id="@+id/color3"
-        android:layout_width="@dimen/caja_colores"
-        android:layout_height="@dimen/caja_colores"
+        android:layout_width="@dimen/caja_link_colores"
+        android:layout_height="@dimen/caja_link_colores"
         android:layout_margin="3dp"
         android:background="@color/blanco"
         android:orientation="horizontal" >
@@ -34,8 +34,8 @@
 
     <LinearLayout
         android:id="@+id/color4"
-        android:layout_width="@dimen/caja_colores"
-        android:layout_height="@dimen/caja_colores"
+        android:layout_width="@dimen/caja_link_colores"
+        android:layout_height="@dimen/caja_link_colores"
         android:layout_margin="3dp"
         android:background="@color/blanco"
         android:orientation="horizontal" >
@@ -43,14 +43,14 @@
 
     <LinearLayout
         android:id="@+id/color5"
-        android:layout_width="@dimen/caja_colores"
-        android:layout_height="@dimen/caja_colores"
+        android:layout_width="@dimen/caja_link_colores"
+        android:layout_height="@dimen/caja_link_colores"
         android:layout_margin="3dp"
         android:background="@color/blanco"
         android:orientation="horizontal" >
     </LinearLayout>
 
-    <CheckBox
+    <RadioButton
         android:id="@+id/radioLink"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
