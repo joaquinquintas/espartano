@@ -44,8 +44,9 @@ public class ListaLinkPaletas extends ArrayAdapter<String> {
 
 		String tag = idPaleta + "," + Integer.toString(posicion);
 		
-		//Radio	
-        RadioButton check = (RadioButton) rowView.findViewById(R.id.radioLink);
+		//Radio
+
+        CheckBox check = (CheckBox) rowView.findViewById(R.id.radioLink);
 		checkearLinkedCheckbox(check, idFavorito,idPaleta);
 		check.setTag(tag);
 		
@@ -97,7 +98,7 @@ public class ListaLinkPaletas extends ArrayAdapter<String> {
 		cajaColor.setBackgroundColor(Integer.valueOf((colores[4])));
 
 	}
-	private void checkearLinkedCheckbox(RadioButton check, String idFavorito, String idPaleta){
+	private void checkearLinkedCheckbox(CheckBox check, String idFavorito, String idPaleta){
 		BaseDeDatos adminBD = new BaseDeDatos(context, "BaseEspartano.db", null, ConstantesDeNegocio.versionBd); 
 		SQLiteDatabase bd = adminBD.getReadableDatabase();
 		Cursor fila = bd.rawQuery("select id from texturas_x_paletas where id_favorito="+idFavorito+" and id_paleta="+idPaleta, null);

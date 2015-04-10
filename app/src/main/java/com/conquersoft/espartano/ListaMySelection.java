@@ -101,7 +101,13 @@ public class ListaMySelection extends ArrayAdapter<String> {
 				final Dialog d = new Dialog(context);
 				d.requestWindowFeature(Window.FEATURE_NO_TITLE);
 				d.setContentView(R.layout.dialog_link_pallete);
-				
+
+                WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
+                lp.copyFrom(d.getWindow().getAttributes());
+                lp.width = WindowManager.LayoutParams.FILL_PARENT;
+                lp.height = WindowManager.LayoutParams.MATCH_PARENT;
+                d.getWindow().setAttributes(lp);
+
 				crearListaMisPaletas(d,idFavorito);
 				
 				d.show();
@@ -307,12 +313,12 @@ public class ListaMySelection extends ArrayAdapter<String> {
 				d.requestWindowFeature(Window.FEATURE_NO_TITLE);
 				d.setContentView(R.layout.dialog_delete);
 
-                WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
-                lp.copyFrom(d.getWindow().getAttributes());
-                lp.width = WindowManager.LayoutParams.FILL_PARENT;
-                lp.height = WindowManager.LayoutParams.MATCH_PARENT;
-                d.getWindow().setAttributes(lp);
-				d.show();
+                DisplayMetrics metrics = context.getResources().getDisplayMetrics();
+                int width = metrics.widthPixels;
+
+                d.getWindow().setLayout((6 * width)/7, LayoutParams.WRAP_CONTENT);
+                d.show();
+
                 //Boton delete dialogo
                 LinearLayout delBtn = (LinearLayout) d.findViewById(R.id.linearDel);
                 delBtn.setTag(view.getTag().toString());

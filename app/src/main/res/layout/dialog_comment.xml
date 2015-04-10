@@ -16,14 +16,14 @@
         android:layout_marginTop="10dp"
         android:gravity="top"
         android:text="@string/attach_comment"
-        android:textSize="24sp" />
+        android:textSize="22sp" />
 
     <EditText
         android:id="@+id/edtcomment"
         android:layout_below="@+id/textViewAttach"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
+        android:layout_margin="10dp"
         android:background="@color/blanco"
         android:ems="14"
         android:gravity="top"
@@ -47,8 +47,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:layout_marginBottom="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
             android:background="@color/boton_verde"
             android:clickable="true"
             android:gravity="center_horizontal"
@@ -62,7 +62,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/save"
                 android:textColor="@color/blanco"
-                android:textSize="24sp" />
+                android:textSize="22sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -71,8 +71,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:layout_marginBottom="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
             android:background="@color/boton_gris"
             android:clickable="true"
             android:gravity="center_horizontal"
@@ -86,7 +86,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/cancel"
                 android:textColor="@color/blanco"
-                android:textSize="24sp" />
+                android:textSize="22sp" />
         </LinearLayout>
     </LinearLayout>
 

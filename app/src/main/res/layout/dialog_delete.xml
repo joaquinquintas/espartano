@@ -10,8 +10,8 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="@string/delete"
-        android:textSize="24sp"
-        android:layout_marginLeft="20dp"
+        android:textSize="22sp"
+        android:layout_marginLeft="25dp"
         android:layout_marginTop="50dp" />
 
     <LinearLayout
@@ -23,8 +23,8 @@
         android:padding="10dp"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
         android:clickable="true"
         android:gravity="center_horizontal"
         android:onClick="borrarPaleta" >
@@ -35,7 +35,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/yes"
-            android:textSize="24sp" />
+            android:textSize="22sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -45,8 +45,8 @@
         android:background="@color/boton_gris"
         android:orientation="horizontal" 
         android:padding="10dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
         android:gravity="center_horizontal"
         android:layout_marginBottom="50dp"
         >
@@ -58,7 +58,7 @@
             android:layout_height="wrap_content"
             android:text="@string/cancel"
             android:layout_gravity="center"
-            android:textSize="24sp"
+            android:textSize="22sp"
              />
     </LinearLayout>
 
