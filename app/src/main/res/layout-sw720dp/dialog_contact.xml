@@ -9,15 +9,17 @@
         android:id="@+id/idDelete"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
+        android:layout_marginLeft="75dp"
         android:layout_marginTop="50dp"
         android:text="@string/contact"
-        android:textSize="24sp" />
+        android:textSize="26sp" />
 
     <LinearLayout
         android:id="@+id/linearCuerpo"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="75dp"
+        android:layout_marginRight="75dp"
         android:gravity="center"
         android:orientation="vertical" >
 
@@ -29,7 +31,7 @@
             android:orientation="horizontal"
             android:background="@color/blanco"
             android:padding="15dp"
-            android:layout_margin="20dp" >
+             >
 
             <TextView
                 android:id="@+id/mailContact"
@@ -38,7 +40,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/mail_espartano"
-                android:textSize="15sp" />
+                android:textSize="24sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -49,7 +51,7 @@
             android:orientation="horizontal"
             android:background="@color/blanco" 
             android:padding="15dp"
-             android:layout_margin="20dp">
+            >
 
             <TextView
                 android:id="@+id/phoneContact"
@@ -58,7 +60,7 @@
                 android:drawableLeft="@drawable/phoneicon"
                 android:drawablePadding="20dp"
                 android:text="+54 11 4702-3030"
-                android:textSize="15sp" />
+                android:textSize="24sp" />
         </LinearLayout>
         
         <LinearLayout
@@ -69,7 +71,7 @@
             android:orientation="horizontal"
             android:background="@color/blanco" 
             android:padding="15dp"
-             android:layout_margin="20dp">
+            >
 
             <TextView
                 android:id="@+id/webContact"
@@ -78,7 +80,7 @@
                 android:text="@string/web_espartano"
                 android:drawableLeft="@drawable/webicon"
                 android:drawablePadding="20dp"
-                android:textSize="15sp" />
+                android:textSize="24sp" />
         </LinearLayout>
     </LinearLayout>
 
@@ -86,9 +88,9 @@
         android:id="@+id/linearCancelContact"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="75dp"
+        android:layout_marginRight="75dp"
         android:layout_marginTop="50dp"
         android:background="@color/boton_gris"
         android:clickable="true"
@@ -103,7 +105,7 @@
             android:layout_gravity="center"
             android:text="@string/cancel"
             android:textColor="@color/blanco"
-            android:textSize="24sp" />
+            android:textSize="28sp" />
     </LinearLayout>
 
 </LinearLayout>

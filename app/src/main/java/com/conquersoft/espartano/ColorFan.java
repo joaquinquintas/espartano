@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.ViewGroup.LayoutParams;
 import android.view.animation.AnimationUtils;
@@ -241,52 +242,66 @@ public class ColorFan extends Activity implements MenuNavegacion{
 	}
 
 
-	public void irMenuPrincipal(View v){
-		v.startAnimation(AnimationUtils.loadAnimation(this, R.animator.click_boton_1));
-		Intent i = new Intent(getApplicationContext(), MenuPrincipal.class);
-	    startActivity(i);
-	}
+    public void irColorFan(View v){
+        v.startAnimation(AnimationUtils.loadAnimation(this, R.animator.click_boton_1));
+        Intent i = new Intent(getApplicationContext(), ColorFan.class);
+        startActivity(i);
+    }
+    public void irMenuPrincipal(View v){
+        v.startAnimation(AnimationUtils.loadAnimation(this, R.animator.click_boton_1));
+        Intent i = new Intent(getApplicationContext(), MenuPrincipal.class);
+        startActivity(i);
+    }
 
+    public void irMisColecciones(View v) {
+        v.startAnimation(AnimationUtils.loadAnimation(this, R.animator.click_boton_1));
+        Intent i = new Intent(getApplicationContext(), MisColecciones.class);
+        startActivity(i);
+    }
+    public void mostrarContacto(View v) {
+        v.startAnimation(AnimationUtils.loadAnimation(context, R.animator.click_boton_1));
+        final ImageView imagen = (ImageView) v;
+        DisplayMetrics metrics = getResources().getDisplayMetrics();
+        int height = metrics.heightPixels;
+        int img;
+        v.startAnimation(AnimationUtils.loadAnimation(context, R.animator.click_boton_1));
+        if (height>1100){
+            img = R.drawable.contactclicklarge;
+        }
+        else {
+            img = R.drawable.contactclick;
+        }
+        imagen.setImageResource(img);
 
-	public void irColorFan(View v) {
-		v.startAnimation(AnimationUtils.loadAnimation(this, R.animator.click_boton_1));
-		Intent i = new Intent(getApplicationContext(), ColorFan.class);
-		startActivity(i);
-	}
-	public void irMisColecciones(View v) {
-		v.startAnimation(AnimationUtils.loadAnimation(this, R.animator.click_boton_1));
-		Intent i = new Intent(getApplicationContext(), MisColecciones.class);
-	    startActivity(i);
-	}
-	public void irMisPaletasNoDone(View v) {
-		v.startAnimation(AnimationUtils.loadAnimation(this, R.animator.click_boton_1));
-		Intent i = new Intent(getApplicationContext(), MisPaletas.class);
-	    startActivity(i);
-	}
-	public void mostrarContacto(View v) {
-		v.startAnimation(AnimationUtils.loadAnimation(context, R.animator.click_boton_1));
-		final ImageView imagen = (ImageView) v;
-		imagen.setImageResource(R.drawable.contactclick);
-		
-		final Dialog d = new Dialog(this);
-		d.requestWindowFeature(Window.FEATURE_NO_TITLE);
-		d.setContentView(R.layout.dialog_contact);
-		DisplayMetrics metrics = context.getResources().getDisplayMetrics();
-		int width = metrics.widthPixels;
-		
-		d.getWindow().setLayout((6 * width)/7, LayoutParams.WRAP_CONTENT);
-		d.show();
+        final Dialog d = new Dialog(this);
+        d.setCanceledOnTouchOutside(false);
+        d.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        d.setContentView(R.layout.dialog_contact);
+        int width = metrics.widthPixels;
 
-		LinearLayout cancelBtn = (LinearLayout) d.findViewById(R.id.linearCancelContact);
-		cancelBtn.setOnClickListener(new View.OnClickListener() 
-		{
+        d.getWindow().setLayout((6 * width)/7, ViewGroup.LayoutParams.WRAP_CONTENT);
+        d.show();
 
-			@Override
-			public void onClick(View v) {
-				v.startAnimation(AnimationUtils.loadAnimation(context, R.animator.click_boton_1));
-				imagen.setImageResource(R.drawable.contact);
-				d.dismiss();
-			}
-		});
-	}	
+        LinearLayout cancelBtn = (LinearLayout) d.findViewById(R.id.linearCancelContact);
+        cancelBtn.setOnClickListener(new View.OnClickListener()
+        {
+
+            @Override
+            public void onClick(View v) {
+                DisplayMetrics metrics = getResources().getDisplayMetrics();
+                int height = metrics.heightPixels;
+                int img;
+                v.startAnimation(AnimationUtils.loadAnimation(context, R.animator.click_boton_1));
+                if (height>1100){
+                    img = R.drawable.contactlarge;
+                }
+                else {
+                    img = R.drawable.contact;
+                }
+
+                imagen.setImageResource(img);
+                d.dismiss();
+            }
+        });
+    }
 }

@@ -7,6 +7,7 @@
 <dimen name="margen_top_menu_principal">0dp</dimen>
 <dimen name="font_size_menu_principal">16sp</dimen>
 <dimen name="caja_colores">40dp</dimen>
+    <dimen name="caja_coloreslarge">100dp</dimen>
     <dimen name="caja_link_colores">50dp</dimen>
 <dimen name="font_size_done">22sp</dimen>
 <dimen name="margen_top_entre_iconos">20dp</dimen>

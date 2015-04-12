@@ -8,11 +8,11 @@
     <LinearLayout
         android:id="@+id/contPaletas"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:background="@color/fondo_intro"
-        android:gravity="top" >
+        android:gravity="center" >
 
         <TextView
             android:id="@+id/txtTitulo"
@@ -31,7 +31,8 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true" 
         android:layout_below="@+id/contPaletas"
-        android:layout_above="@+id/menuNavegacion">
+        android:layout_above="@+id/menuNavegacion"
+        android:dividerHeight="10sp">
     </ListView>
 
 

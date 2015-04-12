@@ -421,7 +421,18 @@ public class ListaMySelection extends ArrayAdapter<String> {
 	private void colorearFan(View view, Integer idFavorito ){
 		ImageView imagenFanLink = (ImageView) view.findViewById(R.id.icColorFan);
 		if (existenPaletas(idFavorito)){
-			imagenFanLink.setImageResource(R.drawable.fanlinkcolor);
+            DisplayMetrics metrics = context.getResources().getDisplayMetrics();
+            int height = metrics.heightPixels;
+            int img;
+
+            if (height>1100){
+                img = R.drawable.fanlinkcolorlarge;
+            }
+            else {
+                img = R.drawable.fanlinkcolor;
+            }
+
+            imagenFanLink.setImageResource(img);
 		}
 	}
 	private boolean existenPaletas(Integer idFavorito){
@@ -484,7 +495,18 @@ public class ListaMySelection extends ArrayAdapter<String> {
 		if (fila.moveToFirst()) {
 			if (fila.getString(0) != null && !fila.getString(0).equals("")){
 				ImageView imagenComment = (ImageView) v.findViewById(R.id.icChat);
-				imagenComment.setImageResource(R.drawable.chatcolor);
+                DisplayMetrics metrics = context.getResources().getDisplayMetrics();
+                int height = metrics.heightPixels;
+                int img;
+
+                if (height>1100){
+                    img = R.drawable.chatcolorlarge;
+                }
+                else {
+                    img = R.drawable.chatcolor;
+                }
+
+				imagenComment.setImageResource(img);
 				comentario = fila.getString(0);
 			}
 		}
