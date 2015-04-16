@@ -59,6 +59,7 @@ public class ListaLinkPaletas extends ArrayAdapter<String> {
             		String[] idPaletaPos = view.getTag().toString().split(",");
                 	ListaMySelection.checksSeleccionados.add(idPaletaPos[0]);
                 	ListaMySelection.checksEliminados.remove(idPaletaPos[0]);
+
             	}
             	else {
             		String[] idPaletaPos = view.getTag().toString().split(",");
