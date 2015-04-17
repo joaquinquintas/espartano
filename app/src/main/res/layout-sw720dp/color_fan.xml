@@ -44,22 +44,22 @@
 
     <LinearLayout
         android:id="@+id/linearDone"
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignRight="@+id/contPaletas"
         android:layout_below="@+id/contPaletas"
         android:layout_marginBottom="30dp"
-        android:layout_marginLeft="70dp"
         android:layout_marginTop="30dp"
+        android:layout_marginRight="35dp"
         android:baselineAligned="false"
-        android:gravity="center_horizontal"
+        android:gravity="center"
         android:orientation="horizontal" >
 
         <LinearLayout
             android:id="@+id/color1"
             android:layout_width="@dimen/caja_coloreslarge"
             android:layout_height="@dimen/caja_coloreslarge"
-            android:layout_marginRight="15dp"
+            android:layout_marginRight="12dp"
             android:background="#FFFFFF"
             android:clickable="true"
             android:onClick="setCajaColor"
@@ -70,7 +70,7 @@
             android:id="@+id/color2"
             android:layout_width="@dimen/caja_coloreslarge"
             android:layout_height="@dimen/caja_coloreslarge"
-            android:layout_marginRight="15dp"
+            android:layout_marginRight="12dp"
             android:background="#FFFFFF"
             android:clickable="true"
             android:onClick="setCajaColor"
@@ -83,7 +83,7 @@
             android:layout_height="@dimen/caja_coloreslarge"
             android:background="#FFFFFF"
             android:clickable="true"
-            android:layout_marginRight="15dp"
+            android:layout_marginRight="12dp"
             android:onClick="setCajaColor"
             android:orientation="horizontal" >
         </LinearLayout>
@@ -94,7 +94,7 @@
             android:layout_height="@dimen/caja_coloreslarge"
             android:background="#FFFFFF"
             android:clickable="true"
-            android:layout_marginRight="15dp"
+            android:layout_marginRight="12dp"
             android:onClick="setCajaColor"
             android:orientation="horizontal" >
         </LinearLayout>
@@ -105,7 +105,7 @@
             android:layout_height="@dimen/caja_coloreslarge"
             android:background="#FFFFFF"
             android:clickable="true"
-            android:layout_marginRight="15dp"
+            android:layout_marginRight="12dp"
             android:onClick="setCajaColor"
             android:orientation="horizontal" >
         </LinearLayout>
@@ -129,7 +129,7 @@
         android:layout_above="@+id/linearLayout1"
         android:layout_below="@+id/linearDone"
         android:numColumns="7"
-        android:layout_marginLeft="2dp"
+        android:layout_marginLeft="12dp"
         android:verticalSpacing="10dp" >
     </GridView>
 

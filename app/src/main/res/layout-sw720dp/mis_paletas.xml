@@ -7,10 +7,13 @@
     android:id="@+id/linearGeneral" 
     >
 
+
         <LinearLayout
             android:id="@+id/contPaletas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
             android:background="@color/fondo_intro"
             android:gravity="top" >
 
@@ -22,14 +25,13 @@
                 android:layout_marginLeft="10dp"
                 android:contentDescription="@string/flecha_atras"
                 android:onClick="irColorFan"
-                android:src="@drawable/flechaatraslarge" />
+                android:src="@drawable/flechaatras" />
 
             <TextView
                 android:id="@+id/txtTitulo"
-                android:layout_width="0dip"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:layout_weight="0.33"
                 android:gravity="center"
                 android:text="@string/color_fan"
                 android:textSize="@dimen/font_size_titulo" />

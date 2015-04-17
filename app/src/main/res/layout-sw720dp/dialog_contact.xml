@@ -11,8 +11,9 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="75dp"
         android:layout_marginTop="50dp"
+        android:layout_marginBottom="25dp"
         android:text="@string/contact"
-        android:textSize="26sp" />
+        android:textSize="28sp" />
 
     <LinearLayout
         android:id="@+id/linearCuerpo"
@@ -30,15 +31,17 @@
             android:gravity="center"
             android:orientation="horizontal"
             android:background="@color/blanco"
-            android:padding="15dp"
+            android:padding="10dp"
+            android:layout_marginBottom="25dp"
              >
 
             <TextView
                 android:id="@+id/mailContact"
-                android:drawableLeft="@drawable/contacticon"
+                android:drawableLeft="@drawable/contacticonlarge"
                 android:drawablePadding="20dp"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="@string/mail_espartano"
                 android:textSize="24sp" />
         </LinearLayout>
@@ -50,14 +53,16 @@
             android:gravity="center"
             android:orientation="horizontal"
             android:background="@color/blanco" 
-            android:padding="15dp"
+            android:padding="10dp"
+            android:layout_marginBottom="25dp"
             >
 
             <TextView
                 android:id="@+id/phoneContact"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/phoneicon"
+                android:gravity="center"
+                android:drawableLeft="@drawable/phoneiconlarge"
                 android:drawablePadding="20dp"
                 android:text="+54 11 4702-3030"
                 android:textSize="24sp" />
@@ -70,15 +75,17 @@
             android:gravity="center"
             android:orientation="horizontal"
             android:background="@color/blanco" 
-            android:padding="15dp"
+            android:padding="10dp"
+            android:layout_marginBottom="25dp"
             >
 
             <TextView
                 android:id="@+id/webContact"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="@string/web_espartano"
-                android:drawableLeft="@drawable/webicon"
+                android:drawableLeft="@drawable/webiconlarge"
                 android:drawablePadding="20dp"
                 android:textSize="24sp" />
         </LinearLayout>
@@ -87,14 +94,14 @@
     <LinearLayout
         android:id="@+id/linearCancelContact"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
+        android:layout_height="85dp"
+        android:layout_marginBottom="50dp"
         android:layout_marginLeft="75dp"
         android:layout_marginRight="75dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="40dp"
         android:background="@color/boton_gris"
         android:clickable="true"
-        android:gravity="center_horizontal"
+        android:gravity="center"
         android:orientation="horizontal"
         android:padding="5dp" >
 
