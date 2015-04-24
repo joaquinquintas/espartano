@@ -9,6 +9,9 @@
         android:id="@+id/linearcuerpo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:layout_marginLeft="45dp"
+        android:layout_marginRight="45dp"
         android:gravity="center"
         android:orientation="vertical" >
 
@@ -25,8 +28,9 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
+
                 android:background="@color/blanco"
-                android:ems="14"
+                android:ems="30"
                 android:hint="@string/name"
                 android:inputType="textPersonName"
                 android:padding="10dp" >
@@ -36,10 +40,11 @@
                 android:id="@+id/edtPhone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@color/blanco"
-                android:ems="14"
+                android:ems="30"
                 android:hint="@string/phone"
                 android:inputType="phone"
                 android:padding="10dp" >
@@ -52,8 +57,9 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:background="@color/blanco"
-            android:ems="14"
-            android:hint="@string/email2"
+            android:ems="30"
+            android:text="design@elespartano.com.ar"
+            android:focusable="false"
             android:inputType="textEmailAddress"
             android:padding="10dp" >
         </EditText>
@@ -63,38 +69,42 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
+            android:layout_marginLeft="45dp"
+            android:layout_marginRight="45dp"
             android:background="@color/blanco"
-            android:ems="14"
+            android:ems="30"
             android:gravity="top"
             android:hint="@string/comment"
-            android:lines="6"
+            android:lines="10"
             android:padding="10dp"
             android:singleLine="false" >
         </EditText>
     </LinearLayout>
 
+
     <LinearLayout
         android:id="@+id/linearSendMail"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="50dp"
+        android:layout_height="85dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="25dp"
+        android:layout_marginLeft="75dp"
+        android:layout_marginRight="75dp"
         android:background="@color/boton_verde"
         android:clickable="true"
-        android:gravity="center_horizontal"
+        android:gravity="center"
         android:orientation="horizontal"
-        android:padding="5dp" >
+        android:padding="5dp"
+        >
 
         <TextView
-            android:id="@+id/send"
+            android:id="@+id/yes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="@string/send"
             android:textColor="@color/blanco"
-            android:textSize="24sp" />
+            android:textSize="28sp" />
     </LinearLayout>
 
 </LinearLayout>

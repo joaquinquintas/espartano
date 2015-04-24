@@ -240,7 +240,11 @@ public class ColorFan extends Activity implements MenuNavegacion{
 		
 		return stColores;
 	}
-
+    public void irMisPaletasNoDone(View v) {
+        		v.startAnimation(AnimationUtils.loadAnimation(this, R.animator.click_boton_1));
+        		Intent i = new Intent(getApplicationContext(), MisPaletas.class);
+        	    startActivity(i);
+        	}
 
     public void irColorFan(View v){
         v.startAnimation(AnimationUtils.loadAnimation(this, R.animator.click_boton_1));

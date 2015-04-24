@@ -2,64 +2,83 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:background="@color/gris_dialog" >
+    android:background="@color/gris_dialog"
+    android:orientation="vertical" >
 
     <TextView
         android:id="@+id/idDelete"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="75dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="25dp"
         android:text="@string/delete"
-        android:textSize="24sp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="50dp" />
+        android:textSize="28sp" />
+
+
 
     <LinearLayout
         android:id="@+id/linearDel"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:layout_marginBottom="25dp"
+        android:layout_marginLeft="75dp"
+        android:layout_marginRight="75dp"
         android:background="@color/boton_verde"
-        android:orientation="horizontal"
-        android:padding="10dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
         android:clickable="true"
-        android:gravity="center_horizontal"
-        android:onClick="borrarPaleta" >
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:onClick="borrarPaleta"
+        >
 
         <TextView
             android:id="@+id/yes"
-            android:textColor="@color/blanco"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:text="@string/yes"
-            android:textSize="24sp" />
+            android:textColor="@color/blanco"
+            android:textSize="28sp" />
     </LinearLayout>
+
+
+
 
     <LinearLayout
         android:id="@+id/linearCancel"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="85dp"
+        android:layout_marginBottom="80dp"
+        android:layout_marginLeft="75dp"
+        android:layout_marginRight="75dp"
         android:background="@color/boton_gris"
-        android:orientation="horizontal" 
-        android:padding="10dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:gravity="center_horizontal"
-        android:layout_marginBottom="50dp"
+        android:clickable="true"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="5dp"
         >
 
         <TextView
             android:id="@+id/cancel"
-            android:textColor="@color/blanco"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/cancel"
             android:layout_gravity="center"
-            android:textSize="24sp"
-             />
+            android:text="@string/cancel"
+            android:textColor="@color/blanco"
+            android:textSize="28sp" />
     </LinearLayout>
 
+
 </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+

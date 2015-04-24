@@ -5,6 +5,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.DisplayMetrics;
@@ -152,6 +153,8 @@ public class MenuPrincipal extends ActionBarActivity implements MenuNavegacion{
         Intent i = new Intent(getApplicationContext(), MisColecciones.class);
         startActivity(i);
     }
+
+
     public void mostrarContacto(View v) {
         v.startAnimation(AnimationUtils.loadAnimation(context, R.animator.click_boton_1));
         final ImageView imagen = (ImageView) v;
@@ -175,6 +178,20 @@ public class MenuPrincipal extends ActionBarActivity implements MenuNavegacion{
 
         d.getWindow().setLayout((6 * width)/7, ViewGroup.LayoutParams.WRAP_CONTENT);
         d.show();
+
+        TextView link = (TextView) d.findViewById(R.id.webContact);
+        link.setOnClickListener(new View.OnClickListener()
+        {
+
+            @Override
+            public void onClick(View v) {
+                String url = "www.elespartano.com.ar";
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                startActivity(i);
+            }
+        });
+
 
         LinearLayout cancelBtn = (LinearLayout) d.findViewById(R.id.linearCancelContact);
         cancelBtn.setOnClickListener(new View.OnClickListener()
