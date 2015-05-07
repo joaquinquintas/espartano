@@ -122,6 +122,7 @@ public class ListaPaletas extends ArrayAdapter<String> {
 				//Boton delete
 				LinearLayout emailBtn = (LinearLayout) dMail.findViewById(R.id.linearMail);
 				emailBtn.setTag(view.getTag());
+
 				emailBtn.setOnClickListener(new View.OnClickListener() 
 				{
 
@@ -166,8 +167,8 @@ public class ListaPaletas extends ArrayAdapter<String> {
 
 								et = (EditText) dCuerpoMail.findViewById(R.id.edtcomment);
 								String comment = et.getText().toString();
-								
-								enviarMail(name,phone,mail,comment);
+
+								enviarMail(name, phone, mail, comment, "tags");
 								
 								dCuerpoMail.dismiss();
 							}
@@ -309,7 +310,7 @@ public class ListaPaletas extends ArrayAdapter<String> {
 		MisPaletas.adapter.notifyDataSetChanged();
 	}
 
-	public void enviarMail(String name, String phone, String mail, String comment){
+	public void enviarMail(String name, String phone, String mail, String comment, String tags){
 
 	      String[] TO = {mail};
 	      Intent emailIntent = new Intent(Intent.ACTION_SEND);
@@ -319,7 +320,7 @@ public class ListaPaletas extends ArrayAdapter<String> {
 
 	      emailIntent.putExtra(Intent.EXTRA_EMAIL, TO);
 	      emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Espartano App");
-	      emailIntent.putExtra(Intent.EXTRA_TEXT, "Name: "+name+"\nPhone: "+phone+"\nComment: "+comment);
+	      emailIntent.putExtra(Intent.EXTRA_TEXT, "Name: "+name+"\nPhone: "+phone+"\nComment: "+comment+"\nPalette: "+tags);
 
 	      try {
 	    	  context.startActivity(Intent.createChooser(emailIntent, "Send mail..."));

@@ -2,9 +2,17 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/relativeGeneral"
     android:layout_width="match_parent"
-    android:layout_height="500dp"
-    android:scaleType="centerCrop"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical"
     android:background="@color/fondo_negro_mp" >
+
+    <ImageView
+        android:id="@+id/imgSelection"
+        android:layout_width="fill_parent"
+        android:layout_height="250dp"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true" />
 
     <LinearLayout
         android:layout_width="wrap_content"

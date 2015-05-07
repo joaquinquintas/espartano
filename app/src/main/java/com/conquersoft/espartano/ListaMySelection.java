@@ -54,14 +54,23 @@ public class ListaMySelection extends ArrayAdapter<String> {
 		LayoutInflater inflater = context.getLayoutInflater();
 		view = inflater.inflate(R.layout.item_lista_selections, null, true);
 
-		RelativeLayout relativeGeneral = (RelativeLayout) view.findViewById(R.id.relativeGeneral);
+		//final float scale = getContext().getResources().getDisplayMetrics().density;
+		//int pixels = (int) (250 * scale + 0.5f);
 
-        /***
-        Bitmap yourBitmap =  BitmapFactory.decodeResource(this.context.getResources(), imagenIds.get(posicion)[1]);
+		ImageView imgSelection = (ImageView) view.findViewById(R.id.imgSelection);
+		//RelativeLayout relativeGeneral = (RelativeLayout) view.findViewById(R.id.relativeGeneral);
+		//RelativeLayout.LayoutParams rel_btn = new RelativeLayout.LayoutParams(
+		//		ViewGroup.LayoutParams.WRAP_CONTENT, pixels);
+
+		//relativeGeneral.setLayoutParams(rel_btn);
+
+
 
 
         // Bitmap resized = Bitmap.createScaledBitmap(yourBitmap, yourBitmap.getWidth(), (int)(yourBitmap.getHeight()*0.3), true);
-        Bitmap bm = Bitmap.createBitmap(yourBitmap, 0, 0, yourBitmap.getWidth(), (int)(yourBitmap.getHeight()*0.2));
+        //Bitmap bm = Bitmap.createBitmap(yourBitmap, 0, 0, yourBitmap.getWidth(), (int)(yourBitmap.getHeight()*0.2));
+		/*
+		Bitmap yourBitmap =  BitmapFactory.decodeResource(this.context.getResources(), imagenIds.get(posicion)[1]);
 
         DisplayMetrics metrics = this.context.getResources().getDisplayMetrics();
         int height = metrics.heightPixels;
@@ -76,9 +85,9 @@ public class ListaMySelection extends ArrayAdapter<String> {
 
 
 		relativeGeneral.setBackground(new BitmapDrawable(context.getResources(), bm));
-        ***/
-        relativeGeneral.setBackground(context.getResources().getDrawable(imagenIds.get(posicion)[1]));
-
+		*/
+        //relativeGeneral.setBackground(context.getResources().getDrawable(imagenIds.get(posicion)[1]));
+		imgSelection.setImageResource(imagenIds.get(posicion)[1]);
 		String tag = posicion + "," + imagenIds.get(posicion)[0]+","+imagenIds.get(posicion)[2];
 		//ImagenIds: 0-IdFavorito, 1-codigo Textura, 2-idTextura
 		

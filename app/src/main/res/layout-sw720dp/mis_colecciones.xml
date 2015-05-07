@@ -32,6 +32,7 @@
         android:layout_centerVertical="true" 
         android:layout_below="@+id/contPaletas"
         android:layout_above="@+id/menuNavegacion"
+        android:layout_marginBottom="100dp"
         android:dividerHeight="10sp">
     </ListView>
 
