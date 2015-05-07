@@ -9,6 +9,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
@@ -86,6 +87,43 @@ public class MisColecciones extends Activity implements MenuNavegacion{
 		
 		
 	}
+    public void mailAll(View v){
+        String contenido = "";
+        BaseDeDatos adminBD = new BaseDeDatos(context, "BaseEspartano.db", null, ConstantesDeNegocio.versionBd);
+        SQLiteDatabase bd = adminBD.getReadableDatabase();
+        Cursor fila = bd.rawQuery("select comment, codigo_textura from favoritos", null);
+
+        if (fila.moveToFirst()) {
+            contenido = "Codigo de Textura: "+fila.getString(1) +"\n \nComentario: "+ fila.getString(0);
+        }
+        bd.close();
+        enviarMail(contenido);
+
+    }
+
+    public void enviarMail(String contenido){
+
+        String[] TO = {ConstantesDeNegocio.mailEspartano};
+        Intent emailIntent = new Intent(Intent.ACTION_SEND);
+        emailIntent.setData(Uri.parse("mailto:"));
+        emailIntent.setType("text/plain");
+
+
+        emailIntent.putExtra(Intent.EXTRA_EMAIL, TO);
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Coleccion enviada");
+        emailIntent.putExtra(Intent.EXTRA_TEXT, contenido);
+
+        try {
+            context.startActivity(Intent.createChooser(emailIntent, "Send mail..."));
+        } catch (android.content.ActivityNotFoundException ex) {
+            Toast toast = Toast.makeText(context,
+                    "THERE IS NO EMAIL CLIENT INSTALLED", Toast.LENGTH_SHORT);
+            toast.setGravity(Gravity.CENTER, 0, 0);
+            toast.show();
+
+        }
+    }
+
 
     @Override
     protected void attachBaseContext(Context newBase) {
