@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/gris_dialog"
-    android:gravity="bottom" >
+    android:orientation="vertical" >
 
     <TextView
         android:id="@+id/textViewAttach"
@@ -11,48 +11,42 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginBottom="25dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="50dp"
         android:gravity="top"
         android:text="@string/attach_comment"
-        android:textSize="24sp" />
+        android:textSize="28sp" />
 
     <EditText
         android:id="@+id/edtcomment"
         android:layout_below="@+id/textViewAttach"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:background="@color/blanco"
         android:ems="14"
         android:gravity="top"
-        android:inputType="textMultiLine"
         android:lines="10"
         android:padding="10dp"
         android:singleLine="false" >
     </EditText>
 
-    <LinearLayout
-        android:id="@+id/linearBotonera"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/edtcomment"
-        android:layout_marginTop="20dp"
-        android:orientation="vertical" >
 
         <LinearLayout
             android:id="@+id/linearSaveComment"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
             android:layout_gravity="bottom"
+            android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
+            android:layout_marginLeft="75dp"
+            android:layout_marginRight="75dp"
             android:background="@color/boton_verde"
             android:clickable="true"
-            android:gravity="center_horizontal"
-            android:onClick="borrarPaleta"
+            android:gravity="center"
             android:orientation="horizontal"
             android:padding="5dp" >
 
@@ -62,21 +56,20 @@
                 android:layout_height="wrap_content"
                 android:text="@string/save"
                 android:textColor="@color/blanco"
-                android:textSize="24sp" />
+                android:textSize="28sp" />
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/linearCancelComment"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
             android:layout_gravity="bottom"
-            android:layout_marginBottom="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
+            android:layout_marginBottom="50dp"
+            android:layout_marginLeft="75dp"
+            android:layout_marginRight="75dp"
             android:background="@color/boton_gris"
             android:clickable="true"
-            android:gravity="center_horizontal"
-            android:onClick="borrarPaleta"
+            android:gravity="center"
             android:orientation="horizontal"
             android:padding="5dp" >
 
@@ -86,8 +79,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/cancel"
                 android:textColor="@color/blanco"
-                android:textSize="24sp" />
+                android:textSize="28sp" />
         </LinearLayout>
-    </LinearLayout>
 
-</RelativeLayout>
+</LinearLayout>

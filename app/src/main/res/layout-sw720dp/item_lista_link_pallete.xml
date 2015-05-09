@@ -7,8 +7,8 @@
 
     <LinearLayout
         android:id="@+id/color1"
-        android:layout_width="@dimen/caja_link_colores"
-        android:layout_height="@dimen/caja_link_colores"
+        android:layout_width="@dimen/caja_coloreslarge"
+        android:layout_height="@dimen/caja_coloreslarge"
         android:layout_margin="3dp"
         android:layout_marginBottom="6dp"
         android:background="@color/blanco"
@@ -17,8 +17,8 @@
 
     <LinearLayout
         android:id="@+id/color2"
-        android:layout_width="@dimen/caja_link_colores"
-        android:layout_height="@dimen/caja_link_colores"
+        android:layout_width="@dimen/caja_coloreslarge"
+        android:layout_height="@dimen/caja_coloreslarge"
         android:layout_margin="3dp"
         android:layout_marginBottom="6dp"
         android:background="@color/blanco"
@@ -27,8 +27,8 @@
 
     <LinearLayout
         android:id="@+id/color3"
-        android:layout_width="@dimen/caja_link_colores"
-        android:layout_height="@dimen/caja_link_colores"
+        android:layout_width="@dimen/caja_coloreslarge"
+        android:layout_height="@dimen/caja_coloreslarge"
         android:layout_margin="3dp"
         android:layout_marginBottom="6dp"
         android:background="@color/blanco"
@@ -37,8 +37,8 @@
 
     <LinearLayout
         android:id="@+id/color4"
-        android:layout_width="@dimen/caja_link_colores"
-        android:layout_height="@dimen/caja_link_colores"
+        android:layout_width="@dimen/caja_coloreslarge"
+        android:layout_height="@dimen/caja_coloreslarge"
         android:layout_margin="3dp"
         android:layout_marginBottom="6dp"
         android:background="@color/blanco"
@@ -47,8 +47,8 @@
 
     <LinearLayout
         android:id="@+id/color5"
-        android:layout_width="@dimen/caja_link_colores"
-        android:layout_height="@dimen/caja_link_colores"
+        android:layout_width="@dimen/caja_coloreslarge"
+        android:layout_height="@dimen/caja_coloreslarge"
         android:layout_margin="3dp"
         android:layout_marginBottom="6dp"
         android:background="@color/blanco"
@@ -57,11 +57,10 @@
 
     <CheckBox
         android:id="@+id/radioLink"
-        android:layout_width="wrap_content"
+        android:layout_width="50dp"
+        android:layout_marginLeft="15dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:layout_margin="5dp"
-        android:layout_marginLeft="10dp"
+        android:layout_gravity="center_vertical"
         android:button="@drawable/selector"/>
 
 </LinearLayout>

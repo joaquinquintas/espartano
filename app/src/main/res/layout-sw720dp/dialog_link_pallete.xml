@@ -11,18 +11,17 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginBottom="15dp"
-        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="30dp"
         android:layout_marginTop="40dp"
         android:gravity="top"
         android:text="@string/link_pallete"
-        android:textSize="20sp" />
+        android:textSize="28sp" />
 
     <ListView
         android:id="@+id/listLinkPallete"
         android:layout_width="match_parent"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="5dp"
+        android:layout_marginLeft="30dp"
         android:layout_height="wrap_content"
         android:layout_above="@+id/linearBotonera"
         android:divider="@null"
@@ -39,18 +38,18 @@
 
         <LinearLayout
             android:id="@+id/linearDoneLink"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
+            android:layout_width="match_parent"
+            android:layout_height="85dp"
             android:layout_marginBottom="20dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="40dp"
+            android:layout_marginLeft="75dp"
+            android:layout_marginRight="75dp"
             android:background="@color/boton_verde"
             android:clickable="true"
-            android:gravity="center_horizontal"
-            android:onClick="borrarPaleta"
+            android:gravity="center"
             android:orientation="horizontal"
-            android:padding="10dp" >
+            android:padding="5dp"
+            android:onClick="borrarPaleta"
+             >
 
             <TextView
                 android:id="@+id/yes"
@@ -58,23 +57,23 @@
                 android:layout_height="wrap_content"
                 android:text="@string/done"
                 android:textColor="@color/blanco"
-                android:textSize="22sp" />
+                android:textSize="28sp" />
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/linearCancelPallete"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:layout_marginBottom="30dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="85dp"
+            android:layout_marginBottom="40dp"
+            android:layout_marginLeft="75dp"
+            android:layout_marginRight="75dp"
             android:background="@color/boton_gris"
             android:clickable="true"
-            android:gravity="center_horizontal"
-            android:onClick="borrarPaleta"
+            android:gravity="center"
             android:orientation="horizontal"
-            android:padding="10dp" >
+            android:padding="5dp"
+            android:onClick="borrarPaleta"
+             >
 
             <TextView
                 android:id="@+id/cancelPallete"
@@ -82,7 +81,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/cancel"
                 android:textColor="@color/blanco"
-                android:textSize="22sp" />
+                android:textSize="28sp" />
         </LinearLayout>
     </LinearLayout>
 

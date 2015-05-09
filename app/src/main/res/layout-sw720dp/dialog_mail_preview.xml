@@ -8,16 +8,17 @@
 
     <LinearLayout
         android:id="@+id/linearMailSelection"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="75dp"
+        android:layout_marginRight="75dp"
         android:background="@color/boton_verde"
-        android:orientation="horizontal"
-        android:padding="10dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
         android:clickable="true"
-        android:gravity="center_horizontal"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="5dp"
         android:onClick="borrarPaleta" >
 
         <TextView
@@ -26,22 +27,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/emailit"
-            android:textSize="24sp" />
+            android:textSize="28sp" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearPreviewSelection"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/salmon"
-        android:orientation="horizontal"
-        android:padding="10dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
         android:layout_marginBottom="20dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
+        android:layout_marginLeft="75dp"
+        android:layout_marginRight="75dp"
+        android:background="@color/salmon"
         android:clickable="true"
-        android:gravity="center_horizontal"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="5dp"
         android:onClick="borrarPaleta" >
 
         <TextView
@@ -50,19 +50,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/preview"
-            android:textSize="24sp" />
+            android:textSize="28sp" />
     </LinearLayout>
     <LinearLayout
         android:id="@+id/linearCancelSelection"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="85dp"
+        android:layout_marginBottom="40dp"
+        android:layout_marginLeft="75dp"
+        android:layout_marginRight="75dp"
         android:background="@color/boton_gris"
-        android:orientation="horizontal" 
-        android:padding="10dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:gravity="center_horizontal"
-        android:layout_marginBottom="50dp"
+        android:clickable="true"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="5dp"
         >
 
         <TextView
@@ -72,7 +73,7 @@
             android:layout_height="wrap_content"
             android:text="@string/cancel"
             android:layout_gravity="center"
-            android:textSize="24sp"
+            android:textSize="28sp"
              />
     </LinearLayout>
 

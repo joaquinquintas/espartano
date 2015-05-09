@@ -111,11 +111,15 @@ public class ListaMySelection extends ArrayAdapter<String> {
 				d.requestWindowFeature(Window.FEATURE_NO_TITLE);
 				d.setContentView(R.layout.dialog_link_pallete);
 
-                WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
-                lp.copyFrom(d.getWindow().getAttributes());
-                lp.width = WindowManager.LayoutParams.FILL_PARENT;
-                lp.height = WindowManager.LayoutParams.MATCH_PARENT;
-                d.getWindow().setAttributes(lp);
+                //WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
+                //lp.copyFrom(d.getWindow().getAttributes());
+                //lp.width = WindowManager.LayoutParams.FILL_PARENT;
+                //lp.height = WindowManager.LayoutParams.MATCH_PARENT;
+                //d.getWindow().setAttributes(lp);
+				DisplayMetrics metrics = context.getResources().getDisplayMetrics();
+				int width = metrics.widthPixels;
+
+				d.getWindow().setLayout((6 * width) / 7, LayoutParams.WRAP_CONTENT);
 
 				crearListaMisPaletas(d,idFavorito);
 				
@@ -178,9 +182,16 @@ public class ListaMySelection extends ArrayAdapter<String> {
 			@Override
 			public void onClick(View view) {
 				view.startAnimation(AnimationUtils.loadAnimation(context, R.animator.click_boton_1));
+
+
 				final Dialog d = new Dialog(context);
 				d.requestWindowFeature(Window.FEATURE_NO_TITLE);
 				d.setContentView(R.layout.dialog_comment);
+				DisplayMetrics metrics = context.getResources().getDisplayMetrics();
+				int width = metrics.widthPixels;
+
+				d.getWindow().setLayout((6 * width) / 7, LayoutParams.WRAP_CONTENT);
+
 				String[] ArrTag =  view.getTag().toString().split(",");
 				if (ArrTag.length > 3) {
 					String comentario = ArrTag[3];
@@ -517,6 +528,20 @@ public class ListaMySelection extends ArrayAdapter<String> {
 
 				imagenComment.setImageResource(img);
 				comentario = fila.getString(0);
+			}else{
+				ImageView imagenComment = (ImageView) v.findViewById(R.id.icChat);
+				DisplayMetrics metrics = context.getResources().getDisplayMetrics();
+				int height = metrics.heightPixels;
+				int img;
+
+				if (height>1100){
+					img = R.drawable.chatlarge;
+				}
+				else {
+					img = R.drawable.chat;
+				}
+
+				imagenComment.setImageResource(img);
 			}
 		}
         bd.close();
@@ -536,6 +561,9 @@ public class ListaMySelection extends ArrayAdapter<String> {
 		SQLiteDatabase bd = adminBD.getWritableDatabase();
 		
 		ContentValues valores = new ContentValues();
+		if (comentario == ""){
+			comentario = null;
+		}
 		valores.put("comment",comentario);
 		
 		//Actualizamos el registro en la base de datos
