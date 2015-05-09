@@ -5,14 +5,24 @@
     android:background="@color/fondo_negro_mp"
     android:orientation="vertical" >
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/contPaletas"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_alignParentLeft="true"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
         android:layout_alignParentTop="true"
         android:background="@color/fondo_intro"
-        android:gravity="center" >
+        android:gravity="top"
+        android:orientation="horizontal">
+        
+        <TextView
+            android:id="@+id/txtTitulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:gravity="center"
+            android:text="@string/my_selection"
+            android:textSize="@dimen/font_size_titulo" />
 
         <ImageView
             android:id="@+id/irPaletasId"
@@ -23,17 +33,7 @@
             android:contentDescription="@string/ic_collections"
             android:onClick="mailAll"
             android:src="@drawable/mailall" />
-
-
-        <TextView
-            android:id="@+id/txtTitulo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:gravity="center"
-            android:text="@string/my_selection"
-            android:textSize="@dimen/font_size_titulo" />
-    </LinearLayout>
+    </RelativeLayout>
 
     <ListView
         android:id="@+id/listaFavoritos"

@@ -544,14 +544,49 @@ public class ListaMySelection extends ArrayAdapter<String> {
 	}
 	private void enviarMailColeccion(String idFavorito){
 		String contenido = "";
-		BaseDeDatos adminBD = new BaseDeDatos(context, "BaseEspartano.db", null, ConstantesDeNegocio.versionBd); 
+		String[] colores;
+		Integer id_textura;
+		//String[] arrContenido;
+		BaseDeDatos adminBD = new BaseDeDatos(context, "BaseEspartano.db", null, ConstantesDeNegocio.versionBd);
 		SQLiteDatabase bd = adminBD.getReadableDatabase();
-		Cursor fila = bd.rawQuery("select comment, codigo_textura from favoritos where id="+idFavorito, null);
-		
+		Cursor fila = bd.rawQuery("select comment, codigo_textura, id from favoritos where id="+idFavorito, null);
+		String comment = "";
 		if (fila.moveToFirst()) {
-			contenido = "Codigo de Textura: "+fila.getString(1) +"\n \nComentario: "+ fila.getString(0); 
+			//arrContenido = new String[fila.getCount()];
+
+			for (int i=0; i<fila.getCount(); i++) {
+				contenido += "Código de Textura: " + fila.getString(1) + "\n \n";
+
+				comment =  fila.getString(0);
+				if (comment != null){
+					contenido +="Comentario: " + comment+"\n  \n";
+				}
+				id_textura =  fila.getInt(2);
+				if (id_textura != null){
+
+					Cursor paletas = bd.rawQuery("select colores from Paletas where id in(select id_paleta from texturas_x_paletas where id_favorito = " + String.valueOf(id_textura)+")", null);
+					if (paletas.moveToFirst()) {
+						contenido +="Paletas: \n";
+						for (int j=0; j<paletas.getCount(); j++) {
+							colores = paletas.getString(0).split(",");
+							for (int h=0; h<colores.length; h++) {
+								final String hexColor = new String( String.format("%06X", (0xFFFFFF & (Integer.valueOf(colores[0]))))).toLowerCase();
+								Cursor colors = bd.query("Colores", new String[] {"id"}, "color=?", new String[]{String.valueOf(hexColor)}, null, null, "id DESC", "1");
+								colors.moveToFirst();
+								String color_id = colors.getString(0);
+								contenido += color_id +",";
+							}
+							contenido += "\n";
+							paletas.moveToNext();
+						}
+					}
+
+				}
+
+				fila.moveToNext();
+			}
 		}
-        bd.close();
+		bd.close();
 		enviarMail(contenido);
 		
 	}
@@ -570,7 +605,7 @@ public class ListaMySelection extends ArrayAdapter<String> {
 
 
 	      emailIntent.putExtra(Intent.EXTRA_EMAIL, TO);
-	      emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Coleccion enviada");
+	      emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Mi Selección");
 	      emailIntent.putExtra(Intent.EXTRA_TEXT, contenido);
 
 	      try {
