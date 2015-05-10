@@ -56,10 +56,10 @@ public class HorizontalListViewDemo extends ActionBarActivity {
 		super.onCreate(savedInstanceState);
 
         CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
-                        .setDefaultFontPath("fonts/Whitney_HTF_Light.ttf")
-                        .setFontAttrId(R.attr.fontPath)
-                        .build()
-        );
+						.setDefaultFontPath("fonts/Whitney_HTF_Light.ttf")
+						.setFontAttrId(R.attr.fontPath)
+						.build()
+		);
 
 		setContentView(R.layout.sliding_texturas);
 		getSupportActionBar().hide();
@@ -81,6 +81,28 @@ public class HorizontalListViewDemo extends ActionBarActivity {
 		HorizontialListView listview = (HorizontialListView) findViewById(R.id.listview);
 		listview.setAdapter(mAdapter);
 		listview.setSelection(Integer.valueOf(posicion));
+
+
+
+
+	}
+
+
+	@Override
+	public void onWindowFocusChanged(boolean hasFocus) {
+		if(hasFocus){
+			View right = (View) findViewById(R.id.icono_right);
+			View left = (View) findViewById(R.id.icono_left);
+
+			right.setVisibility(View.VISIBLE);
+			left.setVisibility(View.VISIBLE);
+
+			right.startAnimation(AnimationUtils.loadAnimation(context, R.animator.arrows));
+			left.startAnimation(AnimationUtils.loadAnimation(context, R.animator.arrows));
+
+			right.setVisibility(View.INVISIBLE);
+			left.setVisibility(View.INVISIBLE);
+		}
 	}
 
     @Override

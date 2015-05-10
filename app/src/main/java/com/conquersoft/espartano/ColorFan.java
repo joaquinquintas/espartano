@@ -9,6 +9,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.graphics.drawable.GradientDrawable;
+import android.graphics.drawable.ShapeDrawable;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
@@ -64,35 +66,48 @@ public class ColorFan extends Activity implements MenuNavegacion{
         	LinearLayout cajaColor;
 			cajaColor = (LinearLayout) findViewById(R.id.color1);
 			cajaColor.setBackgroundColor(Integer.valueOf(arrColores[0]));
-	
+			GradientDrawable d = (GradientDrawable)getResources().getDrawable(R.drawable.border);
+			cajaColor.setTag(Integer.valueOf(arrColores[0]));
+			cajaColor.setBackground(d);
+
 			cajaColor = (LinearLayout) findViewById(R.id.color2);
 			cajaColor.setBackgroundColor(Integer.valueOf(arrColores[1]));
+			cajaColor.setTag(Integer.valueOf(arrColores[1]));
 	
 			cajaColor = (LinearLayout) findViewById(R.id.color3);
 			cajaColor.setBackgroundColor(Integer.valueOf(arrColores[2]));
+			cajaColor.setTag(Integer.valueOf(arrColores[2]));
 	
 			cajaColor = (LinearLayout) findViewById(R.id.color4);
 			cajaColor.setBackgroundColor(Integer.valueOf(arrColores[3]));
+			cajaColor.setTag(Integer.valueOf(arrColores[3]));
 	
 			cajaColor = (LinearLayout) findViewById(R.id.color5);
 			cajaColor.setBackgroundColor(Integer.valueOf(arrColores[4]));
+			cajaColor.setTag(Integer.valueOf(arrColores[4]));
         }
         else {
 			LinearLayout cajaColor;
 			cajaColor = (LinearLayout) findViewById(R.id.color1);
 			cajaColor.setBackgroundColor(Color.WHITE);
+			cajaColor.setBackground(getResources().getDrawable(R.drawable.border));
+			cajaColor.setTag(Color.WHITE);
 	
 			cajaColor = (LinearLayout) findViewById(R.id.color2);
 			cajaColor.setBackgroundColor(Color.WHITE);
+			cajaColor.setTag(Color.WHITE);
 	
 			cajaColor = (LinearLayout) findViewById(R.id.color3);
 			cajaColor.setBackgroundColor(Color.WHITE);
+			cajaColor.setTag(Color.WHITE);
 	
 			cajaColor = (LinearLayout) findViewById(R.id.color4);
 			cajaColor.setBackgroundColor(Color.WHITE);
+			cajaColor.setTag(Color.WHITE);
 	
 			cajaColor = (LinearLayout) findViewById(R.id.color5);
 			cajaColor.setBackgroundColor(Color.WHITE);
+			cajaColor.setTag(Color.WHITE);
         }
 		
 		gridView = (GridView) findViewById(R.id.grillaColores);
@@ -126,23 +141,29 @@ public class ColorFan extends Activity implements MenuNavegacion{
 			break;
 		case 2:
 			cajaColor = (LinearLayout) findViewById(R.id.color2);
+
 			break;
 		case 3:
 			cajaColor = (LinearLayout) findViewById(R.id.color3);
+
 			break;
 		case 4:
 			cajaColor = (LinearLayout) findViewById(R.id.color4);
+
 			break;
 		case 5:
 			cajaColor = (LinearLayout) findViewById(R.id.color5);
+
 			break;
 		default:
 			cajaColor = (LinearLayout) findViewById(R.id.color1);
+
 			break;
 		}
 		coloresElegidos[posicionALlenar] = "x";
 		cajaColor.setAlpha((float) 1);
 		cajaColor.setBackgroundColor(color);
+		cajaColor.setTag(color);
 		posicionALlenar = 0;
 		for (int i = 1; i < coloresElegidos.length; i++) {
 			if (!coloresElegidos[i].equals("x")) {
@@ -150,11 +171,81 @@ public class ColorFan extends Activity implements MenuNavegacion{
 				break;
 			}
 		}
+
+		GradientDrawable d;
+		View v;
+
+		switch (posicionALlenar) {
+			case (1):
+				v = (View)findViewById(R.id.color1);
+				d = (GradientDrawable)getResources().getDrawable(R.drawable.border);
+				d.setColor(((ColorDrawable) v.getBackground()).getColor());
+				v.setBackground(d);
+				break;
+			case (2):
+				v = (View)findViewById(R.id.color2);
+				d = (GradientDrawable)getResources().getDrawable(R.drawable.border);
+				d.setColor(((ColorDrawable) v.getBackground()).getColor());
+				v.setBackground(d);
+				break;
+			case (3):
+				v = (View)findViewById(R.id.color3);
+				d = (GradientDrawable)getResources().getDrawable(R.drawable.border);
+				d.setColor(((ColorDrawable) v.getBackground()).getColor());
+				v.setBackground(d);
+				break;
+			case (4):
+				v = (View)findViewById(R.id.color4);
+				d = (GradientDrawable)getResources().getDrawable(R.drawable.border);
+				d.setColor(((ColorDrawable) v.getBackground()).getColor());
+				v.setBackground(d);
+				break;
+			case (5):
+				v = (View)findViewById(R.id.color5);
+				d = (GradientDrawable)getResources().getDrawable(R.drawable.border);
+				d.setColor(((ColorDrawable) v.getBackground()).getColor());
+				v.setBackground(d);
+				break;
+			default:
+				v = (View)findViewById(R.id.color1);
+				d = (GradientDrawable)getResources().getDrawable(R.drawable.border);
+				d.setColor(((ColorDrawable) v.getBackground()).getColor());
+				v.setBackground(d);
+				break;
+
+		}
+
+
+
 	}
 	
 	public void setCajaColor(View v){
 		resetSelected();
 		v.setAlpha((float) 0.95);
+		//
+		String resultado;
+		try{
+			GradientDrawable d = (GradientDrawable)getResources().getDrawable(R.drawable.border);
+			Drawable background = v.getBackground();
+			if (background instanceof ColorDrawable){
+
+				d.setColor(((ColorDrawable) background).getColor());
+				v.setTag(((ColorDrawable) background).getColor());
+
+			}else{
+				d.setColor(Color.WHITE);
+				v.setTag(Color.WHITE);
+			}
+
+			v.setBackground(d);
+		} catch (Exception e) {
+			resultado = "ERROR" + e.getMessage();
+			Toast toast =Toast.makeText(getApplicationContext(), resultado, Toast.LENGTH_LONG);
+			toast.setGravity(Gravity.CENTER, 0, 0);
+			toast.show();
+		}
+
+
 		switch (v.getId()) {
 		case (R.id.color1):
 			posicionALlenar = 1;
@@ -175,15 +266,52 @@ public class ColorFan extends Activity implements MenuNavegacion{
 	}
 	
 	private void resetSelected(){
+		Drawable background;
 		LinearLayout lin = (LinearLayout) findViewById(R.id.color1);
+
+		background = lin.getBackground();
+		if (background instanceof GradientDrawable){
+			lin.setBackground(new ColorDrawable((int) lin.getTag()));
+			//((GradientDrawable)background).setColor();
+
+
+		}
 		lin.setAlpha((float) 1);
 		lin = (LinearLayout) findViewById(R.id.color2);
+		background = lin.getBackground();
+		if (background instanceof GradientDrawable){
+			lin.setBackground( new ColorDrawable((int) lin.getTag()));
+			//((GradientDrawable)background).setColor();
+
+
+		}
 		lin.setAlpha((float) 1);
 		lin = (LinearLayout) findViewById(R.id.color3);
+		background = lin.getBackground();
+		if (background instanceof GradientDrawable){
+			lin.setBackground( new ColorDrawable((int) lin.getTag()));
+			//((GradientDrawable)background).setColor();
+
+
+		}
 		lin.setAlpha((float) 1);
 		lin = (LinearLayout) findViewById(R.id.color4);
+		background = lin.getBackground();
+		if (background instanceof GradientDrawable){
+			lin.setBackground( new ColorDrawable((int) lin.getTag()));
+			//((GradientDrawable)background).setColor();
+
+
+		}
 		lin.setAlpha((float) 1);
 		lin = (LinearLayout) findViewById(R.id.color5);
+		background = lin.getBackground();
+		if (background instanceof GradientDrawable){
+			lin.setBackground( new ColorDrawable((int) lin.getTag()));
+			//((GradientDrawable)background).setColor();
+
+
+		}
 		lin.setAlpha((float) 1);
 	}
 	
