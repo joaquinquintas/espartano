@@ -104,7 +104,7 @@ public class Compatibles extends Activity {
             }
 
             if (arrImagenesCrop != null) {
-                ListaTexturas adapter = new ListaTexturas(Compatibles.this,
+                ListaCompatibles adapter = new ListaCompatibles(Compatibles.this,
                         arrImagenesCrop, arrCodigos);
                 lista = (ListView) findViewById(R.id.list_compatibles);
                 lista.setAdapter(adapter);

@@ -10,7 +10,7 @@
     <ImageView
         android:id="@+id/imgSelection"
         android:layout_width="fill_parent"
-        android:layout_height="250dp"
+        android:layout_height="255dp"
         android:scaleType="fitCenter"
         android:adjustViewBounds="true" />
 

@@ -29,10 +29,11 @@ public class ListaTexturas extends ArrayAdapter<String> {
 		}
 		ImageView imageView = (ImageView) view.findViewById(R.id.img);
 		imageView.setImageResource(imagenId[posicion]);
+		/*
 		if (this.codigos != null){
 			TextView text = (TextView) view.findViewById(R.id.compatible_name);
-			text.setText(codigos[posicion]);
-		}
+			text.setText(this.codigos[posicion]);
+		}*/
 
 		return view;
 		
