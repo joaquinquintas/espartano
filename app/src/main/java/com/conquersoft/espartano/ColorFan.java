@@ -206,12 +206,12 @@ public class ColorFan extends Activity implements MenuNavegacion{
 				d.setColor(((ColorDrawable) v.getBackground()).getColor());
 				v.setBackground(d);
 				break;
-			default:
-				v = (View)findViewById(R.id.color1);
-				d = (GradientDrawable)getResources().getDrawable(R.drawable.border);
-				d.setColor(((ColorDrawable) v.getBackground()).getColor());
-				v.setBackground(d);
-				break;
+			//default:
+			//	v = (View)findViewById(R.id.color1);
+			//	d = (GradientDrawable)getResources().getDrawable(R.drawable.border);
+			//	d.setColor(((ColorDrawable) v.getBackground()).getColor());
+			//	v.setBackground(d);
+			//	break;
 
 		}
 
@@ -345,25 +345,30 @@ public class ColorFan extends Activity implements MenuNavegacion{
 	
 	private String crearStringColores(){
 		String stColores = "";
+		int color;
 		
 		LinearLayout caja = (LinearLayout) findViewById(R.id.color1);
-		int color = ((ColorDrawable) caja.getBackground()).getColor();
+		color = (int)caja.getTag();
 		stColores = String.valueOf(color);
 		
 		caja = (LinearLayout) findViewById(R.id.color2);
-		color = ((ColorDrawable) caja.getBackground()).getColor();
+		//color = ((ColorDrawable) caja.getBackground()).getColor();
+		color = (int)caja.getTag();
 		stColores = stColores + "," + String.valueOf(color);
 		
 		caja = (LinearLayout) findViewById(R.id.color3);
-		color = ((ColorDrawable) caja.getBackground()).getColor();
+		//color = ((ColorDrawable) caja.getBackground()).getColor();
+		color = (int)caja.getTag();
 		stColores = stColores + "," + String.valueOf(color);
 		
 		caja = (LinearLayout) findViewById(R.id.color4);
-		color = ((ColorDrawable) caja.getBackground()).getColor();
+		//color = ((ColorDrawable) caja.getBackground()).getColor();
+		color = (int)caja.getTag();
 		stColores = stColores + "," + String.valueOf(color);
 		
 		caja = (LinearLayout) findViewById(R.id.color5);
-		color = ((ColorDrawable) caja.getBackground()).getColor();
+		//color = ((ColorDrawable) caja.getBackground()).getColor();
+		color = (int)caja.getTag();
 		stColores = stColores + "," + String.valueOf(color);
 		
 		return stColores;

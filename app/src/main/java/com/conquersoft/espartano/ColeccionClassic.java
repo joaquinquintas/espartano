@@ -107,7 +107,7 @@ public class ColeccionClassic extends Activity implements MenuNavegacion{
 
 		if (arrImagenesCrop != null) {
 			ListaTexturas adapter = new ListaTexturas(ColeccionClassic.this,
-                    arrImagenesCrop);
+                    arrImagenesCrop, null);
 			lista = (ListView) findViewById(R.id.list);
 			lista.setAdapter(adapter);
 			lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {

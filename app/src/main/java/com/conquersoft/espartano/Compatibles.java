@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -13,7 +14,9 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.view.animation.AnimationUtils;
+import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,12 +25,17 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class Compatibles extends Activity {
 
-	private String nombreColeccion;
-	TextView titulo;
 	String codTextura = "";
-	ArrayList<Item> gridArray = new ArrayList<Item>();
-	GridCompatibles adapterGrid;
-	GridView grillaCompatibles;
+    Context context;
+    ListView lista;
+    Integer[] arrImagenesCrop = null;
+    //String[] arrImagenes = null;
+    //String[] arrColores = null;
+    String[] arrCodigos = null;
+    //String queryImagenes = "";
+    //String queryCodigos = "";		//Todos los codigos disponibles, se usan para mandarselos a la vista de texturas
+    //String queryColores = "";		//Todos los colores disponibles, se usan para mandarselos a la vista de texturas
+    //String queryIds = "";			//Todos los ids de las texturas disponibles, se usan para mandarselos a la vista de textura
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -49,20 +57,95 @@ public class Compatibles extends Activity {
 
 		
         Bundle bundle = getIntent().getExtras();
-        nombreColeccion = bundle.getString("nombreColeccion");
 		codTextura = bundle.getString("idTextura");
+        BaseDeDatos adminBD = new BaseDeDatos(this, "BaseEspartano.db", null, ConstantesDeNegocio.versionBd); //Recordar cambiar el nro de version en cada run
+        SQLiteDatabase bd = adminBD.getReadableDatabase();
 		
-		
-		titulo = (TextView) findViewById(R.id.txtTitulo);
-		titulo.setText(nombreColeccion);
-        
-		
-        BaseDeDatos adminBD=new BaseDeDatos(this, "BaseEspartano.db", null, ConstantesDeNegocio.versionBd); //Recordar cambiar el nro de version en cada run
-        SQLiteDatabase bd=adminBD.getReadableDatabase();
-        
-        Cursor fila=bd.rawQuery("select compatibles, id from Texturas where codigo='" + codTextura+"'", null);
-        
-        
+        try {
+
+
+            Cursor fila_compatibles = bd.rawQuery("select compatibles, id from Texturas where codigo='" + codTextura + "'", null);
+
+            if (fila_compatibles.moveToFirst()) {
+                String[] arrCompatibles = fila_compatibles.getString(0).split(",");
+                //arrImagenes = new String[arrCompatibles.length];
+                arrImagenesCrop = new Integer[arrCompatibles.length];
+                //arrColores = new String[arrCompatibles.length];
+                arrCodigos = new String[arrCompatibles.length];
+
+                for (int j = 0; j < arrCompatibles.length; j++) {
+                    Cursor fila = bd.rawQuery("select codigo, colores, id, imagen_crop, imagen from Texturas where imagen='" + arrCompatibles[j] + "'", null);
+
+                    if (fila.moveToFirst()) {
+
+
+                        //for (int i = 0; i < fila.getCount(); i++) {
+                            arrImagenesCrop[j] = getResources().getIdentifier(fila.getString(3), "drawable", getPackageName());
+                            //arrImagenes[i] = fila.getString(4);
+                            //arrColores[i] = fila.getString(1);
+                            arrCodigos[j] = fila.getString(0);
+
+                            //queryCodigos = queryCodigos + fila.getString(0) + ";";
+                            //queryColores = queryColores + fila.getString(1) + ";";
+                            //queryIds = queryIds + fila.getString(2) + ";";
+                            //queryImagenes = queryImagenes + fila.getString(4) + ";";
+
+                          //  fila.moveToNext();
+                        //}
+
+                    }
+
+                }
+            } else {
+                Toast toast = Toast.makeText(this, "NO COMPATIBLES FOR THIS DESIGN",
+                        Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                toast.show();
+            }
+
+            if (arrImagenesCrop != null) {
+                ListaTexturas adapter = new ListaTexturas(Compatibles.this,
+                        arrImagenesCrop, arrCodigos);
+                lista = (ListView) findViewById(R.id.list_compatibles);
+                lista.setAdapter(adapter);
+            /*
+            lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view,
+                                        int position, long id) {
+
+                    String nombreImgTextura = arrImagenes[position];
+                    nombreImgTextura = nombreImgTextura.substring(nombreImgTextura.indexOf('/') + 1);
+
+                    Intent i = new Intent(getApplicationContext(), HorizontalListViewDemo.class);
+                    i.putExtra("textura", nombreImgTextura);
+                    i.putExtra("colores", arrColores[position]);
+                    i.putExtra("nombreColeccion", nombreColeccion);
+                    i.putExtra("queryCodigos", queryCodigos);
+                    i.putExtra("queryColores", queryColores);
+                    i.putExtra("queryImagenes", queryImagenes);
+                    i.putExtra("queryIds", queryIds);
+                    i.putExtra("posicion", Integer.valueOf(position).toString());
+                    startActivity(i);
+                }
+            });
+            */
+            }
+        }catch (Exception e){
+            Toast toast = Toast.makeText(this, "ERROR GETTING THE COMPATIBLES: " + e.getMessage(),
+                    Toast.LENGTH_SHORT);
+            toast.setGravity(Gravity.CENTER, 0, 0);
+            toast.show();
+        }finally{
+            bd.close();
+        }
+
+
+
+
+
+
+        /*
         if (fila.moveToFirst()) {
         	String[] arrCompatibles = fila.getString(0).split(",");
             for (int i=0; i<arrCompatibles.length; i++) {
@@ -76,12 +159,15 @@ public class Compatibles extends Activity {
             toast.show();
         }
         bd.close();
-        
-        grillaCompatibles = (GridView) findViewById(R.id.gridCompatibles); 
-        adapterGrid = new GridCompatibles(this, R.layout.item_grid_compatible, gridArray);
-        grillaCompatibles.setAdapter(adapterGrid); 
 
-	}
+        grillaCompatibles = (GridView) findViewById(R.id.gridCompatibles);
+        adapterGrid = new GridCompatibles(this, R.layout.item_grid_compatible, gridArray);
+        grillaCompatibles.setAdapter(adapterGrid);
+        */
+    }
+
+
+
 	public static int calculateInSampleSize(
             BitmapFactory.Options options, int reqWidth, int reqHeight) {
     // Raw height and width of image

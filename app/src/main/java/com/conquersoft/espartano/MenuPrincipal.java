@@ -130,7 +130,6 @@ public class MenuPrincipal extends ActionBarActivity implements MenuNavegacion{
 			txtView.setCompoundDrawablesWithIntrinsicBounds(img, null, null, null);
 			txtView.setTextColor(context.getResources().getColor(R.color.small_click));
 			coleccion = "small patterns";
-			startActivity(i);
 		}
 
 		i.putExtra("coleccion", coleccion.toUpperCase());

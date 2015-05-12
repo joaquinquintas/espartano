@@ -29,36 +29,15 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
+            android:text="COMPATIBLE"
             android:textSize="@dimen/font_size_titulo" />
     </FrameLayout>
 
-    <View
-        android:id="@+id/lineaDivisora"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
+    <ListView
+        android:id="@+id/list_compatibles"
         android:layout_below="@+id/contPaletas"
-        android:background="@color/fondo_negro_mp" />
-
-    <TextView
-        android:id="@+id/txtCompatible"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/lineaDivisora"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginBottom="25dp"
-        android:text="@string/compatible"
-        android:gravity="center"
-        android:textSize="@dimen/font_size_titulo" />
+        android:dividerHeight="10sp" />
 
-    <GridView
-        android:id="@+id/gridCompatibles"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/txtCompatible"
-        android:numColumns="5"
-        android:layout_marginLeft="30dp"
-        android:verticalSpacing="10dp"
-        >
-    </GridView>
 </RelativeLayout>
