@@ -12,7 +12,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:background="@color/fondo_intro"
-        android:orientation="horizontal" >
+        android:orientation="horizontal"
+        android:padding="20dp">
 
         <ImageView
             android:id="@+id/imageView2"

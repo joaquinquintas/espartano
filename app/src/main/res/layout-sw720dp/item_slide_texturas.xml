@@ -79,6 +79,69 @@
         </LinearLayout>
     </RelativeLayout>
 
+        <RelativeLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/linearLayout1"
+            android:layout_marginTop="20dp"
+            android:background="@color/fondo_intro" >
+        <LinearLayout
+            android:id="@+id/linearColores2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp"
+            >
+            <LinearLayout
+                android:id="@+id/cajaColor6"
+                android:layout_width="@dimen/caja_colores"
+                android:layout_height="@dimen/caja_colores"
+                android:layout_margin="3dp"
+                android:background="@color/blanco"
+                android:orientation="horizontal" >
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cajaColor7"
+                android:layout_width="@dimen/caja_colores"
+                android:layout_height="@dimen/caja_colores"
+                android:layout_margin="3dp"
+                android:background="@color/blanco"
+                android:orientation="horizontal" >
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cajaColor8"
+                android:layout_width="@dimen/caja_colores"
+                android:layout_height="@dimen/caja_colores"
+                android:layout_margin="3dp"
+                android:background="@color/blanco"
+                android:orientation="horizontal" >
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cajaColor9"
+                android:layout_width="@dimen/caja_colores"
+                android:layout_height="@dimen/caja_colores"
+                android:layout_margin="3dp"
+                android:background="@color/blanco"
+                android:orientation="horizontal" >
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cajaColor10"
+                android:layout_width="@dimen/caja_colores"
+                android:layout_height="@dimen/caja_colores"
+                android:layout_margin="3dp"
+                android:background="@color/blanco"
+                android:orientation="horizontal" >
+            </LinearLayout>
+            </LinearLayout>
+    </RelativeLayout>
+
     <ImageView
         android:id="@+id/icono_favoritos"
         android:layout_width="wrap_content"

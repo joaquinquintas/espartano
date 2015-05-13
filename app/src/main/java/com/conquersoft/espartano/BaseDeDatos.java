@@ -28,7 +28,7 @@ public class BaseDeDatos extends SQLiteOpenHelper {
          ***/
 
 
-        db.execSQL("insert into Texturas (codigo, id_coleccion, colores, imagen, imagen_crop, posicion, compatibles) VALUES ('1A',1,'B7807B,584F4C,C7C3B3,989F8E','classic_1a', '_1a_crop' ,1,'classic_3a_,classic_2b_,classic_2a,classic_4a_,classic_5b_')");
+        db.execSQL("insert into Texturas (codigo, id_coleccion, colores, imagen, imagen_crop, posicion, compatibles) VALUES ('1A',1,'B7807B,584F4C,C7C3B3,989F8E,ccd0d3,edbfbf','classic_1a', '_1a_crop' ,1,'classic_3a_,classic_2b_,classic_2a,classic_4a_,classic_5b_')");
         db.execSQL("insert into Texturas (codigo, id_coleccion, colores, imagen, imagen_crop, posicion, compatibles) VALUES ('2A',1,'B7807B,584F4C,C7C3B3,989F8E','classic_2a', '_2a_crop', 2,'classic_2c,classic_3a_')");
         db.execSQL("insert into Texturas (codigo, id_coleccion, colores, imagen, imagen_crop, posicion, compatibles) VALUES ('2B_',1,'B7807B,584F4C,C7C3B3,989F8E','classic_2b_', '_2b__crop', 3,'classic_2c,classic_4a_')");
         db.execSQL("insert into Texturas (codigo, id_coleccion, colores, imagen, imagen_crop, posicion, compatibles) VALUES ('2C',1,'B7807B,584F4C,C7C3B3,989F8E','classic_2c','_2c_crop',4,'classic_3b_,classic_4a_')");

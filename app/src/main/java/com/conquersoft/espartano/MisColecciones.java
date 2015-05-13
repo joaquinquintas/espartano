@@ -72,6 +72,10 @@ public class MisColecciones extends Activity implements MenuNavegacion{
     		}
 
         } else{
+
+
+            View sendAll = (View) findViewById(R.id.irPaletasId);
+            sendAll.setVisibility(View.INVISIBLE);
             Toast toast = Toast.makeText(this, "THERE ARE NO SELECTIONS AVAILABLE",
                     Toast.LENGTH_SHORT);
             toast.setGravity(Gravity.CENTER, 0, 0);
