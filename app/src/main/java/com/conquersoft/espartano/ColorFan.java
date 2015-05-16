@@ -399,10 +399,9 @@ public class ColorFan extends Activity implements MenuNavegacion{
         v.startAnimation(AnimationUtils.loadAnimation(context, R.animator.click_boton_1));
         final ImageView imagen = (ImageView) v;
         DisplayMetrics metrics = getResources().getDisplayMetrics();
-        int height = metrics.heightPixels;
         int img;
         v.startAnimation(AnimationUtils.loadAnimation(context, R.animator.click_boton_1));
-        if (height>1100){
+        if (Application.isTablet(context)){
             img = R.drawable.contactclicklarge;
         }
         else {
@@ -426,10 +425,9 @@ public class ColorFan extends Activity implements MenuNavegacion{
             @Override
             public void onClick(View v) {
                 DisplayMetrics metrics = getResources().getDisplayMetrics();
-                int height = metrics.heightPixels;
                 int img;
                 v.startAnimation(AnimationUtils.loadAnimation(context, R.animator.click_boton_1));
-                if (height>1100){
+                if (Application.isTablet(context)){
                     img = R.drawable.contactlarge;
                 }
                 else {

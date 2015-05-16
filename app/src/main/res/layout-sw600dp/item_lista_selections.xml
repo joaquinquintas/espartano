@@ -3,16 +3,7 @@
     android:id="@+id/relativeGeneral"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
-    android:orientation="vertical"
     android:background="@color/fondo_negro_mp" >
-
-    <ImageView
-        android:id="@+id/imgSelection"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:scaleType="centerCrop"
-        android:adjustViewBounds="true"/>
 
     <LinearLayout
         android:layout_width="wrap_content"

@@ -52,15 +52,14 @@ public class SpecialAdapter extends BaseAdapter {
 		if (convertView == null) {
 			linear = new LinearLayout(mContext);
 			DisplayMetrics metrics = mContext.getResources().getDisplayMetrics();
-			int height = metrics.heightPixels;
-	        if (height>1100){
+	        if (Application.isTablet(mContext)){
 	        	linear.setLayoutParams(new GridView.LayoutParams(100, 100));	
 	        }
 	        else {
-	        	linear.setLayoutParams(new GridView.LayoutParams(70, 70));
+	        	linear.setLayoutParams(new GridView.LayoutParams(90, 90));
 	        }
 			
-			linear.setOrientation(1);
+			linear.setOrientation(LinearLayout.HORIZONTAL);
 		} else {
 			linear = (LinearLayout) convertView;
 		}

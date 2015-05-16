@@ -2,18 +2,18 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@color/fondo_intro"
+    android:background="@color/fondo_negro_mp"
     android:orientation="vertical" >
 
     <FrameLayout
         android:id="@+id/contPaletas"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:background="@color/fondo_intro"
-        android:gravity="top"
-        android:orientation="horizontal" >
+        android:orientation="horizontal"
+        android:padding="20dp">
 
         <ImageView
             android:id="@+id/imageView2"
@@ -23,38 +23,22 @@
             android:layout_marginLeft="10dp"
             android:contentDescription="@string/flecha_atras"
             android:onClick="volverVerTextura"
-            android:src="@drawable/flechaatras" />
+            android:src="@drawable/flechaatraslarge" />
 
         <TextView
             android:id="@+id/txtTitulo"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_height="match_parent"
             android:gravity="center"
             android:text="COMPATIBLE"
-            android:textSize="22sp" />
+            android:textSize="@dimen/font_size_titulo" />
     </FrameLayout>
-
-    <View
-        android:id="@+id/lineaDivisora"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_below="@+id/contPaletas"
-        android:background="@color/fondo_negro_mp" />
-
-    <TextView
-        android:id="@+id/txtCompatible"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/lineaDivisora"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:text="@string/compatible"
-        android:textSize="24sp" />
 
     <ListView
         android:id="@+id/list_compatibles"
         android:layout_below="@+id/contPaletas"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:dividerHeight="10sp" />
+
 </RelativeLayout>

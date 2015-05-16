@@ -72,12 +72,18 @@ public class MenuPrincipal extends ActionBarActivity implements MenuNavegacion{
 		Intent i = new Intent(getApplicationContext(), ColeccionClassic.class);
 		TextView txtView = (TextView) findViewById(v.getId());
 		Drawable img;
-		DisplayMetrics metrics = getResources().getDisplayMetrics();
-		int height = metrics.heightPixels;
 
 		switch (v.getId()) {
 		case (R.id.colClassic):
-			if (height>1100){
+			if (Application.isTablet(context)){
+				//String PACKAGE_NAME = getApplicationContext().getPackageName();
+				//String uri = PACKAGE_NAME + ":drawable/icono_classic_click_large";
+				//int imageResource = getResources().getIdentifier(uri, null, null);
+				//img = context.getResources().getDrawable(R.drawable.icono_classic_click_large);
+				//System.out.println("IMG ID OLD:: "+img);
+				//System.out.println("IMG ID :: "+imageResource);
+				//System.out.println("PACKAGE_NAME :: "+PACKAGE_NAME);
+				//img  = getResources().getDrawable(imageResource);
 				img = context.getResources().getDrawable(R.drawable.icono_classic_click_large);
 			}
 			else {
@@ -88,7 +94,7 @@ public class MenuPrincipal extends ActionBarActivity implements MenuNavegacion{
 			coleccion = "classic";
 			break;
 		case (R.id.colContemporary):
-			if (height>1100){
+			if (Application.isTablet(context)){
 				img = context.getResources().getDrawable(R.drawable.icono_contemporary_click_large);
 			}
 			else {
@@ -99,7 +105,7 @@ public class MenuPrincipal extends ActionBarActivity implements MenuNavegacion{
 			coleccion = "contemporary";
 			break;
 		case (R.id.colEthnic):
-			if (height>1100){
+			if (Application.isTablet(context)){
 				img = context.getResources().getDrawable(R.drawable.icono_ethnic_click_large);
 			}
 			else {
@@ -110,7 +116,7 @@ public class MenuPrincipal extends ActionBarActivity implements MenuNavegacion{
 			coleccion = "ethnic";
 			break;
 		case (R.id.colOrganic):
-			if (height>1100){
+			if (Application.isTablet(context)){
 				img = context.getResources().getDrawable(R.drawable.icono_organic_click_large);
 			}
 			else {
@@ -121,7 +127,7 @@ public class MenuPrincipal extends ActionBarActivity implements MenuNavegacion{
 			coleccion = "organic";
 			break;
 		case (R.id.colSmall):
-			if (height>1100){
+			if (Application.isTablet(context)){
 				img = context.getResources().getDrawable(R.drawable.icono_small_patterns_click_large);
 			}
 			else {
@@ -158,10 +164,9 @@ public class MenuPrincipal extends ActionBarActivity implements MenuNavegacion{
         v.startAnimation(AnimationUtils.loadAnimation(context, R.animator.click_boton_1));
         final ImageView imagen = (ImageView) v;
         DisplayMetrics metrics = getResources().getDisplayMetrics();
-        int height = metrics.heightPixels;
         int img;
         v.startAnimation(AnimationUtils.loadAnimation(context, R.animator.click_boton_1));
-        if (height>1100){
+        if (Application.isTablet(context)){
             img = R.drawable.contactclicklarge;
         }
         else {
@@ -199,15 +204,14 @@ public class MenuPrincipal extends ActionBarActivity implements MenuNavegacion{
             @Override
             public void onClick(View v) {
                 DisplayMetrics metrics = getResources().getDisplayMetrics();
-                int height = metrics.heightPixels;
                 int img;
                 v.startAnimation(AnimationUtils.loadAnimation(context, R.animator.click_boton_1));
-                if (height>1100){
+                if (Application.isTablet(context)){
                     img = R.drawable.contactlarge;
                 }
                 else {
                     img = R.drawable.contact;
-                }
+				}
 
                 imagen.setImageResource(img);
                 d.dismiss();

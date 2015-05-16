@@ -29,8 +29,8 @@
             android:textColor="@color/fuente_menu_principal"
             android:onClick="abrirColeccion"
             android:text="@string/classic"
-            fontPath="fonts/Whitney_HTF_light.ttf"
-            />
+            fontPath="fonts/Whitney_HTF_Medium.ttf"/>
+
 
         <TextView
             android:id="@+id/colContemporary"
@@ -47,7 +47,8 @@
             android:gravity="center_vertical"
             android:onClick="abrirColeccion"
             android:text="@string/contemporary"
-            android:textColor="@color/fuente_menu_principal" />
+            android:textColor="@color/fuente_menu_principal"
+            fontPath="fonts/Whitney_HTF_Medium.ttf"/>
 
         <TextView
             android:id="@+id/colEthnic"
@@ -64,7 +65,8 @@
             android:textSize="@dimen/font_size_menu_principal"
             android:onClick="abrirColeccion"
             android:text="@string/ethnic"
-            android:textColor="@color/fuente_menu_principal" />
+            android:textColor="@color/fuente_menu_principal"
+            fontPath="fonts/Whitney_HTF_Medium.ttf"/>
 
         <TextView
             android:id="@+id/colOrganic"
@@ -81,7 +83,8 @@
             android:gravity="center_vertical"
             android:onClick="abrirColeccion"
             android:text="@string/organic"
-            android:textColor="@color/fuente_menu_principal" />
+            android:textColor="@color/fuente_menu_principal"
+            fontPath="fonts/Whitney_HTF_Medium.ttf"/>
 
         <TextView
             android:id="@+id/colSmall"
@@ -98,7 +101,8 @@
             android:gravity="center_vertical"
             android:onClick="abrirColeccion"
             android:text="@string/small_patterns"
-            android:textColor="@color/fuente_menu_principal" />
+            android:textColor="@color/fuente_menu_principal"
+            fontPath="fonts/Whitney_HTF_Medium.ttf"/>
     </LinearLayout>
 
     <LinearLayout

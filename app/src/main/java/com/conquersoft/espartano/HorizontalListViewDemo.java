@@ -3,6 +3,7 @@ package com.conquersoft.espartano;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -162,8 +163,7 @@ public class HorizontalListViewDemo extends ActionBarActivity {
             if (isFavorite(queryCodigos[position], queryIds[position])) {
                 Drawable img;
                 DisplayMetrics metrics = getResources().getDisplayMetrics();
-                int height_ = metrics.heightPixels;
-                if (height_ > 1100) {
+                if (Application.isTablet(context)) {
                     img = context.getResources().getDrawable(R.drawable.corazonlarge_on);
                 } else {
                     img = context.getResources().getDrawable(R.drawable.corazon_on);
@@ -181,8 +181,7 @@ public class HorizontalListViewDemo extends ActionBarActivity {
                         desAgregarFavoritos(codYId[0], codYId[1]);
                         Drawable img;
                         DisplayMetrics metrics = getResources().getDisplayMetrics();
-                        int height = metrics.heightPixels;
-                        if (height > 1100) {
+                        if (Application.isTablet(context)) {
                             img = context.getResources().getDrawable(R.drawable.corazonlarge);
                         } else {
                             img = context.getResources().getDrawable(R.drawable.corazon);
@@ -193,7 +192,7 @@ public class HorizontalListViewDemo extends ActionBarActivity {
                         Drawable img;
                         DisplayMetrics metrics = getResources().getDisplayMetrics();
                         int height = metrics.heightPixels;
-                        if (height > 1100) {
+                        if (Application.isTablet(context)) {
                             img = context.getResources().getDrawable(R.drawable.corazonlarge_on);
                         } else {
                             img = context.getResources().getDrawable(R.drawable.corazon_on);
@@ -208,6 +207,7 @@ public class HorizontalListViewDemo extends ActionBarActivity {
         }
 
     };
+
 
     private Boolean isFavorite(String codigo, String idTextura) {
         BaseDeDatos adminBD = new BaseDeDatos(this, "BaseEspartano.db", null, ConstantesDeNegocio.versionBd);

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/gris_dialog"
@@ -10,9 +10,9 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="@dimen/contact_cancel_margin_top"
+        android:layout_marginTop="50dp"
         android:text="@string/contact"
-        android:textSize="@dimen/contact_cancel_title_text_size" />
+        android:textSize="24sp" />
 
     <LinearLayout
         android:id="@+id/linearCuerpo"
@@ -28,21 +28,17 @@
             android:gravity="center"
             android:orientation="horizontal"
             android:background="@color/blanco"
-            android:padding="@dimen/contact_cancel_data_padding"
-            android:layout_marginBottom="0dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp">
+            android:padding="15dp"
+            android:layout_margin="20dp" >
 
             <TextView
                 android:id="@+id/mailContact"
                 android:drawableLeft="@drawable/contacticon"
                 android:drawablePadding="20dp"
-                android:gravity="center"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/mail_espartano"
-                android:textSize="@dimen/contact_cancel_data_text_size" />
+                android:textSize="15sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -52,21 +48,17 @@
             android:gravity="center"
             android:orientation="horizontal"
             android:background="@color/blanco" 
-            android:padding="@dimen/contact_cancel_data_padding"
-            android:layout_marginBottom="0dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp">
+            android:padding="15dp"
+             android:layout_margin="20dp">
 
             <TextView
                 android:id="@+id/phoneContact"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:drawableLeft="@drawable/phoneicon"
-                android:gravity="center"
                 android:drawablePadding="20dp"
                 android:text="+54 11 4702-3030"
-                android:textSize="@dimen/contact_cancel_data_text_size" />
+                android:textSize="15sp" />
         </LinearLayout>
         
         <LinearLayout
@@ -76,21 +68,17 @@
             android:gravity="center"
             android:orientation="horizontal"
             android:background="@color/blanco" 
-            android:padding="@dimen/contact_cancel_data_padding"
-            android:layout_marginBottom="0dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp">
+            android:padding="15dp"
+             android:layout_margin="20dp">
 
             <TextView
                 android:id="@+id/webContact"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
                 android:text="@string/web_espartano"
                 android:drawableLeft="@drawable/webicon"
                 android:drawablePadding="20dp"
-                android:textSize="@dimen/contact_cancel_data_text_size" />
+                android:textSize="15sp" />
         </LinearLayout>
     </LinearLayout>
 
@@ -102,7 +90,7 @@
         android:layout_marginBottom="10dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginTop="@dimen/contact_cancel_margin_top"
+        android:layout_marginTop="50dp"
         android:background="@color/boton_gris"
         android:clickable="true"
         android:gravity="center_horizontal"
@@ -116,7 +104,7 @@
             android:layout_gravity="center"
             android:text="@string/cancel"
             android:textColor="@color/blanco"
-            android:textSize="20sp" />
+            android:textSize="10sp" />
     </LinearLayout>
 
-</LinearLayout>
+</RelativeLayout>

@@ -50,6 +50,7 @@ public class ListaMySelection extends ArrayAdapter<String> {
 
 	@Override
 	public View getView(int posicion, View view, ViewGroup parent) {
+		System.out.print("MI SELECCION");
         System.out.print(this.imagenIds);
 		LayoutInflater inflater = context.getLayoutInflater();
 		view = inflater.inflate(R.layout.item_lista_selections, null, true);
@@ -87,6 +88,7 @@ public class ListaMySelection extends ArrayAdapter<String> {
 		relativeGeneral.setBackground(new BitmapDrawable(context.getResources(), bm));
 		*/
         //relativeGeneral.setBackground(context.getResources().getDrawable(imagenIds.get(posicion)[1]));
+		System.out.print("MI SELECCION");
 		imgSelection.setImageResource(imagenIds.get(posicion)[1]);
 		String tag = posicion + "," + imagenIds.get(posicion)[0]+","+imagenIds.get(posicion)[2];
 		//ImagenIds: 0-IdFavorito, 1-codigo Textura, 2-idTextura
@@ -442,10 +444,9 @@ public class ListaMySelection extends ArrayAdapter<String> {
 		ImageView imagenFanLink = (ImageView) view.findViewById(R.id.icColorFan);
 		if (existenPaletas(idFavorito)){
             DisplayMetrics metrics = context.getResources().getDisplayMetrics();
-            int height = metrics.heightPixels;
             int img;
 
-            if (height>1100){
+            if (Application.isTablet(context)){
                 img = R.drawable.fanlinkcolorlarge;
             }
             else {
@@ -516,10 +517,9 @@ public class ListaMySelection extends ArrayAdapter<String> {
 			if (fila.getString(0) != null && !fila.getString(0).equals("")){
 				ImageView imagenComment = (ImageView) v.findViewById(R.id.icChat);
                 DisplayMetrics metrics = context.getResources().getDisplayMetrics();
-                int height = metrics.heightPixels;
                 int img;
 
-                if (height>1100){
+                if (Application.isTablet(context)){
                     img = R.drawable.chatcolorlarge;
                 }
                 else {

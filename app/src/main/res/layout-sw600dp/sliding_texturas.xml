@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@color/fondo_intro"
+    android:background="#fff"
     android:orientation="vertical" >
 
     <FrameLayout
@@ -22,7 +22,7 @@
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="10dp"
             android:contentDescription="@string/flecha_atras"
-            android:onClick="volverVerTextura"
+            android:onClick="irCollections"
             android:src="@drawable/flechaatras" />
 
         <TextView
@@ -31,30 +31,24 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:gravity="center"
-            android:text="COMPATIBLE"
             android:textSize="22sp" />
+
+        <ImageView
+            android:id="@+id/idImgCompatible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:contentDescription="@string/flecha_atras"
+            android:onClick="irCompatibles"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/ir_compatible" />
     </FrameLayout>
 
-    <View
-        android:id="@+id/lineaDivisora"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_below="@+id/contPaletas"
-        android:background="@color/fondo_negro_mp" />
-
-    <TextView
-        android:id="@+id/txtCompatible"
-        android:layout_width="wrap_content"
+    <com.conquersoft.ui.HorizontialListView
+        android:id="@+id/listview"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/lineaDivisora"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:text="@string/compatible"
-        android:textSize="24sp" />
-
-    <ListView
-        android:id="@+id/list_compatibles"
         android:layout_below="@+id/contPaletas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:background="#ddd" />
+
 </RelativeLayout>
