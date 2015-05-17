@@ -35,7 +35,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/yes"
-            android:textSize="22sp" />
+            fontPath="fonts/Whitney_HTF_Medium.ttf"
+            android:textSize="@dimen/font_size_botonoes" />
     </LinearLayout>
 
     <LinearLayout
@@ -57,8 +58,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/cancel"
+            fontPath="fonts/Whitney_HTF_Medium.ttf"
             android:layout_gravity="center"
-            android:textSize="22sp"
+            android:textSize="@dimen/font_size_botonoes"
              />
     </LinearLayout>
 

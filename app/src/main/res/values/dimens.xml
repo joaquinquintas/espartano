@@ -8,7 +8,6 @@
     <dimen name="font_size_menu_principal">16sp</dimen>
     <dimen name="caja_colores">44dp</dimen>
     <dimen name="caja_coloreslarge">100dp</dimen>
-    <dimen name="caja_link_colores">50dp</dimen>
     <dimen name="font_size_done">15sp</dimen>
     <dimen name="margen_top_entre_iconos">20dp</dimen>
     <dimen name="caja_colores2">40dp</dimen>
@@ -17,6 +16,13 @@
     <dimen name="caja_coloresPreview">40dp</dimen>
     <dimen name="caja_coloresPreviewMargin">5dp</dimen>
     <dimen name="font_size_comentario_preview">14sp</dimen>
+
+
+    <!-- DIALOGS-->
+    <dimen name="font_size_botonoes">22sp</dimen>
+
+    <!-- ITEM LIST LINK PALLETE-->
+    <dimen name="caja_link_colores">40dp</dimen>
     <!-- MAIN -->
     <dimen name="padding_text_menu_principal">20dp</dimen>
 

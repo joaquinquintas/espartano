@@ -93,8 +93,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="@string/send"
+            fontPath="fonts/Whitney_HTF_Medium.ttf"
             android:textColor="@color/blanco"
-            android:textSize="24sp" />
+            android:textSize="@dimen/font_size_botonoes" />
     </LinearLayout>
 
 </LinearLayout>
