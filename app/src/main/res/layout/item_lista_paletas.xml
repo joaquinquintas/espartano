@@ -13,8 +13,8 @@
 
         <LinearLayout
             android:id="@+id/listaColor1"
-            android:layout_width="@dimen/caja_colores2"
-            android:layout_height="@dimen/caja_colores2"
+            android:layout_width="@dimen/paletas_box"
+            android:layout_height="@dimen/paletas_box"
             android:layout_margin="3dp"
             android:background="@color/blanco"
             android:orientation="horizontal" >
@@ -39,8 +39,8 @@
 
         <LinearLayout
             android:id="@+id/listaColor2"
-            android:layout_width="@dimen/caja_colores2"
-            android:layout_height="@dimen/caja_colores2"
+            android:layout_width="@dimen/paletas_box"
+            android:layout_height="@dimen/paletas_box"
             android:layout_margin="3dp"
             android:background="@color/blanco"
             android:orientation="horizontal" >
@@ -65,8 +65,8 @@
 
         <LinearLayout
             android:id="@+id/listaColor3"
-            android:layout_width="@dimen/caja_colores2"
-            android:layout_height="@dimen/caja_colores2"
+            android:layout_width="@dimen/paletas_box"
+            android:layout_height="@dimen/paletas_box"
             android:layout_margin="3dp"
             android:background="@color/blanco"
             android:orientation="horizontal" >
@@ -91,8 +91,8 @@
 
         <LinearLayout
             android:id="@+id/listaColor4"
-            android:layout_width="@dimen/caja_colores2"
-            android:layout_height="@dimen/caja_colores2"
+            android:layout_width="@dimen/paletas_box"
+            android:layout_height="@dimen/paletas_box"
             android:layout_margin="3dp"
             android:background="@color/blanco"
             android:orientation="horizontal" >
@@ -117,8 +117,8 @@
 
         <LinearLayout
             android:id="@+id/listaColor5"
-            android:layout_width="@dimen/caja_colores2"
-            android:layout_height="@dimen/caja_colores2"
+            android:layout_width="@dimen/paletas_box"
+            android:layout_height="@dimen/paletas_box"
             android:layout_margin="3dp"
             android:background="@color/blanco"
             android:orientation="horizontal" >
@@ -139,9 +139,7 @@
         android:id="@+id/imgEliminar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="top"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="26dp"
+        android:layout_gravity="center"
         android:clickable="true"
         android:contentDescription="@string/eliminar"
         android:onClick="showDialogEliminar"
@@ -151,9 +149,7 @@
         android:id="@+id/imgEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="top"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
         android:contentDescription="@string/email"
         android:src="@drawable/mail" />
 

@@ -30,6 +30,7 @@
     <dimen name="margin_header">20dp</dimen>
     <dimen name="margin_top_image_header">20dp</dimen>
     <dimen name="margin_boxes">6dp</dimen>
+    <dimen name="paletas_box">50dp</dimen>
 
     <!-- CONTACT -->
     <dimen name="contact_cancel_margin_top">20dp</dimen>
