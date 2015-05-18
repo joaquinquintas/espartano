@@ -5,24 +5,25 @@
     android:background="@color/fondo_negro_mp"
     android:orientation="vertical" >
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/contPaletas"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
+        android:padding="17dp"
         android:layout_alignParentTop="true"
         android:background="@color/fondo_intro"
         android:gravity="top"
-        android:orientation="horizontal" >
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/txtTitulo"
-            android:layout_width="fill_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
             android:gravity="center"
-            android:textSize="22sp"
-            android:layout_margin="10dp" />
-    </LinearLayout>
+            android:textSize="@dimen/font_size_titulo" />
+    </RelativeLayout>
     
     <ListView
         android:id="@+id/list"

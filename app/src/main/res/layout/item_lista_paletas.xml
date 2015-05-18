@@ -27,6 +27,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:textSize="10dp"
+            fontPath="fonts/Whitney_HTF_Medium.ttf"
             android:layout_margin="3dp"/>
     </LinearLayout>
 
@@ -52,6 +53,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:textSize="10dp"
+            fontPath="fonts/Whitney_HTF_Medium.ttf"
             android:layout_margin="3dp"/>
     </LinearLayout>
 
@@ -77,6 +79,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:textSize="10dp"
+            fontPath="fonts/Whitney_HTF_Medium.ttf"
             android:layout_margin="3dp"/>
     </LinearLayout>
 
@@ -102,6 +105,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:textSize="10dp"
+            fontPath="fonts/Whitney_HTF_Medium.ttf"
             android:layout_margin="3dp" />
     </LinearLayout>
 
@@ -127,6 +131,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:textSize="10dp"
+            fontPath="fonts/Whitney_HTF_Medium.ttf"
             android:layout_margin="3dp" />
     </LinearLayout>
 

@@ -35,7 +35,9 @@ android:background="@color/fondo_negro_mp" >
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         android:gravity="center"
-        android:textSize="28dp" />
+        android:textColor="#4D4D4D"
+        fontPath="fonts/Whitney_HTF_Medium.ttf"
+        android:textSize="18sp" />
 
 </LinearLayout>
 
