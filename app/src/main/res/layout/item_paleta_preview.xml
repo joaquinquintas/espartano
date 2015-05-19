@@ -27,8 +27,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textSize="20dp"
-            android:layout_margin="3dp"/>
+            android:textSize="@dimen/font_size_color_preview"
+            android:layout_marginBottom="3dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -54,8 +56,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textSize="20dp"
-            android:layout_margin="3dp"/>
+            android:textSize="@dimen/font_size_color_preview"
+            android:layout_marginBottom="3dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -80,8 +84,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textSize="20dp"
-            android:layout_margin="3dp"/>
+            android:textSize="@dimen/font_size_color_preview"
+            android:layout_marginBottom="3dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -106,8 +112,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textSize="20dp"
-            android:layout_margin="3dp" />
+            android:textSize="@dimen/font_size_color_preview"
+            android:layout_marginBottom="3dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -133,8 +141,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textSize="20dp"
-            android:layout_margin="3dp" />
+            android:textSize="@dimen/font_size_color_preview"
+            android:layout_marginBottom="3dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"/>
     </LinearLayout>
 
 

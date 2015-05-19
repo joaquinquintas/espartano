@@ -41,7 +41,6 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
             android:contentDescription="@string/flecha_atras"
-            android:layout_centerVertical="true"
             android:onClick="irCompatibles"
             android:src="@drawable/ir_compatible" />
     </RelativeLayout>

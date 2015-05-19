@@ -531,10 +531,9 @@ public class ListaMySelection extends ArrayAdapter<String> {
 			}else{
 				ImageView imagenComment = (ImageView) v.findViewById(R.id.icChat);
 				DisplayMetrics metrics = context.getResources().getDisplayMetrics();
-				int height = metrics.heightPixels;
 				int img;
 
-				if (height>1100){
+				if (Application.isTablet(context)){
 					img = R.drawable.chatlarge;
 				}
 				else {
