@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/gris_dialog"
+    android:gravity="bottom" >
+
+    <TextView
+        android:id="@+id/textViewLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="40dp"
+        android:gravity="top"
+        android:text="@string/link_pallete"
+        android:textSize="20sp" />
+
+    <ListView
+        android:id="@+id/listLinkPallete"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="5dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/linearBotonera"
+        android:divider="@null"
+        android:layout_below="@+id/textViewLink" >
+    </ListView>
+
+    <LinearLayout
+        android:id="@+id/linearBotonera"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp" >
+
+        <LinearLayout
+            android:id="@+id/linearDoneLink"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="40dp"
+            android:background="@color/boton_verde"
+            android:clickable="true"
+            android:gravity="center_horizontal"
+            android:onClick="borrarPaleta"
+            android:orientation="horizontal"
+            android:padding="10dp" >
+
+            <TextView
+                android:id="@+id/yes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/done"
+                android:textColor="@color/blanco"
+                android:textSize="@dimen/font_size_botonoes"
+                fontPath="fonts/Whitney_HTF_Medium.ttf"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearCancelPallete"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="40dp"
+            android:background="@color/boton_gris"
+            android:clickable="true"
+            android:gravity="center_horizontal"
+            android:onClick="borrarPaleta"
+            android:orientation="horizontal"
+            android:padding="10dp" >
+
+            <TextView
+                android:id="@+id/cancelPallete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cancel"
+                android:textColor="@color/blanco"
+                android:textSize="@dimen/font_size_botonoes"
+                fontPath="fonts/Whitney_HTF_Medium.ttf"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
