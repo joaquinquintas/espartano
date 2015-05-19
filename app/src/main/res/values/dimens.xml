@@ -26,7 +26,7 @@
     <dimen name="font_size_botonoes">22sp</dimen>
 
     <!-- ITEM LIST LINK PALLETE-->
-    <dimen name="caja_link_colores">40dp</dimen>
+    <dimen name="caja_link_colores">20dp</dimen>
     <!-- MAIN -->
     <dimen name="padding_text_menu_principal">20dp</dimen>
 
