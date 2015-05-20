@@ -29,7 +29,7 @@
             android:onClick="abrirColeccion"
             android:text="@string/classic"
             fontPath="fonts/Whitney_HTF_Medium.ttf"/>
-             />
+        />
 
         <TextView
             android:id="@+id/colContemporary"

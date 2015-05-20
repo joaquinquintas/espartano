@@ -204,8 +204,8 @@ public class Preview extends Activity {
     public void sacarFoto(View v) {
         // image naming and path  to include sd card  appending name you choose for file
 
-        LinearLayout lin = (LinearLayout) findViewById(R.id.linearBotonSave);
-        lin.setVisibility(2);
+        RelativeLayout lin = (RelativeLayout) findViewById(R.id.linearBotonSave);
+        lin.setVisibility(View.INVISIBLE);
         RelativeLayout layoutGeneral = (RelativeLayout) findViewById(R.id.layoutGeneral);
         layoutGeneral.removeView(lin);
 
@@ -216,25 +216,31 @@ public class Preview extends Activity {
         bitmap = Bitmap.createBitmap(v1.getDrawingCache());
         v1.setDrawingCacheEnabled(false);
 
-        String root = Environment.getExternalStorageDirectory().getAbsoluteFile().toString();
-        File myDir = new File(root + "/Espartano/Media/Espartano Images/");
-        myDir.mkdirs();
-        //String filePath = Environment.getExternalStorageDirectory()
-        //        + File.separator + "Espartano/Media/Espartano Images/";
 
-        int n = 10000;
-        Random generator = new Random();
-        n = generator.nextInt(n);
-        String fname = "espartano_" + String.valueOf(n) + ".png";
-        File file = new File(myDir, fname);
-        FileOutputStream fos;
         try {
+            String root = Environment.getExternalStorageDirectory().getAbsoluteFile().toString();
+            File myDir = new File(root + "/Espartano/Media/Espartano Images/");
+            myDir.mkdirs();
+            //String filePath = Environment.getExternalStorageDirectory()
+            //        + File.separator + "Espartano/Media/Espartano Images/";
+
+            int n = 10000;
+            Random generator = new Random();
+            n = generator.nextInt(n);
+            String fname = "espartano_" + String.valueOf(n) + ".png";
+            File file = new File(myDir, fname);
+            FileOutputStream fos;
             fos = new FileOutputStream(file);
             bitmap.compress(CompressFormat.PNG, 90, fos);
             fos.flush();
             fos.close();
-            sendBroadcast(new Intent(Intent.ACTION_MEDIA_MOUNTED, Uri.parse("file://"+ Environment.getExternalStorageDirectory().getAbsoluteFile().toString())));
-        } catch (Exception e) {
+            try {
+                sendBroadcast(new Intent(Intent.ACTION_MEDIA_MOUNTED, Uri.parse("file://" + Environment.getExternalStorageDirectory().getAbsoluteFile().toString())));
+            }catch (Exception e){
+                sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.parse("file://"+ Environment.getExternalStorageDirectory().getAbsoluteFile().toString())));
+
+            }
+            } catch (Exception e) {
             String resultado = "THERE WAS AN ERROR SAVING THE IMAGE" + e.getMessage();
             Toast toast = Toast.makeText(getApplicationContext(), resultado, Toast.LENGTH_LONG);
             toast.setGravity(Gravity.CENTER, 0, 0);
@@ -292,8 +298,8 @@ public class Preview extends Activity {
     public void sacarFoto_(View v) {
         // image naming and path  to include sd card  appending name you choose for file
 
-        LinearLayout lin = (LinearLayout) findViewById(R.id.linearBotonSave);
-        lin.setVisibility(2);
+        RelativeLayout lin = (RelativeLayout) findViewById(R.id.linearBotonSave);
+        lin.setVisibility(View.INVISIBLE);
         RelativeLayout layoutGeneral = (RelativeLayout) findViewById(R.id.layoutGeneral);
         layoutGeneral.removeView(lin);
 

@@ -447,7 +447,7 @@ public class ListaMySelection extends ArrayAdapter<String> {
             int img;
 
             if (Application.isTablet(context)){
-                img = R.drawable.fanlinkcolorlarge;
+                img = R.drawable.fanlinkcolor;
             }
             else {
                 img = R.drawable.fanlinkcolor;
@@ -520,7 +520,7 @@ public class ListaMySelection extends ArrayAdapter<String> {
                 int img;
 
                 if (Application.isTablet(context)){
-                    img = R.drawable.chatcolorlarge;
+                    img = R.drawable.chatcolor;
                 }
                 else {
                     img = R.drawable.chatcolor;
@@ -534,7 +534,7 @@ public class ListaMySelection extends ArrayAdapter<String> {
 				int img;
 
 				if (Application.isTablet(context)){
-					img = R.drawable.chatlarge;
+					img = R.drawable.chat;
 				}
 				else {
 					img = R.drawable.chat;

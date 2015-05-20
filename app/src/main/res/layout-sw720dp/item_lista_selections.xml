@@ -33,7 +33,7 @@
             android:layout_marginBottom="10dp"
             android:layout_weight="1"
             android:contentDescription="@string/item_lista_textura"
-            android:src="@drawable/fanlarge" />
+            android:src="@drawable/fan" />
 
         <ImageView
             android:id="@+id/icChat"
@@ -42,7 +42,7 @@
             android:layout_marginLeft="20dp"
             android:layout_weight="1"
             android:contentDescription="@string/item_lista_textura"
-            android:src="@drawable/chatlarge" />
+            android:src="@drawable/chat" />
 
         <ImageView
             android:id="@+id/icMail"
@@ -51,7 +51,7 @@
             android:layout_marginLeft="20dp"
             android:layout_weight="1"
             android:contentDescription="@string/item_lista_textura"
-            android:src="@drawable/mail_large" />
+            android:src="@drawable/mail" />
 
         <ImageView
             android:id="@+id/icEliminarSel"
@@ -61,7 +61,7 @@
             android:layout_marginRight="50dp"
             android:layout_weight="1"
             android:contentDescription="@string/item_lista_textura"
-            android:src="@drawable/cruzlarge" />
+            android:src="@drawable/cruz" />
     </LinearLayout>
 
 </RelativeLayout>

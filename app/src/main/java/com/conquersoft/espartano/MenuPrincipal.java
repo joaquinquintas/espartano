@@ -84,7 +84,7 @@ public class MenuPrincipal extends ActionBarActivity implements MenuNavegacion{
 				//System.out.println("IMG ID :: "+imageResource);
 				//System.out.println("PACKAGE_NAME :: "+PACKAGE_NAME);
 				//img  = getResources().getDrawable(imageResource);
-				img = context.getResources().getDrawable(R.drawable.icono_classic_click_large);
+				img = context.getResources().getDrawable(R.drawable.icono_classic_click);
 			}
 			else {
 				img = context.getResources().getDrawable(R.drawable.icono_classic_click);
@@ -95,7 +95,7 @@ public class MenuPrincipal extends ActionBarActivity implements MenuNavegacion{
 			break;
 		case (R.id.colContemporary):
 			if (Application.isTablet(context)){
-				img = context.getResources().getDrawable(R.drawable.icono_contemporary_click_large);
+				img = context.getResources().getDrawable(R.drawable.icono_contemporary_click);
 			}
 			else {
 				img = context.getResources().getDrawable(R.drawable.icono_contemporary_click);
@@ -106,7 +106,7 @@ public class MenuPrincipal extends ActionBarActivity implements MenuNavegacion{
 			break;
 		case (R.id.colEthnic):
 			if (Application.isTablet(context)){
-				img = context.getResources().getDrawable(R.drawable.icono_ethnic_click_large);
+				img = context.getResources().getDrawable(R.drawable.icono_ethnic_click);
 			}
 			else {
 				img = context.getResources().getDrawable(R.drawable.icono_ethnic_click);
@@ -117,7 +117,7 @@ public class MenuPrincipal extends ActionBarActivity implements MenuNavegacion{
 			break;
 		case (R.id.colOrganic):
 			if (Application.isTablet(context)){
-				img = context.getResources().getDrawable(R.drawable.icono_organic_click_large);
+				img = context.getResources().getDrawable(R.drawable.icono_organic_click);
 			}
 			else {
 				img = context.getResources().getDrawable(R.drawable.icono_organic_click);
@@ -128,7 +128,7 @@ public class MenuPrincipal extends ActionBarActivity implements MenuNavegacion{
 			break;
 		case (R.id.colSmall):
 			if (Application.isTablet(context)){
-				img = context.getResources().getDrawable(R.drawable.icono_small_patterns_click_large);
+				img = context.getResources().getDrawable(R.drawable.icono_small_patterns_click);
 			}
 			else {
 				img = context.getResources().getDrawable(R.drawable.icono_small_patterns_click);
@@ -167,7 +167,7 @@ public class MenuPrincipal extends ActionBarActivity implements MenuNavegacion{
         int img;
         v.startAnimation(AnimationUtils.loadAnimation(context, R.animator.click_boton_1));
         if (Application.isTablet(context)){
-            img = R.drawable.contactclicklarge;
+            img = R.drawable.contactclick;
         }
         else {
             img = R.drawable.contactclick;
@@ -207,7 +207,7 @@ public class MenuPrincipal extends ActionBarActivity implements MenuNavegacion{
                 int img;
                 v.startAnimation(AnimationUtils.loadAnimation(context, R.animator.click_boton_1));
                 if (Application.isTablet(context)){
-                    img = R.drawable.contactlarge;
+                    img = R.drawable.contact;
                 }
                 else {
                     img = R.drawable.contact;

@@ -23,7 +23,7 @@
             android:layout_alignParentTop="true"
             android:contentDescription="@string/ic_collections"
             android:onClick="irMisPaletasNoDone"
-            android:src="@drawable/colorfanmaslarge" />
+            android:src="@drawable/colorfanmas" />
 
         <TextView
             android:id="@+id/txtTitulo"
@@ -151,7 +151,7 @@
             android:onClick="irMenuPrincipal"
             android:layout_marginTop="10dp"
             android:contentDescription="@string/ic_collections"
-            android:src="@drawable/collectionslarge" />
+            android:src="@drawable/collections" />
 
         <ImageView
             android:id="@+id/imageView9"
@@ -162,7 +162,7 @@
             android:onClick="irColorFan"
             android:layout_marginBottom="10dp"
             android:layout_marginTop="10dp"
-            android:src="@drawable/colorfanclicklarge" />
+            android:src="@drawable/colorfanclick" />
 
         <ImageView
             android:id="@+id/imageView7"
@@ -173,7 +173,7 @@
             android:layout_marginBottom="10dp"
             android:layout_marginTop="10dp"
             android:contentDescription="@string/ic_collections"
-            android:src="@drawable/myselection_large" />
+            android:src="@drawable/myselection" />
 
         <ImageView
             android:id="@+id/imageView8"
@@ -184,7 +184,7 @@
             android:layout_marginTop="10dp"
             android:onClick="mostrarContacto"
             android:contentDescription="@string/ic_collections"
-            android:src="@drawable/contactlarge" />
+            android:src="@drawable/contact" />
     </LinearLayout>
 
     <View

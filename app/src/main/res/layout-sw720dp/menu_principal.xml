@@ -20,8 +20,8 @@
             android:layout_marginLeft="@dimen/margen_izq_menu_principal"
             android:layout_weight="1"
             android:clickable="true"
-            android:drawableLeft="@drawable/icono_classic_large"
-            android:drawableStart="@drawable/icono_classic_large"
+            android:drawableLeft="@drawable/icono_classic"
+            android:drawableStart="@drawable/icono_classic"
             android:drawablePadding="25dp"
             android:textSize="@dimen/font_size_menu_principal"
             android:layout_marginTop="2dp"
@@ -40,8 +40,8 @@
             android:layout_marginTop="20dp"
             android:layout_weight="1"
             android:clickable="true"
-            android:drawableLeft="@drawable/icono_contemporary_large"
-            android:drawableStart="@drawable/icono_contemporary_large"
+            android:drawableLeft="@drawable/icono_contemporary"
+            android:drawableStart="@drawable/icono_contemporary"
             android:drawablePadding="25dp"
             android:textSize="@dimen/font_size_menu_principal"
             android:gravity="center_vertical"
@@ -57,8 +57,8 @@
             android:layout_marginLeft="@dimen/margen_izq_menu_principal"
             android:layout_marginTop="20dp"
             android:layout_weight="1"
-            android:drawableLeft="@drawable/icono_ethnic_large"
-            android:drawableStart="@drawable/icono_ethnic_large"
+            android:drawableLeft="@drawable/icono_ethnic"
+            android:drawableStart="@drawable/icono_ethnic"
             android:drawablePadding="25dp"
             android:clickable="true"
             android:gravity="center_vertical"
@@ -77,8 +77,8 @@
             android:layout_weight="1"
             android:textSize="@dimen/font_size_menu_principal"
             android:clickable="true"
-            android:drawableLeft="@drawable/icono_organic_large"
-            android:drawableStart="@drawable/icono_organic_large"
+            android:drawableLeft="@drawable/icono_organic"
+            android:drawableStart="@drawable/icono_organic"
             android:drawablePadding="25dp"
             android:gravity="center_vertical"
             android:onClick="abrirColeccion"
@@ -95,8 +95,8 @@
             android:layout_weight="1"
             android:textSize="@dimen/font_size_menu_principal"
             android:clickable="true"
-            android:drawableLeft="@drawable/icono_small_patterns_large"
-            android:drawableStart="@drawable/icono_small_patterns_large"
+            android:drawableLeft="@drawable/icono_small_patterns"
+            android:drawableStart="@drawable/icono_small_patterns"
             android:drawablePadding="25dp"
             android:gravity="center_vertical"
             android:onClick="abrirColeccion"
@@ -124,7 +124,7 @@
             android:layout_marginBottom="10dp"
             android:layout_marginTop="10dp"
             android:contentDescription="@string/ic_collections"
-            android:src="@drawable/collectionsclicklarge" />
+            android:src="@drawable/collectionsclick" />
 
         <ImageView
             android:id="@+id/imageView9"
@@ -135,7 +135,7 @@
             android:onClick="irColorFan"
             android:layout_marginBottom="10dp"
             android:layout_marginTop="10dp"
-            android:src="@drawable/colorfanlarge" />
+            android:src="@drawable/colorfan" />
 
         <ImageView
             android:id="@+id/imageView7"
@@ -146,7 +146,7 @@
             android:layout_marginBottom="10dp"
             android:layout_marginTop="10dp"
             android:contentDescription="@string/ic_collections"
-            android:src="@drawable/myselection_large" />
+            android:src="@drawable/myselection" />
 
         <ImageView
             android:id="@+id/imageView8"
@@ -157,7 +157,7 @@
             android:layout_marginTop="10dp"
             android:onClick="mostrarContacto"
             android:contentDescription="@string/ic_collections"
-            android:src="@drawable/contactlarge" />
+            android:src="@drawable/contact" />
     </LinearLayout>
 
     <View

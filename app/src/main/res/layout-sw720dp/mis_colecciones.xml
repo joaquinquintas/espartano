@@ -43,7 +43,7 @@
         android:layout_centerVertical="true" 
         android:layout_below="@+id/contPaletas"
         android:layout_above="@+id/menuNavegacion"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="@dimen/margin_footer"
         android:dividerHeight="10sp">
     </ListView>
 
@@ -68,7 +68,7 @@
             android:onClick="irMenuPrincipal"
             android:layout_marginTop="10dp"
             android:contentDescription="@string/ic_collections"
-            android:src="@drawable/collectionslarge" />
+            android:src="@drawable/collections" />
 
         <ImageView
             android:id="@+id/imageView9"
@@ -79,7 +79,7 @@
             android:onClick="irColorFan"
             android:layout_marginBottom="10dp"
             android:layout_marginTop="10dp"
-            android:src="@drawable/colorfanlarge" />
+            android:src="@drawable/colorfan" />
 
         <ImageView
             android:id="@+id/imageView7"
@@ -90,7 +90,7 @@
             android:layout_marginBottom="10dp"
             android:layout_marginTop="10dp"
             android:contentDescription="@string/ic_collections"
-            android:src="@drawable/myselectionclick_large" />
+            android:src="@drawable/myselectionclick" />
 
         <ImageView
             android:id="@+id/imageView8"
@@ -101,7 +101,7 @@
             android:layout_marginTop="10dp"
             android:onClick="mostrarContacto"
             android:contentDescription="@string/ic_collections"
-            android:src="@drawable/contactlarge" />
+            android:src="@drawable/contact" />
     </LinearLayout>
 
     <View

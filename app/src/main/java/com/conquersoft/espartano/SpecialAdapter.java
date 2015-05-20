@@ -50,15 +50,17 @@ public class SpecialAdapter extends BaseAdapter {
 		
 		LinearLayout linear;
 		if (convertView == null) {
-			linear = new LinearLayout(mContext);
-			DisplayMetrics metrics = mContext.getResources().getDisplayMetrics();
-	        if (Application.isTablet(mContext)){
-	        	linear.setLayoutParams(new GridView.LayoutParams(100, 100));	
-	        }
-	        else {
-	        	linear.setLayoutParams(new GridView.LayoutParams(90, 90));
-	        }
-			
+			linear = new LinearLayout(this.mContext);
+			//DisplayMetrics metrics = mContext.getResources().getDisplayMetrics();
+	        //if (Application.isTablet(mContext)){
+			int size = (int)mContext.getResources().getDimension(R.dimen.size_grid_element);
+			linear.setLayoutParams(new GridView.LayoutParams(size, size));
+			//linear.setLayoutParams(new GridView.LayoutParams(90, 90));
+
+			//}
+	        //else {
+	        //	linear.setLayoutParams(new GridView.LayoutParams(90, 90));
+	        //}
 			linear.setOrientation(LinearLayout.HORIZONTAL);
 		} else {
 			linear = (LinearLayout) convertView;

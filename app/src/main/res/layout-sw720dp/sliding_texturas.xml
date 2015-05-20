@@ -24,7 +24,7 @@
             android:layout_marginLeft="10dp"
             android:contentDescription="@string/flecha_atras"
             android:onClick="irCollections"
-            android:src="@drawable/flechaatraslarge" />
+            android:src="@drawable/flechaatras" />
 
         <TextView
             android:id="@+id/txtTitulo"
@@ -42,7 +42,7 @@
             android:contentDescription="@string/flecha_atras"
             android:onClick="irCompatibles"
             android:layout_marginRight="10dp"
-            android:src="@drawable/ir_compatible_large" />
+            android:src="@drawable/ir_compatible" />
     </FrameLayout>
 
     <com.conquersoft.ui.HorizontialListView

@@ -25,7 +25,7 @@
             android:layout_marginLeft="10dp"
             android:contentDescription="@string/flecha_atras"
             android:onClick="irColorFan"
-            android:src="@drawable/flechaatraslarge" />
+            android:src="@drawable/flechaatras" />
 
         <TextView
             android:id="@+id/txtTitulo"

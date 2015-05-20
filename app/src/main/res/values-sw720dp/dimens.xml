@@ -18,4 +18,7 @@
 <dimen name="caja_coloresPreviewMargin">10dp</dimen>
 <dimen name="caja_coloresPreview">70dp</dimen>
 <dimen name="font_size_comentario_preview">20sp</dimen>
+    <dimen name="size_grid_element">100dp</dimen>
+    <dimen name="margin_footer">100dp</dimen>
+
 </resources>

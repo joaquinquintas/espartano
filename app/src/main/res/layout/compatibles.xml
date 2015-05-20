@@ -9,7 +9,7 @@
         android:id="@+id/contPaletas"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="17dp"
+        android:padding="@dimen/padding_header_no_icon"
         android:layout_alignParentTop="true"
         android:background="@color/fondo_intro"
         android:gravity="top"
@@ -33,7 +33,7 @@
             android:layout_centerVertical="true"
             android:gravity="center"
             android:text="COMPATIBLE"
-            android:textSize="22sp" />
+            android:textSize="@dimen/font_size_titulo" />
     </RelativeLayout>
 
     <View

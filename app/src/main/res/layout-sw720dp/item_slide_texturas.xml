@@ -153,7 +153,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:contentDescription="@string/ic_favoritos"
-        android:src="@drawable/corazonlarge" />
+        android:src="@drawable/corazon" />
 
     <ImageView
         android:id="@+id/icono_watermark"

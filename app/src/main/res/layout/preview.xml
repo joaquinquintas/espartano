@@ -41,7 +41,7 @@
             android:layout_alignParentRight="true"
             android:layout_alignBottom="@+id/codigoTextura"
             android:gravity="right"
-            android:textSize="10sp"
+            android:textSize="@dimen/font_espartano_preview"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
 

@@ -140,7 +140,7 @@
         android:clickable="true"
         android:contentDescription="@string/eliminar"
         android:onClick="showDialogEliminar"
-        android:src="@drawable/cruzlarge" />
+        android:src="@drawable/cruz" />
 
     <ImageView
         android:id="@+id/imgEmail"
@@ -150,7 +150,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
         android:contentDescription="@string/email"
-        android:src="@drawable/mail_large" />
+        android:src="@drawable/mail" />
 
 
 </LinearLayout>

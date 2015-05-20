@@ -13,6 +13,15 @@
     <dimen name="caja_colores2">40dp</dimen>
     <dimen name="margen_izq_mis_paletas">10dp</dimen>
     <dimen name="font_size_titulo">22sp</dimen>
+    <dimen name="padding_header_no_icon">17dp</dimen>
+    <dimen name="subtitle_font_size">18dp</dimen>
+    <dimen name="text_color">10dp</dimen>
+    <dimen name="done_margin_left">2dp</dimen>
+    <dimen name="size_grid_element">40dp</dimen>
+    <dimen name="font_espartano_preview">10sp</dimen>
+    <dimen name="margin_footer">100dp</dimen>
+    <dimen name="email_margin_top">80dp</dimen>
+    <dimen name="email_margin_side">45dp</dimen>
 
 
     <!-- PREVIEW-->

@@ -78,7 +78,7 @@
         android:contentDescription="@string/ic_favoritos"
         android:src="@drawable/watermark" />
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/linearBotonSave"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -102,5 +102,5 @@
             android:textColor="@color/blanco"
             />
 
-    </LinearLayout>
+    </RelativeLayout>
 </RelativeLayout>

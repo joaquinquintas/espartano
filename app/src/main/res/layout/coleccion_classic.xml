@@ -9,7 +9,7 @@
         android:id="@+id/contPaletas"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="17dp"
+        android:padding="@dimen/padding_header_no_icon"
         android:layout_alignParentTop="true"
         android:background="@color/fondo_intro"
         android:gravity="top"
@@ -30,6 +30,7 @@
         android:layout_below="@+id/contPaletas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_footer"
         android:layout_above="@+id/menuNavegacion" />
 
     <LinearLayout

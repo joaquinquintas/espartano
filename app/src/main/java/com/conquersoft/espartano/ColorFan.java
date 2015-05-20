@@ -402,7 +402,7 @@ public class ColorFan extends Activity implements MenuNavegacion{
         int img;
         v.startAnimation(AnimationUtils.loadAnimation(context, R.animator.click_boton_1));
         if (Application.isTablet(context)){
-            img = R.drawable.contactclicklarge;
+            img = R.drawable.contactclick;
         }
         else {
             img = R.drawable.contactclick;
@@ -428,7 +428,7 @@ public class ColorFan extends Activity implements MenuNavegacion{
                 int img;
                 v.startAnimation(AnimationUtils.loadAnimation(context, R.animator.click_boton_1));
                 if (Application.isTablet(context)){
-                    img = R.drawable.contactlarge;
+                    img = R.drawable.contact;
                 }
                 else {
                     img = R.drawable.contact;

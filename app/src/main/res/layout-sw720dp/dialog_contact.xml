@@ -37,7 +37,7 @@
 
             <TextView
                 android:id="@+id/mailContact"
-                android:drawableLeft="@drawable/contacticonlarge"
+                android:drawableLeft="@drawable/contacticon"
                 android:drawablePadding="20dp"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -62,7 +62,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:drawableLeft="@drawable/phoneiconlarge"
+                android:drawableLeft="@drawable/phoneicon"
                 android:drawablePadding="20dp"
                 android:text="+54 11 4702-3030"
                 android:textSize="24sp" />
@@ -85,7 +85,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="@string/web_espartano"
-                android:drawableLeft="@drawable/webiconlarge"
+                android:drawableLeft="@drawable/webicon"
                 android:drawablePadding="20dp"
                 android:clickable="true"
                 android:textSize="24sp" />

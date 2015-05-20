@@ -3,7 +3,10 @@
     package="com.conquersoft.espartano"
     android:versionCode="1"
     android:versionName="1.0" >
-
+    <intent-filter>
+        <action android:name="android.intent.action.MEDIA_MOUNTED" />
+        <data android:scheme="file" />
+    </intent-filter>
     <uses-sdk
         android:minSdkVersion="16"
         android:targetSdkVersion="19" />
