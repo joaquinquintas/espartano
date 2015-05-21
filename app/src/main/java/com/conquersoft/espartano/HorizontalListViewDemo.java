@@ -153,7 +153,9 @@ public class HorizontalListViewDemo extends ActionBarActivity {
 
             int i = 0;
             for (String color : coloresTextura) {
+                if (color != ""){
                 cajasColores[i].setBackgroundColor(Color.parseColor("#" + color));
+                }
                 i++;
             }
 

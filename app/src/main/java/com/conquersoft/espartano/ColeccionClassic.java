@@ -75,7 +75,7 @@ public class ColeccionClassic extends Activity implements MenuNavegacion{
         BaseDeDatos adminBD=new BaseDeDatos(this, "BaseEspartano.db", null, ConstantesDeNegocio.versionBd); //Recordar cambiar el nro de version en cada run
         SQLiteDatabase bd=adminBD.getReadableDatabase();
         
-        Cursor fila=bd.rawQuery("select codigo, colores, id, imagen_crop, imagen from Texturas where id_coleccion=" + mapa.get(nombreColeccion),null);
+        Cursor fila=bd.rawQuery("select codigo, colores, id, imagen_crop, imagen from Texturas where id_coleccion=" + mapa.get(nombreColeccion)+ " order by posicion asc",null);
 
         
         if (fila.moveToFirst()) {

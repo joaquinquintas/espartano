@@ -28,7 +28,9 @@ public class ListaCompatibles extends ArrayAdapter<String> {
             view = inflater.inflate(R.layout.item_lista_compatibles, null, true);
         }
         ImageView imageView = (ImageView) view.findViewById(R.id.img_compatible);
-        imageView.setImageResource(imagenId[posicion]);
+        //String pos = (String) imagenId[posicion];
+        Integer i = imagenId[posicion];
+        imageView.setImageResource(i);
 
 		if (this.codigos != null){
 			TextView text = (TextView) view.findViewById(R.id.compatible_name);

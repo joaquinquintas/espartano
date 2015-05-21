@@ -74,7 +74,7 @@ public class Compatibles extends Activity {
                 arrCodigos = new String[arrCompatibles.length];
 
                 for (int j = 0; j < arrCompatibles.length; j++) {
-                    Cursor fila = bd.rawQuery("select codigo, colores, id, imagen_crop, imagen from Texturas where imagen='" + arrCompatibles[j] + "'", null);
+                    Cursor fila = bd.rawQuery("select codigo, colores, id, imagen_crop, imagen from Texturas where codigo='" + arrCompatibles[j] + "'", null);
 
                     if (fila.moveToFirst()) {
 
