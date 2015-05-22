@@ -142,6 +142,8 @@ public class HorizontalListViewDemo extends ActionBarActivity {
             layoutGeneral = (RelativeLayout) convertView.findViewById(R.id.layoutGeneral);
             bm = decodeSampledBitmapFromResource(getResources(), getResources().getIdentifier(queryImagenes[position], "drawable", getPackageName()), width, height);
             layoutGeneral.setBackground(new BitmapDrawable(getResources(), bm));
+            layoutGeneral.setSelected(true);
+
 
             layoutGeneral.setLayoutParams(new FrameLayout.LayoutParams(width, LayoutParams.MATCH_PARENT));
 
