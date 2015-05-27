@@ -12,6 +12,8 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 
 /**
@@ -65,36 +67,74 @@ public class TexturasSlider extends FragmentActivity {
 
 
         ViewPager vpPager = (ViewPager) findViewById(R.id.vpPager);
-        adapterViewPager = new MyPagerAdapter(getSupportFragmentManager());
+        adapterViewPager = new MyPagerAdapter(getSupportFragmentManager(), nombreTextura, nombreColeccion, titulo,
+                queryCodigos, queryColores, queryIds, queryImagenes);
+
         vpPager.setAdapter(adapterViewPager);
     }
 
-    public static class MyPagerAdapter extends FragmentPagerAdapter {
-        private static int NUM_ITEMS = 3;
+    public class MyPagerAdapter extends FragmentPagerAdapter {
+        private int num_items = 0;
+        private String nombreTextura;
+        private String nombreColeccion;
+        private TextView titulo;
+        private String[] queryCodigos;        //Todos los codigos disponibles, se usan para mandarselos a la vista de texturas
+        private String[] queryColores;        //Todos los colores disponibles, se usan para mandarselos a la vista de texturas
+        private String[] queryIds;            //Todos los ids de las texturas disponibles, se usan para mandarselos a la vista de textura
+        private String[] queryImagenes;
+        Bundle args;
 
         public MyPagerAdapter(FragmentManager fragmentManager) {
             super(fragmentManager);
         }
 
+        public MyPagerAdapter(FragmentManager fragmentManager, String nombreTextura, String nombreColeccion,
+                              TextView titulo, String[] queryCodigos, String[] queryColores, String[] queryIds,
+                              String[] queryImagenes) {
+            super(fragmentManager);
+
+            this.nombreTextura = nombreTextura;
+            this.titulo = titulo;
+            this.nombreColeccion = nombreColeccion;
+            this.queryCodigos = queryCodigos;
+            this.queryColores = queryColores;
+            this.queryIds = queryIds;
+            this.queryImagenes = queryImagenes;
+            this.num_items =  queryImagenes.length;
+            this.args= new Bundle();
+            this.args.putString("nombreTextura", this.nombreTextura);
+            this.args.putString("nombreColeccion", this.nombreColeccion);
+            this.args.putStringArray("queryCodigos", this.queryCodigos);
+            this.args.putStringArray("queryColores", this.queryColores);
+            this.args.putStringArray("queryIds", this.queryIds);
+            this.args.putStringArray("queryImagenes", this.queryImagenes);
+
+        }
+
+
+        public  int getNum_items() {
+            return num_items;
+        }
+
+        public  void setNum_items(int num_items) {
+            this.num_items = num_items;
+        }
+
+        public void setCount(int count){
+            this.setNum_items(count);
+        }
         // Returns total number of pages
         @Override
         public int getCount() {
-            return NUM_ITEMS;
+            return this.getNum_items();
         }
 
         // Returns the fragment to display for that page
         @Override
         public Fragment getItem(int position) {
-            switch (position) {
-                case 0: // Fragment # 0 - This will show FirstFragment
-                    return ItemTextura.newInstance(0, "Page # 1");
-                case 1: // Fragment # 0 - This will show FirstFragment different title
-                    return ItemTextura.newInstance(1, "Page # 2");
-                case 2: // Fragment # 1 - This will show SecondFragment
-                    return ItemTextura.newInstance(2, "Page # 3");
-                default:
-                    return null;
-            }
+
+            return ItemTextura.newInstance(position, this.args);
+
         }
 
         // Returns the page title for the top indicator
@@ -103,6 +143,61 @@ public class TexturasSlider extends FragmentActivity {
             return "Page " + position;
         }
 
+        public String getNombreTextura() {
+            return nombreTextura;
+        }
+
+        public void setNombreTextura(String nombreTextura) {
+            this.nombreTextura = nombreTextura;
+        }
+
+        public String getNombreColeccion() {
+            return nombreColeccion;
+        }
+
+        public void setNombreColeccion(String nombreColeccion) {
+            this.nombreColeccion = nombreColeccion;
+        }
+
+        public TextView getTitulo() {
+            return titulo;
+        }
+
+        public void setTitulo(TextView titulo) {
+            this.titulo = titulo;
+        }
+
+        public String[] getQueryCodigos() {
+            return queryCodigos;
+        }
+
+        public void setQueryCodigos(String[] queryCodigos) {
+            this.queryCodigos = queryCodigos;
+        }
+
+        public String[] getQueryColores() {
+            return queryColores;
+        }
+
+        public void setQueryColores(String[] queryColores) {
+            this.queryColores = queryColores;
+        }
+
+        public String[] getQueryIds() {
+            return queryIds;
+        }
+
+        public void setQueryIds(String[] queryIds) {
+            this.queryIds = queryIds;
+        }
+
+        public String[] getQueryImagenes() {
+            return queryImagenes;
+        }
+
+        public void setQueryImagenes(String[] queryImagenes) {
+            this.queryImagenes = queryImagenes;
+        }
     }
 
 }

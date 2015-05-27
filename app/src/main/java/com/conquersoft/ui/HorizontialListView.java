@@ -74,7 +74,7 @@ public class HorizontialListView extends AdapterView<ListAdapter> {
     /**
      * Controls how the next layout will happen
      */
-    int mLayoutMode = LAYOUT_NORMAL;
+    int mLayoutMode = LAYOUT_FREEZE;
 
 
     public boolean mAlwaysOverrideTouch = true;

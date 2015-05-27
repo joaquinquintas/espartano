@@ -49,11 +49,8 @@ public class ItemTextura extends Fragment {
     Bitmap bm;
 
     // newInstance constructor for creating fragment with arguments
-    public static ItemTextura newInstance(int page, String title) {
+    public static ItemTextura newInstance(int page, Bundle args) {
         ItemTextura itemTextura = new ItemTextura();
-        Bundle args = new Bundle();
-        args.putInt("someInt", page);
-        args.putString("someTitle", title);
         itemTextura.setArguments(args);
         return itemTextura;
     }
