@@ -118,7 +118,7 @@ public class ColeccionClassic extends Activity implements MenuNavegacion{
 					String nombreImgTextura = arrImagenes[position];
 					nombreImgTextura = nombreImgTextura.substring(nombreImgTextura.indexOf('/')+1);
 
-					Intent i = new Intent(getApplicationContext(), HorizontalListViewDemo.class);
+					Intent i = new Intent(getApplicationContext(), TexturasSlider.class);
 					i.putExtra("textura", nombreImgTextura);
 					i.putExtra("colores", arrColores[position]);
 					i.putExtra("nombreColeccion", nombreColeccion);

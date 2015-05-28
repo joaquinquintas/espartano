@@ -1,5 +1,6 @@
 package com.conquersoft.espartano;
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.Bundle;
@@ -38,6 +39,8 @@ public class TexturasSlider extends FragmentActivity {
     Bitmap bm;
     FragmentPagerAdapter adapterViewPager;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,7 +71,7 @@ public class TexturasSlider extends FragmentActivity {
 
         ViewPager vpPager = (ViewPager) findViewById(R.id.vpPager);
         adapterViewPager = new MyPagerAdapter(getSupportFragmentManager(), nombreTextura, nombreColeccion, titulo,
-                queryCodigos, queryColores, queryIds, queryImagenes);
+                queryCodigos, queryColores, queryIds, queryImagenes, context);
 
         vpPager.setAdapter(adapterViewPager);
     }
@@ -90,7 +93,7 @@ public class TexturasSlider extends FragmentActivity {
 
         public MyPagerAdapter(FragmentManager fragmentManager, String nombreTextura, String nombreColeccion,
                               TextView titulo, String[] queryCodigos, String[] queryColores, String[] queryIds,
-                              String[] queryImagenes) {
+                              String[] queryImagenes, Context context) {
             super(fragmentManager);
 
             this.nombreTextura = nombreTextura;

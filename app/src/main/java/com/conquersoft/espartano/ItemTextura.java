@@ -60,6 +60,11 @@ public class ItemTextura extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         position = getArguments().getInt("position", 0);
+        queryCodigos = getArguments().getStringArray("queryCodigos");
+        queryImagenes = getArguments().getStringArray("queryImagenes");
+        queryColores = getArguments().getStringArray("queryColores");
+        queryIds = getArguments().getStringArray("queryIds");
+        context = getActivity();
         //title = getArguments().getString("someTitle");
     }
 
@@ -74,8 +79,12 @@ public class ItemTextura extends Fragment {
         codigoTexturaDelMomento = queryCodigos[position];
 
         layoutGeneral = (RelativeLayout) view.findViewById(R.id.layoutGeneral);
-        bm = decodeSampledBitmapFromResource(getResources(), getResources().getIdentifier(queryImagenes[position], "drawable", context.getPackageName()), ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-        layoutGeneral.setBackground(new BitmapDrawable(getResources(), bm));
+        String image = queryImagenes[position];
+        String package_name = context.getPackageName();
+        //bm = decodeSampledBitmapFromResource(getResources(),getResources().getIdentifier(image, "drawable", package_name), ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+
+        layoutGeneral.setBackground(context.getResources().getDrawable(getResources().getIdentifier(image, "drawable", package_name)));
+        //layoutGeneral.setBackground(new BitmapDrawable(getResources(), bm));
         layoutGeneral.setSelected(true);
 
 
@@ -99,13 +108,8 @@ public class ItemTextura extends Fragment {
 
         imagenFavoritos.setTag(queryCodigos[position] + ";" + queryIds[position] + ";" + queryImagenes[position]);
         if (isFavorite(queryCodigos[position], queryIds[position])) {
-            Drawable img;
-            DisplayMetrics metrics = getResources().getDisplayMetrics();
-            if (Application.isTablet(context)) {
-                img = context.getResources().getDrawable(R.drawable.corazon_on);
-            } else {
-                img = context.getResources().getDrawable(R.drawable.corazon_on);
-            }
+            Drawable img = context.getResources().getDrawable(R.drawable.corazon_on);
+
             imagenFavoritos.setImageDrawable(img);
         }
         imagenFavoritos.setOnClickListener(new View.OnClickListener() {
@@ -118,23 +122,15 @@ public class ItemTextura extends Fragment {
                 if (isFavorite(codYId[0], codYId[1])) {
                     desAgregarFavoritos(codYId[0], codYId[1]);
                     Drawable img;
-                    DisplayMetrics metrics = getResources().getDisplayMetrics();
-                    if (Application.isTablet(context)) {
-                        img = context.getResources().getDrawable(R.drawable.corazon);
-                    } else {
-                        img = context.getResources().getDrawable(R.drawable.corazon);
-                    }
+                    img = context.getResources().getDrawable(R.drawable.corazon);
+
                     imagenFavoritos.setImageDrawable(img);
                 } else {
                     agregarFavoritos(codYId[0], codYId[1], codYId[2]);
                     Drawable img;
                     DisplayMetrics metrics = getResources().getDisplayMetrics();
-                    int height = metrics.heightPixels;
-                    if (Application.isTablet(context)) {
-                        img = context.getResources().getDrawable(R.drawable.corazon_on);
-                    } else {
-                        img = context.getResources().getDrawable(R.drawable.corazon_on);
-                    }
+                    img = context.getResources().getDrawable(R.drawable.corazon_on);
+
                     imagenFavoritos.setImageDrawable(img);
                 }
 
@@ -211,14 +207,14 @@ public class ItemTextura extends Fragment {
         //	bm.recycle();
         //  System.gc();
 
-        v.startAnimation(AnimationUtils.loadAnimation(this, R.animator.click_boton_1));
+        v.startAnimation(AnimationUtils.loadAnimation(context, R.animator.click_boton_1));
         Intent i = new Intent(context.getApplicationContext(), ColeccionClassic.class);
         i.putExtra("coleccion", nombreColeccion);
         startActivity(i);
     }
 
     public void irCompatibles(View v) {
-        v.startAnimation(AnimationUtils.loadAnimation(this, R.animator.click_boton_1));
+        v.startAnimation(AnimationUtils.loadAnimation(context, R.animator.click_boton_1));
         Intent i = new Intent(context.getApplicationContext(), Compatibles.class);
         i.putExtra("idTextura", codigoTexturaDelMomento);
         i.putExtra("nombreColeccion", nombreColeccion);

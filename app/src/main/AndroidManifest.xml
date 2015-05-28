@@ -60,6 +60,13 @@
             android:screenOrientation="portrait" >
         </activity>
         <activity
+            android:name=".TexturasSlider"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="Slider"
+            android:windowSoftInputMode="adjustPan"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
             android:name=".MisPaletas"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="Mis Paletas"

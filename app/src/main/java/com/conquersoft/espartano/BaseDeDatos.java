@@ -479,7 +479,7 @@ public class BaseDeDatos extends SQLiteOpenHelper {
         db.execSQL("insert into Colores (id, color, pos, grupo) VALUES ('483010','5e5d6e',39,1)");
         db.execSQL("insert into Colores (id, color, pos, grupo) VALUES ('364010','685465',40,1)");
         db.execSQL("insert into Colores (id, color, pos, grupo) VALUES ('324020','6e394b',41,1)");
-        db.execSQL("insert into Colores (id, color, pos, grupo) VALUES ('283020','5e303f',42,1)");
+        db.execSQL("insert into Colores (id, color, pos, grupo) VALUES ('283020','5e3040',42,1)");
         db.execSQL("insert into Colores (id, color, pos, grupo) VALUES ('604020','5c6673',43,1)");
         db.execSQL("insert into Colores (id, color, pos, grupo) VALUES ('604030','4d5a6d',44,1)");
         db.execSQL("insert into Colores (id, color, pos, grupo) VALUES ('562020','51566b',45,1)");
