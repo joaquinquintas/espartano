@@ -126,7 +126,7 @@ public class ColeccionClassic extends Activity implements MenuNavegacion{
 					i.putExtra("queryColores", queryColores);
                     i.putExtra("queryImagenes", queryImagenes);
 					i.putExtra("queryIds", queryIds);
-					i.putExtra("posicion", Integer.valueOf(position).toString());
+					i.putExtra("posicion", position);
 					startActivity(i);
 				}
 			});

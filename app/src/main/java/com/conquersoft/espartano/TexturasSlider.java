@@ -62,7 +62,7 @@ public class TexturasSlider extends FragmentActivity {
         queryColores = bundle.getString("queryColores").split(";");
         queryIds = bundle.getString("queryIds").split(";");
         queryImagenes = bundle.getString("queryImagenes").split(";");
-        String posicion = bundle.getString("posicion");
+        int posicion = bundle.getInt("posicion");
 
 
         titulo = (TextView) findViewById(R.id.txtTitulo);
@@ -71,7 +71,7 @@ public class TexturasSlider extends FragmentActivity {
 
         ViewPager vpPager = (ViewPager) findViewById(R.id.vpPager);
         adapterViewPager = new MyPagerAdapter(getSupportFragmentManager(), nombreTextura, nombreColeccion, titulo,
-                queryCodigos, queryColores, queryIds, queryImagenes, context);
+                queryCodigos, queryColores, queryIds, queryImagenes, context, posicion);
 
         vpPager.setAdapter(adapterViewPager);
     }
@@ -93,7 +93,7 @@ public class TexturasSlider extends FragmentActivity {
 
         public MyPagerAdapter(FragmentManager fragmentManager, String nombreTextura, String nombreColeccion,
                               TextView titulo, String[] queryCodigos, String[] queryColores, String[] queryIds,
-                              String[] queryImagenes, Context context) {
+                              String[] queryImagenes, Context context, int posicion) {
             super(fragmentManager);
 
             this.nombreTextura = nombreTextura;
@@ -111,6 +111,7 @@ public class TexturasSlider extends FragmentActivity {
             this.args.putStringArray("queryColores", this.queryColores);
             this.args.putStringArray("queryIds", this.queryIds);
             this.args.putStringArray("queryImagenes", this.queryImagenes);
+            this.args.putInt("posicion", posicion);
 
         }
 
@@ -136,7 +137,7 @@ public class TexturasSlider extends FragmentActivity {
         @Override
         public Fragment getItem(int position) {
 
-            return ItemTextura.newInstance(position, this.args);
+            return ItemTextura.newInstance(2, this.args);
 
         }
 

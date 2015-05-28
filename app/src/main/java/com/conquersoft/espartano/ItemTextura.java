@@ -59,7 +59,7 @@ public class ItemTextura extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        position = getArguments().getInt("position", 0);
+        position = getArguments().getInt("posicion", 2);
         queryCodigos = getArguments().getStringArray("queryCodigos");
         queryImagenes = getArguments().getStringArray("queryImagenes");
         queryColores = getArguments().getStringArray("queryColores");
