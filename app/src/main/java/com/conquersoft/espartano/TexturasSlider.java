@@ -9,6 +9,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBarActivity;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -21,7 +22,7 @@ import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
  * Created by jquintas on 5/22/15.
  */
 
-public class TexturasSlider extends FragmentActivity {
+public class TexturasSlider extends  ActionBarActivity {
 
     String nombreTextura;
     RelativeLayout layoutGeneral;
@@ -52,7 +53,7 @@ public class TexturasSlider extends FragmentActivity {
         );
 
         setContentView(R.layout.textures_list);
-        //getSupportActionBar().hide();
+        getSupportActionBar().hide();
         context = getApplicationContext();
 
         Bundle bundle = getIntent().getExtras();
@@ -74,6 +75,7 @@ public class TexturasSlider extends FragmentActivity {
                 queryCodigos, queryColores, queryIds, queryImagenes, context, posicion);
 
         vpPager.setAdapter(adapterViewPager);
+        //vpPager.setOffscreenPageLimit(posicion);
     }
 
     public class MyPagerAdapter extends FragmentPagerAdapter {
@@ -136,8 +138,8 @@ public class TexturasSlider extends FragmentActivity {
         // Returns the fragment to display for that page
         @Override
         public Fragment getItem(int position) {
-
-            return ItemTextura.newInstance(2, this.args);
+            this.args.putInt("posicion", position);
+            return ItemTextura.newInstance(position, this.args);
 
         }
 
@@ -147,61 +149,6 @@ public class TexturasSlider extends FragmentActivity {
             return "Page " + position;
         }
 
-        public String getNombreTextura() {
-            return nombreTextura;
-        }
-
-        public void setNombreTextura(String nombreTextura) {
-            this.nombreTextura = nombreTextura;
-        }
-
-        public String getNombreColeccion() {
-            return nombreColeccion;
-        }
-
-        public void setNombreColeccion(String nombreColeccion) {
-            this.nombreColeccion = nombreColeccion;
-        }
-
-        public TextView getTitulo() {
-            return titulo;
-        }
-
-        public void setTitulo(TextView titulo) {
-            this.titulo = titulo;
-        }
-
-        public String[] getQueryCodigos() {
-            return queryCodigos;
-        }
-
-        public void setQueryCodigos(String[] queryCodigos) {
-            this.queryCodigos = queryCodigos;
-        }
-
-        public String[] getQueryColores() {
-            return queryColores;
-        }
-
-        public void setQueryColores(String[] queryColores) {
-            this.queryColores = queryColores;
-        }
-
-        public String[] getQueryIds() {
-            return queryIds;
-        }
-
-        public void setQueryIds(String[] queryIds) {
-            this.queryIds = queryIds;
-        }
-
-        public String[] getQueryImagenes() {
-            return queryImagenes;
-        }
-
-        public void setQueryImagenes(String[] queryImagenes) {
-            this.queryImagenes = queryImagenes;
-        }
     }
 
 }
