@@ -8,6 +8,9 @@ import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class Application extends android.app.Application {
+
+    private String texturaSlider;
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -28,6 +31,14 @@ public class Application extends android.app.Application {
         return (context.getResources().getConfiguration().screenLayout
                 & Configuration.SCREENLAYOUT_SIZE_MASK)
                 >= Configuration.SCREENLAYOUT_SIZE_LARGE;
+    }
+
+    public String getTexturaSlider() {
+        return texturaSlider;
+    }
+
+    public void setTexturaSlider(String texturaSlider) {
+        this.texturaSlider = texturaSlider;
     }
 }
 

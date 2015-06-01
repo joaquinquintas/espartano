@@ -2,6 +2,7 @@ package com.conquersoft.espartano;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -10,6 +11,8 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
+import android.view.View;
+import android.view.animation.AnimationUtils;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -35,7 +38,6 @@ public class TexturasSlider extends  ActionBarActivity {
     String[] queryIds;            //Todos los ids de las texturas disponibles, se usan para mandarselos a la vista de textura
     String[] queryImagenes;
 
-    String codigoTexturaDelMomento = "";
     Context context;
     Bitmap bm;
     FragmentPagerAdapter adapterViewPager;
@@ -75,6 +77,7 @@ public class TexturasSlider extends  ActionBarActivity {
                 queryCodigos, queryColores, queryIds, queryImagenes, context, posicion);
 
         vpPager.setAdapter(adapterViewPager);
+        vpPager.setCurrentItem(posicion);
         //vpPager.setOffscreenPageLimit(posicion);
     }
 
@@ -138,6 +141,8 @@ public class TexturasSlider extends  ActionBarActivity {
         // Returns the fragment to display for that page
         @Override
         public Fragment getItem(int position) {
+            System.err.println("POSITION:");
+            System.err.println(String.valueOf(position));
             this.args.putInt("posicion", position);
             return ItemTextura.newInstance(position, this.args);
 
@@ -149,6 +154,27 @@ public class TexturasSlider extends  ActionBarActivity {
             return "Page " + position;
         }
 
+    }
+
+    public void irCollections(View v) {
+        //	bm.recycle();
+        //  System.gc();
+
+        v.startAnimation(AnimationUtils.loadAnimation(this, R.animator.click_boton_1));
+        Intent i = new Intent(getApplicationContext(), ColeccionClassic.class);
+        i.putExtra("coleccion", nombreColeccion);
+        startActivity(i);
+    }
+
+    public void irCompatibles(View v) {
+        v.startAnimation(AnimationUtils.loadAnimation(this, R.animator.click_boton_1));
+        Intent i = new Intent(getApplicationContext(), Compatibles.class);
+
+        String codigoTexturaDelMomento = ((Application) this.getApplication()).getTexturaSlider();
+        //String codigoTexturaDelMomento = (String)v.getTag();
+        i.putExtra("idTextura", codigoTexturaDelMomento);
+        i.putExtra("nombreColeccion", nombreColeccion);
+        startActivity(i);
     }
 
 }

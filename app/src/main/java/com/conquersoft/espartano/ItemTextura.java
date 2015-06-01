@@ -59,12 +59,12 @@ public class ItemTextura extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        position = getArguments().getInt("posicion", 2);
+        position = getArguments().getInt("posicion", 0);
         queryCodigos = getArguments().getStringArray("queryCodigos");
         queryImagenes = getArguments().getStringArray("queryImagenes");
         queryColores = getArguments().getStringArray("queryColores");
         queryIds = getArguments().getStringArray("queryIds");
-        context = getActivity();
+        this.context = getActivity();
         //title = getArguments().getString("someTitle");
     }
 
@@ -77,7 +77,8 @@ public class ItemTextura extends Fragment {
 
 
         codigoTexturaDelMomento = queryCodigos[position];
-
+        //container.setTag(codigoTexturaDelMomento);
+        ((Application)this.context.getApplicationContext()).setTexturaSlider(codigoTexturaDelMomento);
         layoutGeneral = (RelativeLayout) view.findViewById(R.id.layoutGeneral);
         String image = queryImagenes[position];
         String package_name = context.getPackageName();
