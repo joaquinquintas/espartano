@@ -83,7 +83,17 @@ public class ItemTextura extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.textures_item, container, false);
 
+        View right = (View) view.findViewById(R.id.icono_right);
+        View left = (View) view.findViewById(R.id.icono_left);
 
+        right.setVisibility(View.VISIBLE);
+        left.setVisibility(View.VISIBLE);
+
+        right.startAnimation(AnimationUtils.loadAnimation(context, R.animator.arrows));
+        left.startAnimation(AnimationUtils.loadAnimation(context, R.animator.arrows));
+
+        right.setVisibility(View.INVISIBLE);
+        left.setVisibility(View.INVISIBLE);
 
         this.codigoTexturaDelMomento = this.queryCodigos[this.position];
         //container.setTag(codigoTexturaDelMomento);

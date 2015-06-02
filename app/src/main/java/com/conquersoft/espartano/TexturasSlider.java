@@ -83,6 +83,7 @@ public class TexturasSlider extends  ActionBarActivity {
         System.err.println(String.valueOf(posicion));
         //vpPager.getCurrentItem();
         vpPager.setOffscreenPageLimit(2);
+       
     }
 
     public class MyPagerAdapter extends SmartFragmentStatePagerAdapter {
