@@ -104,7 +104,7 @@ public class MisColecciones extends Activity implements MenuNavegacion{
             //arrContenido = new String[fila.getCount()];
 
             for (int i=0; i<fila.getCount(); i++) {
-                contenido += "Código de Textura: " + fila.getString(1) + "\n \n";
+                contenido += "Código de Diseño: " + fila.getString(1) + "\n \n";
 
                 comment =  fila.getString(0);
                 if (comment != null){
