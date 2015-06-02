@@ -44,7 +44,7 @@ public class ItemTextura extends Fragment {
     private String[] queryIds;            //Todos los ids de las texturas disponibles, se usan para mandarselos a la vista de textura
     private String[] queryImagenes;
 
-    private String codigoTexturaDelMomento = "";
+    public String codigoTexturaDelMomento = "";
     private Context context;
     private Bitmap bm;
 
@@ -87,7 +87,9 @@ public class ItemTextura extends Fragment {
 
         this.codigoTexturaDelMomento = this.queryCodigos[this.position];
         //container.setTag(codigoTexturaDelMomento);
-        ((Application)this.context.getApplicationContext()).setTexturaSlider(codigoTexturaDelMomento);
+        System.err.println("TEXTURA DEL MOMENTO:");
+        System.err.println(this.codigoTexturaDelMomento);
+        //((Application)this.context.getApplicationContext()).setTexturaSlider(this.codigoTexturaDelMomento);
         layoutGeneral = (RelativeLayout) view.findViewById(R.id.layoutGeneral);
         String image = this.queryImagenes[this.position];
         String package_name = this.context.getPackageName();

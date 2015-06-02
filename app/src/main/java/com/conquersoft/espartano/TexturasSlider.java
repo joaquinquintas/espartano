@@ -41,6 +41,7 @@ public class TexturasSlider extends  ActionBarActivity {
     Context context;
     Bitmap bm;
     private SmartFragmentStatePagerAdapter adapterViewPager;
+    private ViewPager vpPager;
 
 
 
@@ -72,7 +73,7 @@ public class TexturasSlider extends  ActionBarActivity {
         titulo.setText(nombreColeccion);
 
 
-        ViewPager vpPager = (ViewPager) findViewById(R.id.vpPager);
+        vpPager = (ViewPager) findViewById(R.id.vpPager);
         adapterViewPager = new MyPagerAdapter(getSupportFragmentManager(), nombreTextura, nombreColeccion, titulo,
                 queryCodigos, queryColores, queryIds, queryImagenes);
 
@@ -179,7 +180,7 @@ public class TexturasSlider extends  ActionBarActivity {
         v.startAnimation(AnimationUtils.loadAnimation(this, R.animator.click_boton_1));
         Intent i = new Intent(getApplicationContext(), Compatibles.class);
 
-        String codigoTexturaDelMomento = ((Application) this.getApplication()).getTexturaSlider();
+        String codigoTexturaDelMomento = ((ItemTextura)this.adapterViewPager.getRegisteredFragment(vpPager.getCurrentItem())).codigoTexturaDelMomento;
         //String codigoTexturaDelMomento = (String)v.getTag();
         i.putExtra("idTextura", codigoTexturaDelMomento);
         i.putExtra("nombreColeccion", nombreColeccion);
