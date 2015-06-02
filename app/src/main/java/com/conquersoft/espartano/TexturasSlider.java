@@ -40,7 +40,7 @@ public class TexturasSlider extends  ActionBarActivity {
 
     Context context;
     Bitmap bm;
-    FragmentPagerAdapter adapterViewPager;
+    private SmartFragmentStatePagerAdapter adapterViewPager;
 
 
 
@@ -74,14 +74,17 @@ public class TexturasSlider extends  ActionBarActivity {
 
         ViewPager vpPager = (ViewPager) findViewById(R.id.vpPager);
         adapterViewPager = new MyPagerAdapter(getSupportFragmentManager(), nombreTextura, nombreColeccion, titulo,
-                queryCodigos, queryColores, queryIds, queryImagenes, context, posicion);
+                queryCodigos, queryColores, queryIds, queryImagenes);
 
         vpPager.setAdapter(adapterViewPager);
         vpPager.setCurrentItem(posicion);
-        //vpPager.setOffscreenPageLimit(posicion);
+        System.err.println("POSITION LOADER:");
+        System.err.println(String.valueOf(posicion));
+        //vpPager.getCurrentItem();
+        vpPager.setOffscreenPageLimit(2);
     }
 
-    public class MyPagerAdapter extends FragmentPagerAdapter {
+    public class MyPagerAdapter extends SmartFragmentStatePagerAdapter {
         private int num_items = 0;
         private String nombreTextura;
         private String nombreColeccion;
@@ -91,6 +94,8 @@ public class TexturasSlider extends  ActionBarActivity {
         private String[] queryIds;            //Todos los ids de las texturas disponibles, se usan para mandarselos a la vista de textura
         private String[] queryImagenes;
         Bundle args;
+        Fragment[] myLovelyFragments;
+
 
         public MyPagerAdapter(FragmentManager fragmentManager) {
             super(fragmentManager);
@@ -98,7 +103,7 @@ public class TexturasSlider extends  ActionBarActivity {
 
         public MyPagerAdapter(FragmentManager fragmentManager, String nombreTextura, String nombreColeccion,
                               TextView titulo, String[] queryCodigos, String[] queryColores, String[] queryIds,
-                              String[] queryImagenes, Context context, int posicion) {
+                              String[] queryImagenes) {
             super(fragmentManager);
 
             this.nombreTextura = nombreTextura;
@@ -109,15 +114,14 @@ public class TexturasSlider extends  ActionBarActivity {
             this.queryIds = queryIds;
             this.queryImagenes = queryImagenes;
             this.num_items =  queryImagenes.length;
-            this.args= new Bundle();
-            this.args.putString("nombreTextura", this.nombreTextura);
-            this.args.putString("nombreColeccion", this.nombreColeccion);
-            this.args.putStringArray("queryCodigos", this.queryCodigos);
-            this.args.putStringArray("queryColores", this.queryColores);
-            this.args.putStringArray("queryIds", this.queryIds);
-            this.args.putStringArray("queryImagenes", this.queryImagenes);
-            this.args.putInt("posicion", posicion);
 
+
+            //this.myLovelyFragments = new Fragment[this.queryImagenes.length];
+
+            //for (int i = 0; i < this.queryImagenes.length; i++) {
+            //    this.args.putInt("posicion", i);
+            //    this.myLovelyFragments[i] = ItemTextura.newInstance(i, this.args);
+            //}
         }
 
 
@@ -138,21 +142,26 @@ public class TexturasSlider extends  ActionBarActivity {
             return this.getNum_items();
         }
 
+        @Override
+        public boolean isViewFromObject(View view, Object object) {
+            System.err.println("SRIVE ESTO:?");
+            if(object != null){
+                return ((Fragment)object).getView() == view;
+            }else{
+                return false;
+            }
+        }
+
         // Returns the fragment to display for that page
         @Override
         public Fragment getItem(int position) {
             System.err.println("POSITION:");
             System.err.println(String.valueOf(position));
-            this.args.putInt("posicion", position);
-            return ItemTextura.newInstance(position, this.args);
-
+            return ItemTextura.newInstance(position, this.queryCodigos, this.queryImagenes,
+                    this.queryColores, this.queryIds);
+            //return this.myLovelyFragments[position];
         }
 
-        // Returns the page title for the top indicator
-        @Override
-        public CharSequence getPageTitle(int position) {
-            return "Page " + position;
-        }
 
     }
 

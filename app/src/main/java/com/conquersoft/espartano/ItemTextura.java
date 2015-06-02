@@ -32,25 +32,34 @@ import android.widget.TextView;
 
 public class ItemTextura extends Fragment {
     // Store instance variables
-    Integer position;
-    String nombreTextura;
-    RelativeLayout layoutGeneral;
-    TextView txtNombreTextura;
-    LinearLayout[] cajasColores;
-    String nombreColeccion;
-    TextView titulo;
-    String[] queryCodigos;        //Todos los codigos disponibles, se usan para mandarselos a la vista de texturas
-    String[] queryColores;        //Todos los colores disponibles, se usan para mandarselos a la vista de texturas
-    String[] queryIds;            //Todos los ids de las texturas disponibles, se usan para mandarselos a la vista de textura
-    String[] queryImagenes;
+    private Integer position;
+    private String nombreTextura;
+    private RelativeLayout layoutGeneral;
+    private TextView txtNombreTextura;
+    private LinearLayout[] cajasColores;
+    private String nombreColeccion;
+    private TextView titulo;
+    private String[] queryCodigos;        //Todos los codigos disponibles, se usan para mandarselos a la vista de texturas
+    private String[] queryColores;        //Todos los colores disponibles, se usan para mandarselos a la vista de texturas
+    private String[] queryIds;            //Todos los ids de las texturas disponibles, se usan para mandarselos a la vista de textura
+    private String[] queryImagenes;
 
-    String codigoTexturaDelMomento = "";
-    Context context;
-    Bitmap bm;
+    private String codigoTexturaDelMomento = "";
+    private Context context;
+    private Bitmap bm;
 
     // newInstance constructor for creating fragment with arguments
-    public static ItemTextura newInstance(int page, Bundle args) {
+    public static ItemTextura newInstance(int page,String[] queryCodigos, String[] queryImagenes,
+                                          String[] queryColores, String[] queryIds ) {
         ItemTextura itemTextura = new ItemTextura();
+        Bundle args = new Bundle();
+        args.putInt("posicion", page);
+        args.putStringArray("queryCodigos", queryCodigos);
+        args.putStringArray("queryImagenes", queryImagenes);
+        args.putStringArray("queryColores", queryColores);
+        args.putStringArray("queryIds", queryIds);
+        itemTextura.setArguments(args);
+
         itemTextura.setArguments(args);
         return itemTextura;
     }
@@ -59,11 +68,11 @@ public class ItemTextura extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        position = getArguments().getInt("posicion", 0);
-        queryCodigos = getArguments().getStringArray("queryCodigos");
-        queryImagenes = getArguments().getStringArray("queryImagenes");
-        queryColores = getArguments().getStringArray("queryColores");
-        queryIds = getArguments().getStringArray("queryIds");
+        this.position = getArguments().getInt("posicion", 0);
+        this.queryCodigos = getArguments().getStringArray("queryCodigos");
+        this.queryImagenes = getArguments().getStringArray("queryImagenes");
+        this.queryColores = getArguments().getStringArray("queryColores");
+        this.queryIds = getArguments().getStringArray("queryIds");
         this.context = getActivity();
         //title = getArguments().getString("someTitle");
     }
@@ -76,12 +85,12 @@ public class ItemTextura extends Fragment {
 
 
 
-        codigoTexturaDelMomento = queryCodigos[position];
+        this.codigoTexturaDelMomento = this.queryCodigos[this.position];
         //container.setTag(codigoTexturaDelMomento);
         ((Application)this.context.getApplicationContext()).setTexturaSlider(codigoTexturaDelMomento);
         layoutGeneral = (RelativeLayout) view.findViewById(R.id.layoutGeneral);
-        String image = queryImagenes[position];
-        String package_name = context.getPackageName();
+        String image = this.queryImagenes[this.position];
+        String package_name = this.context.getPackageName();
         //bm = decodeSampledBitmapFromResource(getResources(),getResources().getIdentifier(image, "drawable", package_name), ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
 
         layoutGeneral.setBackground(context.getResources().getDrawable(getResources().getIdentifier(image, "drawable", package_name)));
@@ -92,24 +101,24 @@ public class ItemTextura extends Fragment {
         layoutGeneral.setLayoutParams(new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
 
         txtNombreTextura = (TextView) view.findViewById(R.id.codigoTextura);
-        txtNombreTextura.setText(queryCodigos[position].toUpperCase());
+        txtNombreTextura.setText(this.queryCodigos[this.position].toUpperCase());
 
-        String[] coloresTextura = queryColores[position].split(",");
+        String[] coloresTextura = this.queryColores[this.position].split(",");
         obtenerCajas(view, coloresTextura);
 
         int i = 0;
         for (String color : coloresTextura) {
             if (color != ""){
-                cajasColores[i].setBackgroundColor(Color.parseColor("#" + color));
+                this.cajasColores[i].setBackgroundColor(Color.parseColor("#" + color));
             }
             i++;
         }
 
         final ImageView imagenFavoritos = (ImageView) view.findViewById(R.id.icono_favoritos);
 
-        imagenFavoritos.setTag(queryCodigos[position] + ";" + queryIds[position] + ";" + queryImagenes[position]);
-        if (isFavorite(queryCodigos[position], queryIds[position])) {
-            Drawable img = context.getResources().getDrawable(R.drawable.corazon_on);
+        imagenFavoritos.setTag(this.queryCodigos[this.position] + ";" + this.queryIds[this.position] + ";" + this.queryImagenes[this.position]);
+        if (isFavorite(this.queryCodigos[this.position], this.queryIds[this.position])) {
+            Drawable img = this.context.getResources().getDrawable(R.drawable.corazon_on);
 
             imagenFavoritos.setImageDrawable(img);
         }
@@ -141,7 +150,7 @@ public class ItemTextura extends Fragment {
         return view;
     }
     private Boolean isFavorite(String codigo, String idTextura) {
-        BaseDeDatos adminBD = new BaseDeDatos(context, "BaseEspartano.db", null, ConstantesDeNegocio.versionBd);
+        BaseDeDatos adminBD = new BaseDeDatos(this.context, "BaseEspartano.db", null, ConstantesDeNegocio.versionBd);
         SQLiteDatabase bd = adminBD.getWritableDatabase();
 
         Cursor fila = bd.rawQuery("select id from Favoritos where codigo_textura ='" + codigo + "'  and id_textura='" + idTextura + "'", null);
@@ -152,7 +161,7 @@ public class ItemTextura extends Fragment {
     }
 
     private void obtenerCajas(View v, String[] coloresTextura) {
-        cajasColores = new LinearLayout[coloresTextura.length];
+        this.cajasColores = new LinearLayout[coloresTextura.length];
         LinearLayout colores = (LinearLayout) v.findViewById(R.id.linearColores2);
         RelativeLayout r_colores = (RelativeLayout) v.findViewById(R.id.linearLayout2);
         r_colores.setVisibility(View.INVISIBLE);
@@ -169,34 +178,34 @@ public class ItemTextura extends Fragment {
         for (int i = 0; i < coloresTextura.length; i++) {
             switch (i) {
                 case (0):
-                    cajasColores[i] = (LinearLayout) v.findViewById(R.id.cajaColor1);
+                    this.cajasColores[i] = (LinearLayout) v.findViewById(R.id.cajaColor1);
                     break;
                 case (1):
-                    cajasColores[i] = (LinearLayout) v.findViewById(R.id.cajaColor2);
+                    this.cajasColores[i] = (LinearLayout) v.findViewById(R.id.cajaColor2);
                     break;
                 case (2):
-                    cajasColores[i] = (LinearLayout) v.findViewById(R.id.cajaColor3);
+                    this.cajasColores[i] = (LinearLayout) v.findViewById(R.id.cajaColor3);
                     break;
                 case (3):
-                    cajasColores[i] = (LinearLayout) v.findViewById(R.id.cajaColor4);
+                    this.cajasColores[i] = (LinearLayout) v.findViewById(R.id.cajaColor4);
                     break;
                 case (4):
-                    cajasColores[i] = (LinearLayout) v.findViewById(R.id.cajaColor5);
+                    this.cajasColores[i] = (LinearLayout) v.findViewById(R.id.cajaColor5);
                     break;
                 case (5):
-                    cajasColores[i] = (LinearLayout) v.findViewById(R.id.cajaColor6);
+                    this.cajasColores[i] = (LinearLayout) v.findViewById(R.id.cajaColor6);
                     break;
                 case (6):
-                    cajasColores[i] = (LinearLayout) v.findViewById(R.id.cajaColor7);
+                    this.cajasColores[i] = (LinearLayout) v.findViewById(R.id.cajaColor7);
                     break;
                 case (7):
-                    cajasColores[i] = (LinearLayout) v.findViewById(R.id.cajaColor8);
+                    this.cajasColores[i] = (LinearLayout) v.findViewById(R.id.cajaColor8);
                     break;
                 case (8):
-                    cajasColores[i] = (LinearLayout) v.findViewById(R.id.cajaColor9);
+                    this.cajasColores[i] = (LinearLayout) v.findViewById(R.id.cajaColor9);
                     break;
                 case (9):
-                    cajasColores[i] = (LinearLayout) v.findViewById(R.id.cajaColor10);
+                    this.cajasColores[i] = (LinearLayout) v.findViewById(R.id.cajaColor10);
                     break;
                 default:
                     break;
