@@ -35,12 +35,14 @@ public class ColeccionClassic extends Activity implements MenuNavegacion{
 	Integer[] arrImagenesCrop = null;
     String[] arrImagenes = null;
 	String[] arrColores = null;
+    //String[] arrCompatibles = null;
 	TextView titulo;
     String queryImagenes = "";
 	String queryCodigos = "";		//Todos los codigos disponibles, se usan para mandarselos a la vista de texturas
 	String queryColores = "";		//Todos los colores disponibles, se usan para mandarselos a la vista de texturas
 	String queryIds = "";			//Todos los ids de las texturas disponibles, se usan para mandarselos a la vista de textura
-	
+    String queryCompatibles = "";
+
 	private final Map<String, Integer> mapa = new HashMap<String, Integer>();
 	
 	@Override
@@ -75,23 +77,26 @@ public class ColeccionClassic extends Activity implements MenuNavegacion{
         BaseDeDatos adminBD=new BaseDeDatos(this, "BaseEspartano.db", null, ConstantesDeNegocio.versionBd); //Recordar cambiar el nro de version en cada run
         SQLiteDatabase bd=adminBD.getReadableDatabase();
         
-        Cursor fila=bd.rawQuery("select codigo, colores, id, imagen_crop, imagen from Texturas where id_coleccion=" + mapa.get(nombreColeccion)+ " order by posicion asc",null);
+        Cursor fila=bd.rawQuery("select codigo, colores, id, imagen_crop, imagen, compatibles from Texturas where id_coleccion=" + mapa.get(nombreColeccion)+ " order by posicion asc",null);
 
         
         if (fila.moveToFirst()) {
         	arrImagenes = new String[fila.getCount()];
             arrImagenesCrop = new Integer[fila.getCount()];
         	arrColores = new String[fila.getCount()];
-            
+           // arrCompatibles = new String[fila.getCount()];
+
             for (int i=0; i<fila.getCount(); i++) {
                 arrImagenesCrop[i] = getResources().getIdentifier(fila.getString(3), "drawable", getPackageName());
                 arrImagenes[i] = fila.getString(4);
     			arrColores[i] = fila.getString(1);
+                //arrCompatibles[i] = fila.getString(5);
     			
     			queryCodigos = queryCodigos + fila.getString(0) + ";";
     			queryColores = queryColores + fila.getString(1) + ";";
     			queryIds = queryIds + fila.getString(2) + ";";
                 queryImagenes = queryImagenes + fila.getString(4) + ";";
+                queryCompatibles = queryCompatibles + fila.getString(5) + ";";
     			
     			fila.moveToNext();
     		}
@@ -125,6 +130,7 @@ public class ColeccionClassic extends Activity implements MenuNavegacion{
 					i.putExtra("queryCodigos", queryCodigos);
 					i.putExtra("queryColores", queryColores);
                     i.putExtra("queryImagenes", queryImagenes);
+                    i.putExtra("queryCompatibles", queryCompatibles);
 					i.putExtra("queryIds", queryIds);
 					i.putExtra("posicion", position);
 					startActivity(i);

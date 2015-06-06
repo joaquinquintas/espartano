@@ -11,6 +11,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.Gravity;
 import android.view.View;
 import android.view.animation.AnimationUtils;
@@ -97,10 +98,15 @@ public class Compatibles extends Activity {
 
                 }
             } else {
-                Toast toast = Toast.makeText(this, "NO COMPATIBLES FOR THIS DESIGN",
+                final Toast toast = Toast.makeText(getBaseContext(), "NO COMPATIBLES FOR THIS DESIGN",
                         Toast.LENGTH_SHORT);
                 toast.setGravity(Gravity.CENTER, 0, 0);
                 toast.show();
+                new CountDownTimer(10000, 1000)
+                {
+                    public void onTick(long millisUntilFinished) {toast.show();}
+                    public void onFinish() {toast.cancel();}
+                }.start();
             }
 
             if (arrImagenesCrop != null) {

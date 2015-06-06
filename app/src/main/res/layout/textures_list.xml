@@ -35,7 +35,7 @@
             android:textSize="@dimen/font_size_titulo" />
 
         <ImageView
-            android:id="@+id/idImgCompatible"
+            android:id="@+id/idImgCompatibles"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
@@ -46,11 +46,43 @@
     </RelativeLayout>
 
 
+
+
+    <RelativeLayout
+        android:id="@+id/flechas"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
         <android.support.v4.view.ViewPager
             android:id="@+id/vpPager"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
         </android.support.v4.view.ViewPager>
 
+    <ImageView
+        android:id="@+id/icono_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible"
+        android:contentDescription="@string/ic_favoritos"
+        android:src="@drawable/right" />
+
+
+    <ImageView
+
+        android:id="@+id/icono_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible"
+        android:contentDescription="@string/ic_favoritos"
+        android:src="@drawable/left" />
+    </RelativeLayout>
 
 </LinearLayout>

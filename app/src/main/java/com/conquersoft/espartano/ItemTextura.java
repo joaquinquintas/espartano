@@ -43,6 +43,7 @@ public class ItemTextura extends Fragment {
     private String[] queryColores;        //Todos los colores disponibles, se usan para mandarselos a la vista de texturas
     private String[] queryIds;            //Todos los ids de las texturas disponibles, se usan para mandarselos a la vista de textura
     private String[] queryImagenes;
+    private String[] queryCompatibles;
 
     public String codigoTexturaDelMomento = "";
     private Context context;
@@ -50,13 +51,14 @@ public class ItemTextura extends Fragment {
 
     // newInstance constructor for creating fragment with arguments
     public static ItemTextura newInstance(int page,String[] queryCodigos, String[] queryImagenes,
-                                          String[] queryColores, String[] queryIds ) {
+                                          String[] queryColores, String[] queryIds, String[] queryCompatibles ) {
         ItemTextura itemTextura = new ItemTextura();
         Bundle args = new Bundle();
         args.putInt("posicion", page);
         args.putStringArray("queryCodigos", queryCodigos);
         args.putStringArray("queryImagenes", queryImagenes);
         args.putStringArray("queryColores", queryColores);
+        args.putStringArray("queryCompatibles", queryCompatibles);
         args.putStringArray("queryIds", queryIds);
         itemTextura.setArguments(args);
 
@@ -73,6 +75,7 @@ public class ItemTextura extends Fragment {
         this.queryImagenes = getArguments().getStringArray("queryImagenes");
         this.queryColores = getArguments().getStringArray("queryColores");
         this.queryIds = getArguments().getStringArray("queryIds");
+        this.queryCompatibles = getArguments().getStringArray("queryCompatibles");
         this.context = getActivity();
         //title = getArguments().getString("someTitle");
     }
@@ -83,17 +86,7 @@ public class ItemTextura extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.textures_item, container, false);
 
-        View right = (View) view.findViewById(R.id.icono_right);
-        View left = (View) view.findViewById(R.id.icono_left);
 
-        right.setVisibility(View.VISIBLE);
-        left.setVisibility(View.VISIBLE);
-
-        right.startAnimation(AnimationUtils.loadAnimation(context, R.animator.arrows));
-        left.startAnimation(AnimationUtils.loadAnimation(context, R.animator.arrows));
-
-        right.setVisibility(View.INVISIBLE);
-        left.setVisibility(View.INVISIBLE);
 
         this.codigoTexturaDelMomento = this.queryCodigos[this.position];
         //container.setTag(codigoTexturaDelMomento);
@@ -102,6 +95,10 @@ public class ItemTextura extends Fragment {
         //((Application)this.context.getApplicationContext()).setTexturaSlider(this.codigoTexturaDelMomento);
         layoutGeneral = (RelativeLayout) view.findViewById(R.id.layoutGeneral);
         String image = this.queryImagenes[this.position];
+        System.err.println("position");
+        System.err.println(this.position);
+        System.err.println("IMAGEN");
+        System.err.println(image);
         String package_name = this.context.getPackageName();
         //bm = decodeSampledBitmapFromResource(getResources(),getResources().getIdentifier(image, "drawable", package_name), ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
 

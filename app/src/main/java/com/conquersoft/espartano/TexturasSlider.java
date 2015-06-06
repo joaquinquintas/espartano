@@ -37,6 +37,7 @@ public class TexturasSlider extends  ActionBarActivity {
     String[] queryColores;        //Todos los colores disponibles, se usan para mandarselos a la vista de texturas
     String[] queryIds;            //Todos los ids de las texturas disponibles, se usan para mandarselos a la vista de textura
     String[] queryImagenes;
+    String[] queryCompatibles;
 
     Context context;
     Bitmap bm;
@@ -66,6 +67,7 @@ public class TexturasSlider extends  ActionBarActivity {
         queryColores = bundle.getString("queryColores").split(";");
         queryIds = bundle.getString("queryIds").split(";");
         queryImagenes = bundle.getString("queryImagenes").split(";");
+        queryCompatibles = bundle.getString("queryCompatibles").split(";");
         int posicion = bundle.getInt("posicion");
 
 
@@ -74,16 +76,64 @@ public class TexturasSlider extends  ActionBarActivity {
 
 
         vpPager = (ViewPager) findViewById(R.id.vpPager);
+        View right = (View) findViewById(R.id.icono_right);
+        View left = (View) findViewById(R.id.icono_left);
+
+        right.setVisibility(View.VISIBLE);
+        left.setVisibility(View.VISIBLE);
+
+        right.startAnimation(AnimationUtils.loadAnimation(context, R.animator.arrows));
+        left.startAnimation(AnimationUtils.loadAnimation(context, R.animator.arrows));
+
+        right.setVisibility(View.INVISIBLE);
+        left.setVisibility(View.INVISIBLE);
+
         adapterViewPager = new MyPagerAdapter(getSupportFragmentManager(), nombreTextura, nombreColeccion, titulo,
-                queryCodigos, queryColores, queryIds, queryImagenes);
+                queryCodigos, queryColores, queryIds, queryImagenes, queryCompatibles);
 
         vpPager.setAdapter(adapterViewPager);
         vpPager.setCurrentItem(posicion);
         System.err.println("POSITION LOADER:");
         System.err.println(String.valueOf(posicion));
         //vpPager.getCurrentItem();
-        vpPager.setOffscreenPageLimit(2);
+        View compatibles = (View)  findViewById(R.id.idImgCompatibles);
+        System.err.println("LARGO COMPATIBLES");
+        System.err.println(queryCompatibles[vpPager.getCurrentItem()].length());
+        if (queryCompatibles[vpPager.getCurrentItem()].length()== 0){
+            compatibles.setVisibility(View.INVISIBLE);
+        }else{
+            compatibles.setVisibility(View.VISIBLE);
+        }
+        vpPager.setOffscreenPageLimit(1);
+        // Attach the page change listener inside the activity
+        vpPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 
+            // This method will be invoked when a new page becomes selected.
+            @Override
+            public void onPageSelected(int position) {
+                View compatibles = (View)  findViewById(R.id.idImgCompatibles);
+                System.err.println("LARGO COMPATIBLES");
+                System.err.println(queryCompatibles[position].length());
+                if (queryCompatibles[position].length()== 0){
+                    compatibles.setVisibility(View.INVISIBLE);
+                }else{
+                    compatibles.setVisibility(View.VISIBLE);
+                }
+            }
+
+            // This method will be invoked when the current page is scrolled
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            // Called when the scroll state changes:
+            // SCROLL_STATE_IDLE, SCROLL_STATE_DRAGGING, SCROLL_STATE_SETTLING
+            @Override
+            public void onPageScrollStateChanged(int state) {
+                // Code goes here
+            }
+        });
     }
 
     public class MyPagerAdapter extends SmartFragmentStatePagerAdapter {
@@ -95,6 +145,7 @@ public class TexturasSlider extends  ActionBarActivity {
         private String[] queryColores;        //Todos los colores disponibles, se usan para mandarselos a la vista de texturas
         private String[] queryIds;            //Todos los ids de las texturas disponibles, se usan para mandarselos a la vista de textura
         private String[] queryImagenes;
+        private String[] queryCompatibles;
         Bundle args;
         Fragment[] myLovelyFragments;
 
@@ -105,7 +156,7 @@ public class TexturasSlider extends  ActionBarActivity {
 
         public MyPagerAdapter(FragmentManager fragmentManager, String nombreTextura, String nombreColeccion,
                               TextView titulo, String[] queryCodigos, String[] queryColores, String[] queryIds,
-                              String[] queryImagenes) {
+                              String[] queryImagenes, String[] queryCompatibles) {
             super(fragmentManager);
 
             this.nombreTextura = nombreTextura;
@@ -115,6 +166,7 @@ public class TexturasSlider extends  ActionBarActivity {
             this.queryColores = queryColores;
             this.queryIds = queryIds;
             this.queryImagenes = queryImagenes;
+            this.queryCompatibles = queryCompatibles;
             this.num_items =  queryImagenes.length;
 
 
@@ -159,8 +211,10 @@ public class TexturasSlider extends  ActionBarActivity {
         public Fragment getItem(int position) {
             System.err.println("POSITION:");
             System.err.println(String.valueOf(position));
+
+
             return ItemTextura.newInstance(position, this.queryCodigos, this.queryImagenes,
-                    this.queryColores, this.queryIds);
+                    this.queryColores, this.queryIds, this.queryCompatibles);
             //return this.myLovelyFragments[position];
         }
 
