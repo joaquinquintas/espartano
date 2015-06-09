@@ -118,6 +118,7 @@ public class ItemTextura extends Fragment {
         int i = 0;
         for (String color : coloresTextura) {
             if (color != ""){
+                System.err.println(color);
                 this.cajasColores[i].setBackgroundColor(Color.parseColor("#" + color));
             }
             i++;

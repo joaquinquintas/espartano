@@ -97,12 +97,17 @@ public class TexturasSlider extends  ActionBarActivity {
         System.err.println(String.valueOf(posicion));
         //vpPager.getCurrentItem();
         View compatibles = (View)  findViewById(R.id.idImgCompatibles);
-        System.err.println("LARGO COMPATIBLES");
-        System.err.println(queryCompatibles[vpPager.getCurrentItem()].length());
-        if (queryCompatibles[vpPager.getCurrentItem()].length()== 0){
+
+        try {
+            System.err.println("LARGO COMPATIBLES");
+            System.err.println(queryCompatibles[vpPager.getCurrentItem()].length());
+            if (queryCompatibles[vpPager.getCurrentItem()].length() == 0) {
+                compatibles.setVisibility(View.INVISIBLE);
+            } else {
+                compatibles.setVisibility(View.VISIBLE);
+            }
+        }catch(Exception e){
             compatibles.setVisibility(View.INVISIBLE);
-        }else{
-            compatibles.setVisibility(View.VISIBLE);
         }
         vpPager.setOffscreenPageLimit(1);
         // Attach the page change listener inside the activity
@@ -112,12 +117,16 @@ public class TexturasSlider extends  ActionBarActivity {
             @Override
             public void onPageSelected(int position) {
                 View compatibles = (View)  findViewById(R.id.idImgCompatibles);
-                System.err.println("LARGO COMPATIBLES");
-                System.err.println(queryCompatibles[position].length());
-                if (queryCompatibles[position].length()== 0){
+                try {
+                    System.err.println("LARGO COMPATIBLES");
+                    System.err.println(queryCompatibles[position].length());
+                    if (queryCompatibles[position].length() == 0) {
+                        compatibles.setVisibility(View.INVISIBLE);
+                    } else {
+                        compatibles.setVisibility(View.VISIBLE);
+                    }
+                }catch (Exception e){
                     compatibles.setVisibility(View.INVISIBLE);
-                }else{
-                    compatibles.setVisibility(View.VISIBLE);
                 }
             }
 
