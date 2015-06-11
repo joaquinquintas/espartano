@@ -22,7 +22,8 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:gravity="center"
-            android:textSize="@dimen/font_size_titulo" />
+            android:textSize="@dimen/font_size_titulo"
+            fontPath="fonts/Whitney_HTF_Medium.ttf"/>
     </RelativeLayout>
     
     <ListView
@@ -31,7 +32,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/margin_footer"
-        android:layout_above="@+id/menuNavegacion" />
+        android:layout_above="@+id/linearLayout1" />
 
     <LinearLayout
         android:id="@+id/linearLayout1"

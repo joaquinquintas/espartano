@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="200dp"
         android:gravity="center"
         android:background="@color/fondo_intro" >
 
@@ -22,8 +22,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#4D4D4D"
-            android:textSize="15sp"
-            android:layout_marginTop="5dp"
+            android:textSize="@dimen/item_textura_font_size"
             fontPath="fonts/Whitney_HTF_Medium.ttf"
             android:layout_centerHorizontal="true"
 
@@ -34,9 +33,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/codigoTextura"
-            android:layout_margin="5dp"
+
             android:orientation="horizontal"
-            android:paddingBottom="5dp"
             android:gravity="center">
 
             <LinearLayout

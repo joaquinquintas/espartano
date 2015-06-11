@@ -11,6 +11,7 @@
     <dimen name="font_size_done">15sp</dimen>
     <dimen name="margen_top_entre_iconos">20dp</dimen>
     <dimen name="caja_colores2">40dp</dimen>
+    <dimen name="margin_footer">10dp</dimen>
     <dimen name="margen_izq_mis_paletas">10dp</dimen>
     <dimen name="font_size_titulo">22sp</dimen>
 

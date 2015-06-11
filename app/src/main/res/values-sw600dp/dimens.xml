@@ -23,6 +23,8 @@
     <dimen name="email_margin_top">40dp</dimen>
 
 
+    <!-- ITem Textura-->
+    <dimen name="item_textura_font_size">25sp</dimen>
 
 
     <!-- PREVIEW-->

@@ -21,4 +21,8 @@
     <dimen name="size_grid_element">100dp</dimen>
     <dimen name="margin_footer">100dp</dimen>
 
+
+    <!-- ITem Textura-->
+    <dimen name="item_textura_font_size">25sp</dimen>
+
 </resources>
