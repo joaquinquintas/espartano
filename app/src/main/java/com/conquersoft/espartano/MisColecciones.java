@@ -149,6 +149,7 @@ public class MisColecciones extends Activity implements MenuNavegacion{
         emailIntent.setType("text/plain");
 
 
+
         emailIntent.putExtra(Intent.EXTRA_EMAIL, TO);
         emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Mi Selección");
         emailIntent.putExtra(Intent.EXTRA_TEXT, contenido);

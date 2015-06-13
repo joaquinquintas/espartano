@@ -25,6 +25,7 @@
 
     <!-- ITem Textura-->
     <dimen name="item_textura_font_size">15sp</dimen>
+    <dimen name="item_textura_margin_top">5dp</dimen>
 
     <!-- PREVIEW-->
     <dimen name="caja_coloresPreview">40dp</dimen>

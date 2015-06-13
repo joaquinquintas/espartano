@@ -177,7 +177,6 @@ public class ItemTextura extends Fragment {
         r_colores.setVisibility(View.INVISIBLE);
         colores.setVisibility(View.INVISIBLE);
 
-        LinearLayout[] more_cajaColores = new LinearLayout[5];
         if (coloresTextura.length > 5){
             //Agregar 5 cajas de colores
             colores.setVisibility(View.VISIBLE);

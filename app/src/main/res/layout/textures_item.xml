@@ -17,23 +17,29 @@
         android:gravity="center"
         android:background="@color/fondo_intro" >
 
+        <LinearLayout
+            android:id="@+id/lineaTexto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_centerHorizontal="true"
+            android:gravity="center">
         <TextView
             android:id="@+id/codigoTextura"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#4D4D4D"
             android:textSize="@dimen/item_textura_font_size"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="@dimen/item_textura_margin_top"
             fontPath="fonts/Whitney_HTF_Medium.ttf"
-            android:layout_centerHorizontal="true"
 
             android:textAppearance="?android:attr/textAppearanceLarge" />
-
+    </LinearLayout>
         <LinearLayout
             android:id="@+id/linearColores"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/codigoTextura"
+            android:layout_below="@+id/lineaTexto"
             android:layout_margin="5dp"
             android:orientation="horizontal"
             android:paddingBottom="5dp"
@@ -87,19 +93,25 @@
     </RelativeLayout>
     <RelativeLayout
         android:id="@+id/linearLayout2"
+        android:layout_below="@+id/linearLayout1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/linearLayout1"
         android:layout_marginTop="20dp"
+        android:gravity="center"
         android:background="@color/fondo_intro" >
+
+
         <LinearLayout
             android:id="@+id/linearColores2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_margin="5dp"
             android:orientation="horizontal"
-            android:paddingBottom="10dp"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+
+            android:gravity="center"
             >
             <LinearLayout
                 android:id="@+id/cajaColor6"
@@ -156,13 +168,13 @@
         android:layout_centerHorizontal="true"
         android:contentDescription="@string/ic_favoritos"
         android:src="@drawable/corazon" />
-    <ImageView
+    <!--ImageView
         android:id="@+id/icono_watermark"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:contentDescription="@string/ic_favoritos"
-        android:src="@drawable/watermark" />
+        android:src="@drawable/watermark" /-->
 
 </RelativeLayout>
