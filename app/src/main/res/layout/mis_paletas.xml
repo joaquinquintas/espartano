@@ -34,6 +34,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:gravity="center"
+                fontPath="fonts/Whitney_HTF_Medium.ttf"
                 android:text="@string/color_fan"
                 android:textSize="@dimen/font_size_titulo" />
         </RelativeLayout>

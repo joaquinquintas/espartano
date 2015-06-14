@@ -6,26 +6,15 @@
     <dimen name="margen_izq_menu_principal">70dp</dimen>
     <dimen name="margen_top_menu_principal">0dp</dimen>
     <dimen name="font_size_menu_principal">16sp</dimen>
-    <dimen name="caja_colores">44dp</dimen>
+    <dimen name="caja_colores">40dp</dimen>
     <dimen name="caja_coloreslarge">100dp</dimen>
     <dimen name="font_size_done">15sp</dimen>
     <dimen name="margen_top_entre_iconos">20dp</dimen>
     <dimen name="caja_colores2">40dp</dimen>
+    <dimen name="margin_footer">10dp</dimen>
     <dimen name="margen_izq_mis_paletas">10dp</dimen>
     <dimen name="font_size_titulo">22sp</dimen>
-    <dimen name="padding_header_no_icon">17dp</dimen>
-    <dimen name="subtitle_font_size">18dp</dimen>
-    <dimen name="text_color">10dp</dimen>
-    <dimen name="done_margin_left">2dp</dimen>
-    <dimen name="size_grid_element">40dp</dimen>
-    <dimen name="font_espartano_preview">10sp</dimen>
-    <dimen name="margin_collection_list_footer">100dp</dimen>
-    <dimen name="email_margin_top">80dp</dimen>
-    <dimen name="email_margin_side">45dp</dimen>
 
-    <!-- ITem Textura-->
-    <dimen name="item_textura_font_size">15sp</dimen>
-    <dimen name="item_textura_margin_top">5dp</dimen>
 
     <!-- PREVIEW-->
     <dimen name="caja_coloresPreview">40dp</dimen>
@@ -38,7 +27,7 @@
     <dimen name="font_size_botonoes">22sp</dimen>
 
     <!-- ITEM LIST LINK PALLETE-->
-    <dimen name="caja_link_colores">20dp</dimen>
+    <dimen name="caja_link_colores">30dp</dimen>
     <!-- MAIN -->
     <dimen name="padding_text_menu_principal">20dp</dimen>
 
@@ -46,7 +35,7 @@
     <dimen name="margin_header">20dp</dimen>
     <dimen name="margin_top_image_header">20dp</dimen>
     <dimen name="margin_boxes">6dp</dimen>
-    <dimen name="paletas_box">50dp</dimen>
+    <dimen name="paletas_box">40dp</dimen>
 
     <!-- CONTACT -->
     <dimen name="contact_cancel_margin_top">20dp</dimen>

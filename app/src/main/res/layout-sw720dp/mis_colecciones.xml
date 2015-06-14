@@ -22,6 +22,7 @@
             android:layout_margin="20dp"
             android:gravity="center"
             android:text="@string/my_selection"
+            fontPath="fonts/Whitney_HTF_Medium.ttf"
             android:textSize="@dimen/font_size_titulo" />
 
         <ImageView

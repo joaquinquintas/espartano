@@ -31,7 +31,7 @@
             android:id="@+id/txtTitulo"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
+            fontPath="fonts/Whitney_HTF_Medium.ttf"
             android:text="COLOR FAN"
             android:gravity="center"
             android:textSize="@dimen/font_size_titulo" />
