@@ -74,6 +74,8 @@
         android:padding="20dp" />
 
     <ImageView
+        android:layout_below="@+id/comentarioPreview"
+        android:layout_above="@+id/linearBotonSave"
         android:id="@+id/icono_watermark"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

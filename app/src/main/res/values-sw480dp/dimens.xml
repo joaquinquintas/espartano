@@ -42,5 +42,5 @@
     <dimen name="contact_cancel_text_size">20sp</dimen>
     <dimen name="contact_cancel_data_padding">5dp</dimen>
     <dimen name="contact_cancel_data_text_size">12sp</dimen>
-    <dimen name="contact_cancel_title_text_size">50sp</dimen>
+    <dimen name="contact_cancel_title_text_size">20sp</dimen>
 </resources>

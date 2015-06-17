@@ -64,7 +64,8 @@ public class Preview extends Activity {
         setContentView(R.layout.preview);
 
         getActionBar().hide();
-
+        int count_paletas = 0;
+        boolean has_comment = false;
         Bundle bundle = getIntent().getExtras();
         context = this;
         idFavorito = bundle.getString("idFavorito");
@@ -89,7 +90,8 @@ public class Preview extends Activity {
         fila = bd.rawQuery("select id_paleta from texturas_x_paletas where id_favorito=" + idFavorito, null);
 
         if (fila.moveToFirst()) {
-            for (int i = 0; i < fila.getCount(); i++) {
+            count_paletas = fila.getCount();
+            for (int i = 0; i <count_paletas;  i++) {
                 Cursor filaColores = bd.rawQuery("select colores from Paletas where id=" + fila.getString(0), null);
                 if (filaColores.moveToFirst()) {
                     String[] arrColores = filaColores.getString(0).split(",");
@@ -118,6 +120,7 @@ public class Preview extends Activity {
         txtComentario = (TextView) findViewById(R.id.comentarioPreview);
         if (comentario != null && !comentario.equals("")) {
             txtComentario.setText(comentario.toUpperCase());
+            has_comment = true;
         } else {
             txtComentario.setBackgroundColor(Color.TRANSPARENT);
         }
@@ -134,6 +137,9 @@ public class Preview extends Activity {
         layoutGeneral.setBackground(new BitmapDrawable(getResources(), bm));
 
         layoutGeneral.setLayoutParams(new FrameLayout.LayoutParams(width, LayoutParams.MATCH_PARENT));
+        //if(count_paletas>=3 && has_comment == true){
+          //Maybe we have to resize the water mark
+        //}
 
     }
 

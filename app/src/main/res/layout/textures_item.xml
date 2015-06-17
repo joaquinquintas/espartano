@@ -31,6 +31,7 @@
             android:textColor="#4D4D4D"
             android:textSize="@dimen/item_textura_font_size"
             android:layout_marginTop="@dimen/item_textura_margin_top"
+            android:layout_marginBottom="@dimen/item_textura_margin_top"
             fontPath="fonts/Whitney_HTF_Medium.ttf"
 
             android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -40,16 +41,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/lineaTexto"
-            android:layout_margin="5dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
             android:orientation="horizontal"
-            android:paddingBottom="5dp"
+
+            android:layout_centerHorizontal="true"
             android:gravity="center">
 
             <LinearLayout
                 android:id="@+id/cajaColor1"
                 android:layout_width="@dimen/caja_colores"
                 android:layout_height="@dimen/caja_colores"
-                android:layout_margin="3dp"
+                android:layout_marginRight="5dp"
                 android:background="@color/blanco"
                 android:orientation="horizontal" >
             </LinearLayout>
@@ -58,7 +62,7 @@
                 android:id="@+id/cajaColor2"
                 android:layout_width="@dimen/caja_colores"
                 android:layout_height="@dimen/caja_colores"
-                android:layout_margin="3dp"
+                android:layout_marginRight="5dp"
                 android:background="@color/blanco"
                 android:orientation="horizontal" >
             </LinearLayout>
@@ -67,7 +71,7 @@
                 android:id="@+id/cajaColor3"
                 android:layout_width="@dimen/caja_colores"
                 android:layout_height="@dimen/caja_colores"
-                android:layout_margin="3dp"
+                android:layout_marginRight="5dp"
                 android:background="@color/blanco"
                 android:orientation="horizontal" >
             </LinearLayout>
@@ -76,7 +80,7 @@
                 android:id="@+id/cajaColor4"
                 android:layout_width="@dimen/caja_colores"
                 android:layout_height="@dimen/caja_colores"
-                android:layout_margin="3dp"
+                android:layout_marginRight="5dp"
                 android:background="@color/blanco"
                 android:orientation="horizontal" >
             </LinearLayout>
@@ -85,7 +89,6 @@
                 android:id="@+id/cajaColor5"
                 android:layout_width="@dimen/caja_colores"
                 android:layout_height="@dimen/caja_colores"
-                android:layout_margin="3dp"
                 android:background="@color/blanco"
                 android:orientation="horizontal" >
             </LinearLayout>
@@ -106,18 +109,19 @@
             android:id="@+id/linearColores2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
             android:orientation="horizontal"
-            android:paddingBottom="5dp"
-            android:paddingTop="5dp"
-
+            android:paddingTop="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:layout_centerHorizontal="true"
             android:gravity="center"
             >
             <LinearLayout
                 android:id="@+id/cajaColor6"
                 android:layout_width="@dimen/caja_colores"
                 android:layout_height="@dimen/caja_colores"
-                android:layout_margin="3dp"
+                android:layout_marginRight="5dp"
                 android:background="@color/blanco"
                 android:orientation="horizontal" >
             </LinearLayout>
@@ -126,7 +130,7 @@
                 android:id="@+id/cajaColor7"
                 android:layout_width="@dimen/caja_colores"
                 android:layout_height="@dimen/caja_colores"
-                android:layout_margin="3dp"
+                android:layout_marginRight="5dp"
                 android:background="@color/blanco"
                 android:orientation="horizontal" >
             </LinearLayout>
@@ -135,7 +139,7 @@
                 android:id="@+id/cajaColor8"
                 android:layout_width="@dimen/caja_colores"
                 android:layout_height="@dimen/caja_colores"
-                android:layout_margin="3dp"
+                android:layout_marginRight="5dp"
                 android:background="@color/blanco"
                 android:orientation="horizontal" >
             </LinearLayout>
@@ -144,7 +148,7 @@
                 android:id="@+id/cajaColor9"
                 android:layout_width="@dimen/caja_colores"
                 android:layout_height="@dimen/caja_colores"
-                android:layout_margin="3dp"
+                android:layout_marginRight="5dp"
                 android:background="@color/blanco"
                 android:orientation="horizontal" >
             </LinearLayout>
@@ -153,7 +157,6 @@
                 android:id="@+id/cajaColor10"
                 android:layout_width="@dimen/caja_colores"
                 android:layout_height="@dimen/caja_colores"
-                android:layout_margin="3dp"
                 android:background="@color/blanco"
                 android:orientation="horizontal" >
             </LinearLayout>
